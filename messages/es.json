@@ -45,8 +45,16 @@
         "motors": "Motores atendidos",
         "response": "Respuesta a urgencias"
       },
-      "responseValue": "24 h"
+      "responseValue": "24 h",
+      "scrollCue": "Desliza para ver el taller"
     },
+    "ticker": [
+      "Embobinado de motores",
+      "Mantenimiento industrial",
+      "Reparación de motores",
+      "Diagnóstico eléctrico",
+      "Urgencias 24 h"
+    ],
     "services": {
       "eyebrow": "Servicios",
       "title": "Lo que resolvemos",
@@ -169,7 +177,37 @@
           "2": "Alambre magneto y aislamientos clase F o H según la aplicación",
           "3": "Impregnación con barniz y horneado controlado",
           "4": "Pruebas de aislamiento, resistencias y corriente en vacío"
-        }
+        },
+        "intro": {
+          "first": "El embobinado es el oficio principal del taller, no un servicio agregado. Cuando un motor eléctrico se quema, lo primero es leer el devanado original: número de espiras, calibre del alambre, paso, conexión y clase térmica del aislamiento. Ese registro es lo que permite que el motor rebobinado conserve su par, su corriente nominal y su eficiencia, en lugar de salir funcionando pero consumiendo de más el resto de su vida.",
+          "second": "Con los datos levantados retiramos el devanado dañado, limpiamos y revisamos el núcleo, y volvemos a embobinar con alambre magneto y aislamientos clase F o H según la temperatura de trabajo. Cerramos con impregnación de barniz, horneado controlado y las pruebas eléctricas que documentan cómo quedó."
+        },
+        "applications": [
+          "Motores trifásicos de jaula de ardilla",
+          "Motores monofásicos de arranque por capacitor",
+          "Motores de corriente directa",
+          "Motores de bombas centrífugas y sumergibles",
+          "Motores de ventiladores y compresores",
+          "Motores de dos velocidades y de alta eficiencia"
+        ],
+        "faq": [
+          {
+            "question": "¿Cuánto tarda el rebobinado de un motor?",
+            "answer": "Depende de la potencia y de si el núcleo resultó dañado. Un trifásico de baja potencia suele salir en pocos días hábiles una vez aprobada la cotización; los de mayor tamaño llevan más. La fecha comprometida va por escrito en la cotización, no de palabra."
+          },
+          {
+            "question": "¿Conviene rebobinar o comprar un motor nuevo?",
+            "answer": "Mientras el núcleo y la carcasa estén sanos, rebobinar cuesta una fracción de lo que cuesta reponer el motor y se entrega mucho antes que un equipo de importación. Si encontramos el núcleo dañado o la carcasa comprometida te lo decimos y comparamos las dos opciones antes de que gastes."
+          },
+          {
+            "question": "¿Un motor rebobinado pierde eficiencia?",
+            "answer": "Solo si se rebobina mal. La pérdida aparece cuando se cambia el calibre del alambre, se altera el número de espiras o se sobrecalienta el núcleo para extraer el devanado. Respetando los datos originales y sin quemar el estator, el motor recupera prácticamente la eficiencia de su placa."
+          },
+          {
+            "question": "¿Qué garantía tiene el embobinado?",
+            "answer": "Respaldamos por escrito el embobinado y la mano de obra, y damos seguimiento después del arranque. El plazo queda indicado en la orden de servicio."
+          }
+        ]
       },
       "maintenance": {
         "title": "Mantenimiento industrial",
@@ -182,7 +220,37 @@
           "2": "Cambio de rodamientos, retenes y limpieza de devanados",
           "3": "Revisión de conexiones, protecciones y arrancadores",
           "4": "Bitácora del equipo con mediciones de cada visita"
-        }
+        },
+        "intro": {
+          "first": "El mantenimiento industrial que hacemos parte de la misma idea que el resto del taller: medir antes de opinar. Una rutina preventiva no es pasar un trapo y apretar tornillos; es registrar temperatura, corriente por fase, estado de rodamientos y conexiones en cada visita, para que la bitácora muestre la tendencia y el motor se intervenga antes de que pare la línea.",
+          "second": "Planeamos las rutinas junto con tus paros programados para no robarte producción, y atendemos correctivos cuando algo ya falló. Al terminar cada visita queda un registro del equipo con lo que se midió, lo que se cambió y lo que conviene vigilar."
+        },
+        "applications": [
+          "Motores eléctricos de planta",
+          "Bombas centrífugas y sumergibles",
+          "Ventiladores y extractores",
+          "Compresores",
+          "Arrancadores, protecciones y tableros de fuerza",
+          "Acoplamientos y transmisiones por banda"
+        ],
+        "faq": [
+          {
+            "question": "¿Cada cuánto conviene una rutina preventiva?",
+            "answer": "Depende de las horas de operación y del ambiente: un motor en área con polvo o humedad necesita revisiones más seguidas que uno en área limpia. Lo definimos con tus horas reales de trabajo, no con un calendario genérico."
+          },
+          {
+            "question": "¿Pueden trabajar durante nuestros paros programados?",
+            "answer": "Sí, y es como preferimos hacerlo. Calendarizamos las rutinas dentro de tus ventanas de paro para no sumar tiempo muerto a la planta."
+          },
+          {
+            "question": "¿Qué entregan después de cada visita?",
+            "answer": "Una bitácora del equipo con las mediciones de la visita, lo que se sustituyó y las recomendaciones. Con varias visitas se convierte en un historial que permite anticipar fallas."
+          },
+          {
+            "question": "¿Atienden correctivos urgentes?",
+            "answer": "Sí. Para un paro no programado el teléfono es el canal más rápido, y damos diagnóstico dentro de las primeras 24 horas."
+          }
+        ]
       },
       "repair": {
         "title": "Reparación de motores y bombas",
@@ -195,7 +263,37 @@
           "2": "Sustitución de rodamientos con verificación de tolerancias",
           "3": "Reparación de bombas centrífugas y sumergibles",
           "4": "Balanceo del rotor y prueba de operación"
-        }
+        },
+        "intro": {
+          "first": "Un devanado nuevo montado sobre un eje desgastado o un rodamiento con juego dura poco. Por eso la parte mecánica se atiende con el mismo criterio que la eléctrica: se mide, se compara contra tolerancia y se corrige, en lugar de rearmar a ver si aguanta.",
+          "second": "Rectificamos y metalizamos ejes y alojamientos, sustituimos rodamientos verificando tolerancias, reparamos tapas y carcasas, y atendemos bombas centrífugas y sumergibles acopladas a los motores que trabajamos. Antes de entregar, el rotor se balancea y el equipo se prueba en operación."
+        },
+        "applications": [
+          "Ejes y flechas desgastadas",
+          "Alojamientos de rodamiento fuera de tolerancia",
+          "Tapas y carcasas dañadas",
+          "Bombas centrífugas",
+          "Bombas sumergibles",
+          "Rotores desbalanceados"
+        ],
+        "faq": [
+          {
+            "question": "¿Se puede recuperar un eje desgastado?",
+            "answer": "En la mayoría de los casos sí: se metaliza y se rectifica a la medida original. Se sustituye solo cuando el daño compromete la resistencia del eje, y en ese caso te lo decimos antes de proceder."
+          },
+          {
+            "question": "¿Reparan bombas además del motor?",
+            "answer": "Sí, bombas centrífugas y sumergibles acopladas a los motores que atendemos. Tratar el conjunto evita que el problema regrese por el lado que no se revisó."
+          },
+          {
+            "question": "¿Balancean el rotor?",
+            "answer": "Sí, forma parte del proceso antes de la prueba de operación. Un rotor desbalanceado se come en poco tiempo los rodamientos nuevos."
+          },
+          {
+            "question": "¿Cómo sé si la falla es mecánica o eléctrica?",
+            "answer": "Midiendo. El diagnóstico incluye pruebas eléctricas y revisión mecánica precisamente porque los síntomas se parecen: un motor que calienta puede tener un devanado en corto o un rodamiento trabado."
+          }
+        ]
       },
       "diagnostics": {
         "title": "Diagnóstico y pruebas eléctricas",
@@ -208,9 +306,80 @@
           "2": "Resistencia y balance entre devanados",
           "3": "Corriente por fase y verificación de desbalanceo",
           "4": "Reporte con valores medidos y recomendaciones"
-        }
+        },
+        "intro": {
+          "first": "El diagnóstico es lo que separa una reparación de una adivinanza. Antes de tocar el motor medimos resistencia de aislamiento e índice de polarización, resistencia y balance entre devanados, corriente por fase, temperatura y vibración; después de intervenirlo repetimos las mediciones para poder comparar.",
+          "second": "El resultado es un reporte con los valores obtenidos y las recomendaciones, no un quedó bien. Sirve para decidir con números si un motor se interviene, se vigila o se reemplaza, y deja un punto de partida para la próxima revisión del equipo."
+        },
+        "applications": [
+          "Resistencia de aislamiento e índice de polarización",
+          "Resistencia y balance entre devanados",
+          "Corriente por fase y desbalanceo",
+          "Temperatura de operación",
+          "Vibración",
+          "Verificación después del arranque en sitio"
+        ],
+        "faq": [
+          {
+            "question": "¿Qué indica la resistencia de aislamiento?",
+            "answer": "El estado del aislamiento entre el devanado y tierra. Una lectura baja avisa de humedad, contaminación o aislamiento degradado antes de que el motor se queme."
+          },
+          {
+            "question": "¿Para qué sirve el índice de polarización?",
+            "answer": "Compara la lectura de aislamiento en distintos tiempos y distingue un aislamiento simplemente húmedo de uno realmente deteriorado. Es la diferencia entre secar el motor y tener que rebobinarlo."
+          },
+          {
+            "question": "¿Puedo pedir solo el diagnóstico?",
+            "answer": "Sí. Muchas plantas lo piden para decidir con datos si intervienen el motor o lo reemplazan, o para dejar un punto de referencia de sus equipos críticos."
+          },
+          {
+            "question": "¿Hacen las pruebas en nuestra planta?",
+            "answer": "Sí. El diagnóstico y la verificación posterior al arranque se pueden hacer en sitio; el rebobinado y el rectificado se hacen en taller."
+          }
+        ]
       }
-    }
+    },
+    "sectionLabels": {
+      "overview": "En detalle",
+      "applications": "Qué atendemos",
+      "sectors": "Sectores",
+      "faq": "Preguntas frecuentes"
+    },
+    "sectors": [
+      "Alimentos y bebidas",
+      "Plásticos e inyección",
+      "Metalmecánica",
+      "Tratamiento y bombeo de agua",
+      "Cemento y agregados",
+      "Textil y papel"
+    ],
+    "intro": {
+      "title": "Un solo taller para el motor completo",
+      "first": "En EMBOTEC tratamos el motor eléctrico como lo que es dentro de una planta: un eslabón del que dependen la producción, el consumo de energía y la fecha del siguiente paro. Por eso no separamos el embobinado del diagnóstico ni de la parte mecánica; el mismo equipo que mide el aislamiento es el que rebobina, rectifica el eje y arranca el motor contigo en sitio.",
+      "second": "Trabajamos motores trifásicos, monofásicos y de corriente directa, bombas centrífugas y sumergibles, y el equipo auxiliar que los acompaña. Cada intervención sale con los valores medidos por escrito, para que puedas comparar cómo llegó el motor y cómo se entregó."
+    },
+    "coverage": {
+      "title": "Cobertura y tiempos de respuesta",
+      "description": "Atendemos plantas industriales en México, en taller y en sitio. El embobinado y el rectificado se hacen en el taller, donde están el horno y las máquinas; el diagnóstico, el mantenimiento preventivo y la verificación de arranque se pueden hacer en tu planta. Ante un paro no programado damos un diagnóstico inicial dentro de las primeras 24 horas."
+    },
+    "faq": [
+      {
+        "question": "¿Atienden urgencias fuera de horario?",
+        "answer": "Sí. Un paro no programado no espera al lunes: para urgencias el canal más rápido es el teléfono, y damos un diagnóstico inicial dentro de las primeras 24 horas."
+      },
+      {
+        "question": "¿Trabajan en sitio o solo en taller?",
+        "answer": "Las dos cosas. El embobinado y el rectificado se hacen en taller, donde están el horno y las máquinas; el mantenimiento preventivo, el diagnóstico eléctrico y el arranque se hacen en tu planta."
+      },
+      {
+        "question": "¿Qué necesitan para cotizar un motor?",
+        "answer": "La placa de datos del motor (potencia, voltaje, RPM, marca y modelo), la falla que observaste y, si puedes, una foto. Con eso damos un rango; el precio en firme sale después del diagnóstico."
+      },
+      {
+        "question": "¿Entregan reporte de las pruebas?",
+        "answer": "Sí. Cada motor sale con resistencia de aislamiento, resistencia entre devanados y corriente en vacío medidas y documentadas."
+      }
+    ]
   },
   "Projects": {
     "eyebrow": "Proyectos",

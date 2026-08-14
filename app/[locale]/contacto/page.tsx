@@ -3,8 +3,11 @@ import { Check, Clock, Mail, MapPin, Phone } from 'lucide-react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import JsonLd from '@/components/seo/JsonLd';
 import PageHero from '@/components/ui/PageHero';
+import ParallaxImage from '@/components/ui/ParallaxImage';
 import Reveal from '@/components/ui/Reveal';
+import RevealText from '@/components/ui/RevealText';
 import { company } from '@/data/company';
+import { images, pageImages } from '@/data/images';
 import { resolveLocale } from '@/lib/locale';
 import { breadcrumbSchema, ORGANIZATION_ID } from '@/lib/schema';
 import { absoluteUrl, buildPageMetadata } from '@/lib/seo';
@@ -89,22 +92,23 @@ export default async function ContactPage({ params }: Props) {
         eyebrow={t('eyebrow')}
         title={t('title')}
         description={t('description')}
+        image={pageImages.contact}
+        meta={company.emergencyResponse}
       />
 
-      <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
-        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {/* Canales: una rejilla de datos, sin tarjetas, al estilo de una ficha */}
+      <section className="bg-embotec-white py-20 sm:py-24">
+        <ul className="mx-auto grid w-full max-w-7xl gap-x-8 gap-y-10 px-6 sm:grid-cols-2 lg:grid-cols-4">
           {channels.map((channel, index) => {
             const Icon = channel.icon;
 
             const content = (
               <>
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-embotec-dark text-embotec-orange">
-                  <Icon className="h-5 w-5" aria-hidden />
-                </span>
-                <span className="mt-5 block text-sm font-medium text-embotec-gray">
+                <span className="tech-label flex items-center gap-2 text-embotec-orange-dark">
+                  <Icon className="h-4 w-4" aria-hidden />
                   {t(channel.key)}
                 </span>
-                <span className="mt-1 block font-heading text-base font-bold text-embotec-dark">
+                <span className="mt-4 block font-heading text-lg font-bold break-words text-embotec-dark">
                   {channel.value}
                 </span>
               </>
@@ -115,12 +119,12 @@ export default async function ContactPage({ params }: Props) {
                 as="li"
                 key={channel.key}
                 delay={index * 0.07}
-                className="rounded-3xl border border-embotec-light bg-embotec-white p-6"
+                className="border-t border-embotec-dark/15 pt-6"
               >
                 {channel.href ? (
                   <a
                     href={channel.href}
-                    className="block transition-opacity hover:opacity-75"
+                    className="block transition-colors hover:text-embotec-orange-dark"
                   >
                     {content}
                   </a>
@@ -131,42 +135,83 @@ export default async function ContactPage({ params }: Props) {
             );
           })}
         </ul>
+      </section>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-          <Reveal className="rounded-3xl border border-embotec-light bg-embotec-bg p-8">
-            <h2 className="text-xl font-extrabold tracking-tight text-embotec-dark sm:text-2xl">
+      {/* Qué mandarnos, con la foto sosteniendo el bloque */}
+      <section className="bg-embotec-bg py-24 sm:py-32">
+        <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-20">
+          <Reveal>
+            <ParallaxImage
+              src={images.workshop}
+              strength={13}
+              sizes="(min-width: 1024px) 46vw, 100vw"
+              className="aspect-[4/3] w-full rounded-2xl"
+            />
+          </Reveal>
+
+          <div>
+            <RevealText
+              as="h2"
+              className="display max-w-[16ch] text-[clamp(1.875rem,4vw,3rem)] text-embotec-dark"
+            >
               {t('whatToSend.title')}
-            </h2>
-            <ul className="mt-6 flex flex-col gap-3">
-              {CHECKLIST.map((id) => (
-                <li key={id} className="flex items-start gap-3">
-                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-embotec-blue text-embotec-white">
-                    <Check className="h-3.5 w-3.5" aria-hidden />
+            </RevealText>
+
+            <ul className="mt-8 flex flex-col">
+              {CHECKLIST.map((id, index) => (
+                <Reveal
+                  as="li"
+                  key={id}
+                  delay={index * 0.06}
+                  className="flex items-start gap-4 border-t border-embotec-dark/10 py-4"
+                >
+                  <span className="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-embotec-orange text-embotec-dark">
+                    <Check className="h-3 w-3" aria-hidden />
                   </span>
                   <span className="text-base leading-relaxed text-embotec-dark">
                     {t(`whatToSend.items.${id}`)}
                   </span>
-                </li>
+                </Reveal>
               ))}
             </ul>
-          </Reveal>
+          </div>
+        </div>
+      </section>
 
-          <Reveal
-            delay={0.1}
-            className="on-dark flex flex-col justify-between rounded-3xl bg-embotec-dark p-8"
-          >
-            <div>
-              <span aria-hidden className="block h-1 w-10 bg-embotec-orange" />
-              <h2 className="mt-5 text-xl font-extrabold tracking-tight text-embotec-white">
-                {t('urgency.title')}
-              </h2>
-              <p className="mt-3 text-base leading-relaxed text-embotec-light">
+      {/* Urgencias: banda oscura de cierre con el teléfono */}
+      <section className="on-dark relative isolate overflow-hidden bg-embotec-night py-24 sm:py-32">
+        <div className="absolute inset-0 -z-20">
+          <ParallaxImage
+            src={images.cta}
+            strength={10}
+            sizes="100vw"
+            className="h-full w-full"
+          />
+        </div>
+        <div aria-hidden className="absolute inset-0 -z-10 bg-embotec-night/85" />
+
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <Reveal>
+              <span aria-hidden className="block h-1 w-14 bg-embotec-orange" />
+            </Reveal>
+            <RevealText
+              as="h2"
+              className="display mt-8 text-[clamp(2rem,5vw,4rem)] text-embotec-white"
+            >
+              {t('urgency.title')}
+            </RevealText>
+            <Reveal delay={0.1}>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-embotec-light">
                 {t('urgency.description')}
               </p>
-            </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={0.16} className="lg:pb-2">
             <a
               href={company.phoneHref}
-              className="mt-8 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-embotec-orange px-6 py-3 font-heading text-sm font-bold text-embotec-dark transition-colors hover:bg-embotec-orange-dark hover:text-embotec-white"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-embotec-orange px-7 py-3.5 font-heading text-sm font-bold text-embotec-dark transition-colors hover:bg-embotec-white"
             >
               <Phone className="h-4 w-4" aria-hidden />
               {company.phone}

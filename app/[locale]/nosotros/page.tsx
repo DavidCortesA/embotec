@@ -4,8 +4,11 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import JsonLd from '@/components/seo/JsonLd';
 import CtaBand from '@/components/ui/CtaBand';
 import PageHero from '@/components/ui/PageHero';
+import ParallaxImage from '@/components/ui/ParallaxImage';
 import Reveal from '@/components/ui/Reveal';
+import RevealText from '@/components/ui/RevealText';
 import { company } from '@/data/company';
+import { images, pageImages } from '@/data/images';
 import { resolveLocale } from '@/lib/locale';
 import { breadcrumbSchema } from '@/lib/schema';
 import { buildPageMetadata } from '@/lib/seo';
@@ -63,36 +66,51 @@ export default async function AboutPage({ params }: Props) {
         eyebrow={t('eyebrow')}
         title={t('title')}
         description={t('description')}
+        image={pageImages.about}
+        meta={`${company.yearsInBusiness} — ${t('stats.years')}`}
       />
 
-      <section className="mx-auto w-full max-w-6xl px-6 py-16 sm:py-20">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-          <Reveal>
-            <h2 className="text-2xl font-extrabold tracking-tight text-embotec-dark text-balance sm:text-3xl">
+      {/* Relato: texto a la izquierda, foto que sube más despacio a la derecha */}
+      <section className="bg-embotec-white py-24 sm:py-32">
+        <div className="mx-auto grid w-full max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:gap-20">
+          <div>
+            <RevealText
+              as="h2"
+              className="display max-w-[16ch] text-[clamp(2rem,4.5vw,3.5rem)] text-embotec-dark"
+            >
               {t('story.title')}
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1} className="flex flex-col gap-5">
-            <p className="text-lg leading-relaxed text-embotec-gray">
-              {t('story.paragraphs.first')}
-            </p>
-            <p className="text-lg leading-relaxed text-embotec-gray">
-              {t('story.paragraphs.second')}
-            </p>
+            </RevealText>
+
+            <Reveal delay={0.1} className="mt-8 flex flex-col gap-6">
+              <p className="text-lg leading-relaxed text-embotec-gray">
+                {t('story.paragraphs.first')}
+              </p>
+              <p className="text-lg leading-relaxed text-embotec-gray">
+                {t('story.paragraphs.second')}
+              </p>
+            </Reveal>
+          </div>
+
+          <Reveal delay={0.12}>
+            <ParallaxImage
+              src={images.workshop}
+              strength={14}
+              sizes="(min-width: 1024px) 46vw, 100vw"
+              className="aspect-[4/5] w-full rounded-2xl"
+            />
           </Reveal>
         </div>
+      </section>
 
-        <dl className="mt-16 grid gap-6 sm:grid-cols-3">
+      {/* Cifras: banda oscura con los números en tipografía de cartel */}
+      <section className="on-dark bg-embotec-night py-20 sm:py-24">
+        <dl className="mx-auto grid w-full max-w-7xl gap-12 px-6 sm:grid-cols-3">
           {stats.map((stat, index) => (
-            <Reveal
-              key={stat.key}
-              delay={index * 0.08}
-              className="rounded-3xl border border-embotec-light bg-embotec-bg p-6"
-            >
-              <dt className="text-sm font-medium text-embotec-gray">
+            <Reveal key={stat.key} as="div" delay={index * 0.08}>
+              <dt className="tech-label text-embotec-orange">
                 {t(`stats.${stat.key}`)}
               </dt>
-              <dd className="mt-2 font-heading text-4xl font-extrabold text-embotec-dark">
+              <dd className="display mt-4 text-[clamp(3rem,7vw,5.5rem)] text-embotec-white">
                 {stat.value}
               </dd>
             </Reveal>
@@ -100,15 +118,17 @@ export default async function AboutPage({ params }: Props) {
         </dl>
       </section>
 
-      <section className="bg-embotec-bg py-16 sm:py-20">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <Reveal>
-            <h2 className="text-2xl font-extrabold tracking-tight text-embotec-dark sm:text-3xl">
-              {t('values.title')}
-            </h2>
-          </Reveal>
+      {/* Valores */}
+      <section className="bg-embotec-bg py-24 sm:py-32">
+        <div className="mx-auto w-full max-w-7xl px-6">
+          <RevealText
+            as="h2"
+            className="display max-w-[14ch] text-[clamp(2rem,4.5vw,3.5rem)] text-embotec-dark"
+          >
+            {t('values.title')}
+          </RevealText>
 
-          <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {VALUES.map((value, index) => {
               const Icon = value.icon;
 
@@ -117,15 +137,21 @@ export default async function AboutPage({ params }: Props) {
                   as="li"
                   key={value.key}
                   delay={index * 0.08}
-                  className="rounded-3xl border border-embotec-light bg-embotec-white p-6"
+                  className="border-t border-embotec-dark/15 pt-6"
                 >
-                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-embotec-dark text-embotec-orange">
-                    <Icon className="h-5 w-5" aria-hidden />
-                  </span>
-                  <h3 className="mt-5 font-heading text-base font-bold text-embotec-dark">
+                  <div className="flex items-center gap-3">
+                    <span className="tech-label text-embotec-orange-dark">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <Icon
+                      className="h-5 w-5 text-embotec-dark"
+                      aria-hidden
+                    />
+                  </div>
+                  <h3 className="display mt-5 text-2xl text-embotec-dark">
                     {t(`values.items.${value.key}.title`)}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-embotec-gray">
+                  <p className="mt-3 text-base leading-relaxed text-embotec-gray">
                     {t(`values.items.${value.key}.description`)}
                   </p>
                 </Reveal>

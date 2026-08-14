@@ -1,23 +1,35 @@
 import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
-import { Inter, Montserrat } from 'next/font/google';
+import { Anton, IBM_Plex_Mono, Manrope } from 'next/font/google';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
+import SmoothScroll from '@/components/motion/SmoothScroll';
 import { routing } from '@/i18n/routing';
 import { siteName, siteUrl } from '@/lib/seo';
 import '../globals.css';
 
-const montserrat = Montserrat({
-  variable: '--font-montserrat',
-  subsets: ['latin'],
+/** Titulares de cartel */
+const anton = Anton({
+  variable: '--font-anton',
+  weight: '400',
+  subsets: ['latin', 'latin-ext'],
   display: 'swap',
 });
 
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
+/** Texto corrido e interfaz */
+const manrope = Manrope({
+  variable: '--font-manrope',
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+});
+
+/** Etiquetas y cifras "de ficha técnica" */
+const plexMono = IBM_Plex_Mono({
+  variable: '--font-plex-mono',
+  weight: ['400', '500'],
+  subsets: ['latin', 'latin-ext'],
   display: 'swap',
 });
 
@@ -85,7 +97,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className={`${montserrat.variable} ${inter.variable} h-full antialiased`}
+      className={`${anton.variable} ${manrope.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-embotec-white text-embotec-black">
         {/*
@@ -96,10 +108,15 @@ export default async function LocaleLayout({ children, params }: Props) {
         <noscript>
           <style>{`
             [data-reveal]{opacity:1!important;transform:none!important}
-            [data-hscroll]{position:static!important;height:auto!important;overflow-x:auto!important}
+            [data-hscroll]{height:auto!important}
+            [data-hscroll-inner]{position:static!important;height:auto!important;overflow-x:auto!important}
           `}</style>
         </noscript>
+        {/* Grano de película sobre toda la página (decorativo) */}
+        <div aria-hidden className="grain" />
+
         <NextIntlClientProvider>
+          <SmoothScroll />
           {/* WCAG 2.4.1: permite saltarse el navbar con el teclado */}
           <a
             href="#contenido"

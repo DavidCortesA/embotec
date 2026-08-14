@@ -56,6 +56,31 @@ export function serviceSchema({
     inLanguage: locale,
     serviceType: name,
     provider: { '@id': ORGANIZATION_ID },
+    // TODO (EMBOTEC): acotar a estado/ciudad cuando se confirme la ubicación
+    // real del taller; el país es lo único que hoy podemos afirmar.
+    areaServed: { '@type': 'Country', name: 'México' },
+  };
+}
+
+/**
+ * Preguntas frecuentes. Google las usa para resultados enriquecidos y los
+ * motores generativos las citan casi literalmente, así que el texto debe ser
+ * el mismo que ve el usuario en la página (lo es: ambos salen de `messages`).
+ */
+export function faqSchema(
+  items: ReadonlyArray<{ question: string; answer: string }>
+): JsonLdData {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
   };
 }
 

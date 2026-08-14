@@ -45,8 +45,16 @@
         "motors": "Motors serviced",
         "response": "Emergency response"
       },
-      "responseValue": "24 h"
+      "responseValue": "24 h",
+      "scrollCue": "Scroll to see the workshop"
     },
+    "ticker": [
+      "Motor rewinding",
+      "Industrial maintenance",
+      "Motor repair",
+      "Electrical diagnostics",
+      "24 h emergencies"
+    ],
     "services": {
       "eyebrow": "Services",
       "title": "What we solve",
@@ -169,7 +177,37 @@
           "2": "Magnet wire and class F or H insulation as the application requires",
           "3": "Varnish impregnation with controlled curing",
           "4": "Insulation, resistance and no-load current testing"
-        }
+        },
+        "intro": {
+          "first": "Rewinding is the workshop's core trade, not an add-on service. When an electric motor burns out, the first job is reading the original winding: turn count, wire gauge, pitch, connection and thermal class of the insulation. That record is what lets the rewound motor keep its torque, its rated current and its efficiency, instead of leaving in working order but drawing more power for the rest of its life.",
+          "second": "With those data recorded we strip the damaged winding, clean and inspect the core, and rewind with magnet wire and class F or H insulation according to the working temperature. We finish with varnish impregnation, controlled baking and the electrical tests that document the result."
+        },
+        "applications": [
+          "Three-phase squirrel-cage motors",
+          "Single-phase capacitor-start motors",
+          "DC motors",
+          "Centrifugal and submersible pump motors",
+          "Fan and compressor motors",
+          "Two-speed and high-efficiency motors"
+        ],
+        "faq": [
+          {
+            "question": "How long does rewinding a motor take?",
+            "answer": "It depends on the power rating and on whether the core turned out to be damaged. A low-power three-phase motor usually leaves within a few working days once the quote is approved; larger ones take longer. The committed date goes in the quote in writing, not verbally."
+          },
+          {
+            "question": "Is it better to rewind or buy a new motor?",
+            "answer": "As long as the core and the frame are sound, rewinding costs a fraction of replacing the motor and is delivered far sooner than an imported unit. If we find the core damaged or the frame compromised we tell you, and we compare both options before you spend."
+          },
+          {
+            "question": "Does a rewound motor lose efficiency?",
+            "answer": "Only if it is rewound badly. The loss appears when the wire gauge is changed, the turn count is altered, or the core is overheated to strip the winding. Respecting the original data and without burning the stator, the motor recovers essentially its nameplate efficiency."
+          },
+          {
+            "question": "What warranty does the rewind carry?",
+            "answer": "We back the winding and the labour in writing, and we follow up after start-up. The term is stated on the service order."
+          }
+        ]
       },
       "maintenance": {
         "title": "Industrial maintenance",
@@ -182,7 +220,37 @@
           "2": "Bearing and seal replacement, winding cleaning",
           "3": "Checks on connections, protections and starters",
           "4": "Equipment log with measurements from every visit"
-        }
+        },
+        "intro": {
+          "first": "The industrial maintenance we do follows the same idea as the rest of the workshop: measure before forming an opinion. A preventive routine is not wiping things down and tightening bolts; it is recording temperature, current per phase, bearing condition and connections on every visit, so the log shows the trend and the motor gets attention before it stops the line.",
+          "second": "We schedule routines around your planned shutdowns so we don't cost you production, and we handle corrective work when something has already failed. Every visit ends with an equipment record of what was measured, what was replaced and what is worth watching."
+        },
+        "applications": [
+          "Plant electric motors",
+          "Centrifugal and submersible pumps",
+          "Fans and extractors",
+          "Compressors",
+          "Starters, protections and power panels",
+          "Couplings and belt drives"
+        ],
+        "faq": [
+          {
+            "question": "How often should a preventive routine run?",
+            "answer": "It depends on operating hours and environment: a motor in a dusty or humid area needs checking more often than one in a clean area. We set it from your real working hours, not from a generic calendar."
+          },
+          {
+            "question": "Can you work during our planned shutdowns?",
+            "answer": "Yes, and that is how we prefer to do it. We schedule routines inside your shutdown windows so we don't add downtime to the plant."
+          },
+          {
+            "question": "What do you hand over after each visit?",
+            "answer": "An equipment log with the visit's measurements, what was replaced and the recommendations. Across several visits it becomes a history that lets you anticipate failures."
+          },
+          {
+            "question": "Do you handle urgent corrective work?",
+            "answer": "Yes. For an unplanned shutdown the phone is the fastest channel, and we deliver a diagnosis within the first 24 hours."
+          }
+        ]
       },
       "repair": {
         "title": "Motor and pump repair",
@@ -195,7 +263,37 @@
           "2": "Bearing replacement with tolerance verification",
           "3": "Repair of centrifugal and submersible pumps",
           "4": "Rotor balancing and operational testing"
-        }
+        },
+        "intro": {
+          "first": "A new winding fitted onto a worn shaft or a bearing with play does not last. So the mechanical side gets the same treatment as the electrical one: measure, compare against tolerance and correct, instead of reassembling and hoping it holds.",
+          "second": "We grind and metal-spray shafts and housings, replace bearings while verifying tolerances, repair end shields and frames, and service centrifugal and submersible pumps coupled to the motors we work on. Before delivery the rotor is balanced and the unit is run-tested."
+        },
+        "applications": [
+          "Worn shafts",
+          "Bearing housings out of tolerance",
+          "Damaged end shields and frames",
+          "Centrifugal pumps",
+          "Submersible pumps",
+          "Unbalanced rotors"
+        ],
+        "faq": [
+          {
+            "question": "Can a worn shaft be recovered?",
+            "answer": "In most cases yes: it is metal-sprayed and ground back to the original dimension. It is replaced only when the damage compromises the strength of the shaft, and in that case we tell you before proceeding."
+          },
+          {
+            "question": "Do you repair pumps as well as motors?",
+            "answer": "Yes, centrifugal and submersible pumps coupled to the motors we service. Treating the assembly keeps the problem from coming back through the side that was never checked."
+          },
+          {
+            "question": "Do you balance the rotor?",
+            "answer": "Yes, it is part of the process before the run test. An unbalanced rotor eats through new bearings in short order."
+          },
+          {
+            "question": "How do I know whether the fault is mechanical or electrical?",
+            "answer": "By measuring. Diagnostics include electrical tests and a mechanical inspection precisely because the symptoms look alike: a motor running hot may have a shorted winding or a seized bearing."
+          }
+        ]
       },
       "diagnostics": {
         "title": "Electrical diagnostics and testing",
@@ -208,9 +306,80 @@
           "2": "Winding resistance and phase balance",
           "3": "Current per phase and imbalance checks",
           "4": "Report with measured values and recommendations"
-        }
+        },
+        "intro": {
+          "first": "Diagnostics is what separates a repair from a guess. Before touching the motor we measure insulation resistance and polarisation index, winding resistance and balance, current per phase, temperature and vibration; after the work we repeat the measurements so there is something to compare against.",
+          "second": "The output is a report with the values obtained and the recommendations, not a “it's fine now”. It lets you decide with numbers whether a motor gets repaired, watched or replaced, and it leaves a baseline for the next inspection."
+        },
+        "applications": [
+          "Insulation resistance and polarisation index",
+          "Winding resistance and balance",
+          "Current per phase and imbalance",
+          "Operating temperature",
+          "Vibration",
+          "Verification after on-site start-up"
+        ],
+        "faq": [
+          {
+            "question": "What does insulation resistance tell you?",
+            "answer": "The condition of the insulation between the winding and earth. A low reading warns of moisture, contamination or degraded insulation before the motor burns out."
+          },
+          {
+            "question": "What is the polarisation index for?",
+            "answer": "It compares insulation readings taken at different times and separates insulation that is merely damp from insulation that is genuinely degraded. That is the difference between drying the motor and having to rewind it."
+          },
+          {
+            "question": "Can I order diagnostics on its own?",
+            "answer": "Yes. Many plants order it to decide with data whether to repair or replace a motor, or to establish a baseline for their critical equipment."
+          },
+          {
+            "question": "Do you run the tests at our plant?",
+            "answer": "Yes. Diagnostics and post-start-up verification can be done on site; rewinding and machining are done at the workshop."
+          }
+        ]
       }
-    }
+    },
+    "sectionLabels": {
+      "overview": "In detail",
+      "applications": "What we handle",
+      "sectors": "Industries",
+      "faq": "Frequently asked questions"
+    },
+    "sectors": [
+      "Food and beverage",
+      "Plastics and injection moulding",
+      "Metalworking",
+      "Water treatment and pumping",
+      "Cement and aggregates",
+      "Textiles and paper"
+    ],
+    "intro": {
+      "title": "One workshop for the whole motor",
+      "first": "At EMBOTEC we treat an electric motor as what it actually is inside a plant: a link that production, energy consumption and the date of your next shutdown all depend on. That is why we don't split rewinding from diagnostics or from mechanical work; the same team that measures insulation is the one that rewinds the stator, grinds the shaft and starts the motor with you on site.",
+      "second": "We work on three-phase, single-phase and DC motors, centrifugal and submersible pumps, and the auxiliary equipment around them. Every job leaves with its measured values in writing, so you can compare how the motor arrived with how it was delivered."
+    },
+    "coverage": {
+      "title": "Coverage and response times",
+      "description": "We serve industrial plants across Mexico, both in the workshop and on site. Rewinding and machining happen at the workshop, where the oven and the machines are; diagnostics, preventive maintenance and start-up verification can happen at your plant. For an unplanned shutdown we deliver an initial diagnosis within the first 24 hours."
+    },
+    "faq": [
+      {
+        "question": "Do you handle emergencies outside business hours?",
+        "answer": "Yes. An unplanned shutdown doesn't wait until Monday: for emergencies the phone is the fastest channel, and we deliver an initial diagnosis within the first 24 hours."
+      },
+      {
+        "question": "Do you work on site or only in the workshop?",
+        "answer": "Both. Rewinding and machining happen at the workshop, where the oven and the machines are; preventive maintenance, electrical diagnostics and start-up happen at your plant."
+      },
+      {
+        "question": "What do you need in order to quote a motor?",
+        "answer": "The motor nameplate (power, voltage, RPM, brand and model), the fault you observed and, if you can, a photo. That gets you a range; the firm price comes after the diagnosis."
+      },
+      {
+        "question": "Do you provide a test report?",
+        "answer": "Yes. Every motor leaves with insulation resistance, winding resistance and no-load current measured and documented."
+      }
+    ]
   },
   "Projects": {
     "eyebrow": "Projects",

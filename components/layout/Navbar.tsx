@@ -5,7 +5,6 @@ import {
   AnimatePresence,
   motion,
   useMotionValueEvent,
-  useReducedMotion,
   useScroll,
 } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
@@ -14,20 +13,10 @@ import LogoMark from '@/components/brand/LogoMark';
 import { navItems } from '@/data/navigation';
 import { Link, usePathname } from '@/i18n/navigation';
 import type { AppPathname } from '@/i18n/routing';
+import { useReducedMotion } from '@/lib/useReducedMotion';
 import LanguageSwitcher from './LanguageSwitcher';
 import MobileMenu from './MobileMenu';
-import {
-  brandVariants,
-  ctaVariants,
-  EASE_OUT_EXPO,
-  headerVariants,
-  logoMarkVariants,
-  navItemVariants,
-  navListVariants,
-  NAVBAR_SPRING,
-  shellVariants,
-  taglineVariants,
-} from './navbarMotion';
+import { EASE_OUT_EXPO, useNavbarMotion } from './navbarMotion';
 
 /** Píxeles de scroll antes de permitir que el navbar se encoja */
 const SHRINK_THRESHOLD = 56;
@@ -64,7 +53,7 @@ export default function Navbar() {
   // El navbar solo se encoge si además no hay hover ni menús abiertos.
   const isCompact =
     isScrollingDown && !isHovered && !openDropdown && !isMobileOpen;
-  const size = isCompact ? 'compact' : 'expanded';
+  const navbar = useNavbarMotion(isCompact, prefersReducedMotion);
 
   const closeMenus = useCallback(() => {
     setOpenDropdown(null);
@@ -103,20 +92,14 @@ export default function Navbar() {
   const isActive = (href: AppPathname) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href);
 
-  const transition = prefersReducedMotion ? { duration: 0 } : NAVBAR_SPRING;
-
   return (
     <motion.header
-      initial={false}
-      animate={size}
-      variants={headerVariants}
-      transition={transition}
+      style={navbar.header}
       // El header ocupa todo el ancho pero no debe capturar clics: solo la píldora.
       className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-3 sm:px-6"
     >
       <motion.nav
-        variants={shellVariants}
-        transition={transition}
+        style={navbar.shell}
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
         aria-label={t('mainNavigation')}
@@ -125,24 +108,18 @@ export default function Navbar() {
         <div className="flex items-center justify-between gap-3">
           {/* Logo */}
           <Link href="/" className="flex shrink-0 items-center gap-2.5">
-            <motion.span
-              variants={logoMarkVariants}
-              transition={transition}
-              className="block shrink-0"
-            >
+            <motion.span style={navbar.logoMark} className="block shrink-0">
               <LogoMark className="h-full w-full" />
             </motion.span>
             <span className="flex flex-col justify-center leading-none">
               <motion.span
-                variants={brandVariants}
-                transition={transition}
+                style={navbar.brand}
                 className="font-heading font-extrabold text-embotec-dark"
               >
                 EMBO<span className="text-embotec-orange">TEC</span>
               </motion.span>
               <motion.span
-                variants={taglineVariants}
-                transition={transition}
+                style={navbar.tagline}
                 className="hidden overflow-hidden font-medium tracking-wide text-embotec-gray uppercase sm:block"
               >
                 {t('brandTagline')}
@@ -152,8 +129,7 @@ export default function Navbar() {
 
           {/* Menú central (escritorio) */}
           <motion.ul
-            variants={navListVariants}
-            transition={transition}
+            style={navbar.navList}
             className="hidden items-center lg:flex"
           >
             {navItems.map((item) => {
@@ -168,8 +144,7 @@ export default function Navbar() {
                       className="block"
                     >
                       <motion.span
-                        variants={navItemVariants}
-                        transition={transition}
+                        style={navbar.navItem}
                         className={`relative block rounded-full font-medium whitespace-nowrap transition-colors ${
                           active
                             ? 'text-embotec-blue'
@@ -220,8 +195,7 @@ export default function Navbar() {
                     className="block"
                   >
                     <motion.span
-                      variants={navItemVariants}
-                      transition={transition}
+                      style={navbar.navItem}
                       className={`relative flex items-center gap-1 rounded-full font-medium whitespace-nowrap transition-colors ${
                         active || isOpen
                           ? 'text-embotec-blue'
@@ -313,8 +287,7 @@ export default function Navbar() {
             <LanguageSwitcher layoutId="language-indicator-desktop" />
             <Link href="/contacto" className="block">
               <motion.span
-                variants={ctaVariants}
-                transition={transition}
+                style={navbar.cta}
                 whileHover={{ y: -1 }}
                 // Naranja con texto azul marino: 6.3:1, mientras que el
                 // blanco sobre naranja solo daría 2.4:1 (WCAG 1.4.3).

@@ -4,6 +4,8 @@
   /* Paleta EMBOTEC */
   --color-embotec-blue: #0b5ed7;
   --color-embotec-dark: #0a2540;
+  /* Fondo profundo para las secciones a sangre con fotografía */
+  --color-embotec-night: #05121f;
 
   --color-embotec-orange: #f28c28;
   --color-embotec-orange-dark: #d96f0b;
@@ -15,10 +17,17 @@
   --color-embotec-black: #111827;
   --color-embotec-white: #ffffff;
 
-  /* Tipografía: Montserrat para títulos, Inter para interfaz */
-  --font-heading: var(--font-montserrat), "Montserrat", sans-serif;
-  --font-body: var(--font-inter), "Inter", sans-serif;
-  --font-sans: var(--font-inter), "Inter", sans-serif;
+  /*
+   * Tres voces tipográficas:
+   * - display (Anton): titulares de cartel, siempre en caja alta y grandes.
+   * - heading/body (Manrope): todo el texto corrido y la interfaz.
+   * - mono (IBM Plex Mono): etiquetas, cifras y anotaciones "de ficha técnica".
+   */
+  --font-display: var(--font-anton), "Anton", "Haettenschweiler", sans-serif;
+  --font-heading: var(--font-manrope), "Manrope", sans-serif;
+  --font-body: var(--font-manrope), "Manrope", sans-serif;
+  --font-sans: var(--font-manrope), "Manrope", sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
 }
 
 :root {
@@ -44,9 +53,41 @@ h6 {
 }
 
 html {
-  scroll-behavior: smooth;
   /* WCAG 2.4.11: el elemento con foco no debe quedar bajo el navbar fijo */
   scroll-padding-top: calc(var(--navbar-height) + 16px);
+}
+
+/*
+ * Lenis toma el control del scroll y añade la clase `.lenis` al <html>. Solo
+ * cuando NO está activo (sin JS o con movimiento reducido) dejamos el suavizado
+ * nativo para los enlaces ancla; si se dejan los dos, pelean entre sí.
+ */
+html:not(.lenis) {
+  scroll-behavior: smooth;
+}
+
+/* Hoja mínima de Lenis (evita depender del CSS del paquete) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+/* Los iframes se comen los eventos de rueda a mitad de una animación */
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+::selection {
+  background: var(--color-embotec-orange);
+  color: var(--color-embotec-dark);
 }
 
 /* WCAG 2.4.7: foco siempre visible, solo para navegación con teclado */
@@ -61,17 +102,52 @@ html {
   outline-color: var(--color-embotec-white);
 }
 
-/* WCAG 2.3.3 / 2.2: respetar la preferencia de movimiento reducido */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+/*
+ * Grano de película sobre toda la página. Es una textura SVG generada en el
+ * propio navegador (sin descargas) que rompe los degradados planos y le da a
+ * las fotos el aire de impresión industrial.
+ */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  /* Bajo a propósito: el grano va por encima del texto de toda la página y
+     una opacidad alta le come contraste (WCAG 1.4.3). */
+  opacity: 0.2;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.38'/%3E%3C/svg%3E");
 }
+
+/* Titulares de cartel: Anton solo funciona en caja alta y bien apretado */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 0.92;
+}
+
+/* Etiqueta de ficha técnica que acompaña a cada sección */
+.tech-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/*
+ * Aquí vivía el bloque `@media (prefers-reduced-motion: reduce)` que anulaba
+ * animaciones y transiciones. Se retiró junto con el interruptor de
+ * `lib/useReducedMotion.ts` por decisión del cliente: el sitio anima siempre.
+ * Si algún día se revierte, hay que restaurar los dos a la vez.
+ *
+ * @media (prefers-reduced-motion: reduce) {
+ *   html { scroll-behavior: auto; }
+ *   *, *::before, *::after {
+ *     animation-duration: 0.01ms !important;
+ *     animation-iteration-count: 1 !important;
+ *     transition-duration: 0.01ms !important;
+ *   }
+ * }
+ */

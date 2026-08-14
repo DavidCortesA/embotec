@@ -1,93 +1,127 @@
-import type { Transition, Variants } from 'framer-motion';
+'use client';
 
-/**
- * Variantes compartidas del navbar. El `motion.header` es el único que declara
- * `animate={'expanded' | 'compact'}`; framer propaga esa etiqueta a todos los
- * hijos `motion.*` que declaren estas variantes.
- */
-
-export const NAVBAR_SPRING: Transition = {
-  type: 'spring',
-  stiffness: 320,
-  damping: 32,
-  mass: 0.9,
-};
+import { useEffect } from 'react';
+import { useSpring, useTransform } from 'framer-motion';
 
 export const EASE_OUT_EXPO = [0.16, 1, 0.3, 1] as const;
 
-/** Separación del navbar respecto al borde superior de la ventana */
-export const headerVariants: Variants = {
-  expanded: { paddingTop: 20, paddingBottom: 20 },
-  compact: { paddingTop: 8, paddingBottom: 8 },
+/**
+ * Un único muelle conduce todo el navbar: `0` = expandido, `1` = compacto.
+ * Antes cada `motion.*` animaba sus propias variantes con un spring propio, así
+ * que las ~20 propiedades arrancaban a la vez pero asentaban en tiempos
+ * distintos y el cambio se leía como un salto. Con un solo valor interpolado
+ * todo se mueve en fase y el navbar "respira" en lugar de conmutar.
+ */
+const SHRINK_SPRING = {
+  stiffness: 150,
+  damping: 26,
+  mass: 1,
+  restDelta: 0.0005,
 };
 
-/** La "píldora" flotante con el fondo blur */
-export const shellVariants: Variants = {
-  expanded: {
-    maxWidth: 1200,
-    borderRadius: 24,
-    paddingLeft: 18,
-    paddingRight: 18,
-    paddingTop: 12,
-    paddingBottom: 12,
-    backgroundColor: 'rgba(255, 255, 255, 0.7)',
-    borderColor: 'rgba(233, 238, 243, 0.9)',
-    boxShadow: '0 18px 40px -24px rgba(10, 37, 64, 0.25)',
-  },
-  compact: {
-    maxWidth: 940,
-    borderRadius: 999,
-    paddingLeft: 12,
-    paddingRight: 12,
-    paddingTop: 7,
-    paddingBottom: 7,
-    backgroundColor: 'rgba(255, 255, 255, 0.85)',
-    borderColor: 'rgba(233, 238, 243, 1)',
-    boxShadow: '0 14px 30px -18px rgba(10, 37, 64, 0.35)',
-  },
-};
+/**
+ * Devuelve un objeto `style` por cada pieza del navbar. Todos comparten el
+ * mismo MotionValue, por lo que no hay coste extra en repartirlos.
+ */
+export function useNavbarMotion(
+  isCompact: boolean,
+  prefersReducedMotion: boolean,
+) {
+  const shrink = useSpring(0, SHRINK_SPRING);
 
-export const logoMarkVariants: Variants = {
-  expanded: { width: 42, height: 42 },
-  compact: { width: 34, height: 34 },
-};
+  useEffect(() => {
+    const target = isCompact ? 1 : 0;
+    // `jump` salta sin animar (WCAG 2.3.3).
+    if (prefersReducedMotion) shrink.jump(target);
+    else shrink.set(target);
+  }, [isCompact, prefersReducedMotion, shrink]);
 
-export const brandVariants: Variants = {
-  expanded: { fontSize: 19, letterSpacing: '-0.01em' },
-  compact: { fontSize: 16, letterSpacing: '-0.005em' },
-};
+  // Separación del navbar respecto al borde superior de la ventana
+  const headerPadding = useTransform(shrink, [0, 1], [20, 8]);
 
-export const taglineVariants: Variants = {
-  expanded: { opacity: 1, height: 13, fontSize: 10, marginTop: 3 },
-  compact: { opacity: 0, height: 0, fontSize: 9, marginTop: 0 },
-};
+  // La "píldora" flotante con el fondo blur
+  const shellMaxWidth = useTransform(shrink, [0, 1], [1200, 940]);
+  const shellRadius = useTransform(shrink, [0, 1], [24, 999]);
+  const shellPaddingX = useTransform(shrink, [0, 1], [18, 12]);
+  const shellPaddingY = useTransform(shrink, [0, 1], [12, 7]);
+  const shellBackground = useTransform(
+    shrink,
+    [0, 1],
+    ['rgba(255, 255, 255, 0.7)', 'rgba(255, 255, 255, 0.85)'],
+  );
+  const shellBorder = useTransform(
+    shrink,
+    [0, 1],
+    ['rgba(233, 238, 243, 0.9)', 'rgba(233, 238, 243, 1)'],
+  );
+  const shellShadow = useTransform(
+    shrink,
+    [0, 1],
+    [
+      '0 18px 40px -24px rgba(10, 37, 64, 0.25)',
+      '0 14px 30px -18px rgba(10, 37, 64, 0.35)',
+    ],
+  );
 
-/** Contenedor de los links centrales */
-export const navListVariants: Variants = {
-  expanded: { columnGap: 4, fontSize: 15 },
-  compact: { columnGap: 0, fontSize: 14 },
-};
+  const logoSize = useTransform(shrink, [0, 1], [42, 34]);
 
-/** Cada link o botón del menú central */
-export const navItemVariants: Variants = {
-  expanded: { paddingLeft: 14, paddingRight: 14, paddingTop: 9, paddingBottom: 9 },
-  compact: { paddingLeft: 11, paddingRight: 11, paddingTop: 6, paddingBottom: 6 },
-};
+  const brandSize = useTransform(shrink, [0, 1], [19, 16]);
+  const brandTracking = useTransform(
+    shrink,
+    [0, 1],
+    ['-0.01em', '-0.005em'],
+  );
 
-/** Botón de contacto */
-export const ctaVariants: Variants = {
-  expanded: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingTop: 10,
-    paddingBottom: 10,
-    fontSize: 14,
-  },
-  compact: {
-    paddingLeft: 16,
-    paddingRight: 16,
-    paddingTop: 7,
-    paddingBottom: 7,
-    fontSize: 13,
-  },
-};
+  // La bajada de marca desaparece antes de que el resto termine de encogerse,
+  // para que no se lea texto aplastado a mitad de camino.
+  const taglineOpacity = useTransform(shrink, [0, 0.45], [1, 0]);
+  const taglineHeight = useTransform(shrink, [0, 1], [13, 0]);
+  const taglineMarginTop = useTransform(shrink, [0, 1], [3, 0]);
+
+  const navListGap = useTransform(shrink, [0, 1], [4, 0]);
+  const navListSize = useTransform(shrink, [0, 1], [15, 14]);
+
+  const navItemPaddingX = useTransform(shrink, [0, 1], [14, 11]);
+  const navItemPaddingY = useTransform(shrink, [0, 1], [9, 6]);
+
+  const ctaPaddingX = useTransform(shrink, [0, 1], [20, 16]);
+  const ctaPaddingY = useTransform(shrink, [0, 1], [10, 7]);
+  const ctaSize = useTransform(shrink, [0, 1], [14, 13]);
+
+  return {
+    header: { paddingTop: headerPadding, paddingBottom: headerPadding },
+    shell: {
+      maxWidth: shellMaxWidth,
+      borderRadius: shellRadius,
+      paddingLeft: shellPaddingX,
+      paddingRight: shellPaddingX,
+      paddingTop: shellPaddingY,
+      paddingBottom: shellPaddingY,
+      backgroundColor: shellBackground,
+      borderColor: shellBorder,
+      boxShadow: shellShadow,
+    },
+    logoMark: { width: logoSize, height: logoSize },
+    brand: { fontSize: brandSize, letterSpacing: brandTracking },
+    tagline: {
+      opacity: taglineOpacity,
+      height: taglineHeight,
+      marginTop: taglineMarginTop,
+      fontSize: 10,
+    },
+    navList: { columnGap: navListGap, fontSize: navListSize },
+    navItem: {
+      paddingLeft: navItemPaddingX,
+      paddingRight: navItemPaddingX,
+      paddingTop: navItemPaddingY,
+      paddingBottom: navItemPaddingY,
+    },
+    cta: {
+      paddingLeft: ctaPaddingX,
+      paddingRight: ctaPaddingX,
+      paddingTop: ctaPaddingY,
+      paddingBottom: ctaPaddingY,
+      fontSize: ctaSize,
+    },
+  };
+}

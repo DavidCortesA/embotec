@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Header from '@/components/home/Header';
 import ProcessScroll from '@/components/home/ProcessScroll';
 import ServicesPreview from '@/components/home/ServicesPreview';
+import Ticker from '@/components/home/Ticker';
 import WhyUs from '@/components/home/WhyUs';
 import JsonLd from '@/components/seo/JsonLd';
 import CtaBand from '@/components/ui/CtaBand';
@@ -42,6 +43,7 @@ export default async function Home({ params }: Props) {
         ]}
       />
       <Header />
+      <Ticker />
       <ServicesPreview />
       <ProcessScroll />
       <WhyUs />
