@@ -1,5 +1,4 @@
 import Image from "next/image";
-import LogoMark from "./LogoMark";
 
 /** Tamaño intrínseco del PNG: se usa para que Next reserve el espacio correcto. */
 const LOGO_WIDTH = 825;
