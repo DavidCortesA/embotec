@@ -9,7 +9,7 @@ import {
 } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import LogoMark from '@/components/brand/LogoMark';
+import Logo from '@/components/brand/Logo';
 import { navItems } from '@/data/navigation';
 import { Link, usePathname } from '@/i18n/navigation';
 import type { AppPathname } from '@/i18n/routing';
@@ -108,23 +108,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between gap-3">
           {/* Logo */}
           <Link href="/" className="flex shrink-0 items-center gap-2.5">
-            <motion.span style={navbar.logoMark} className="block shrink-0">
-              <LogoMark className="h-full w-full" />
-            </motion.span>
-            <span className="flex flex-col justify-center leading-none">
-              <motion.span
-                style={navbar.brand}
-                className="font-heading font-extrabold text-embotec-dark"
-              >
-                EMBO<span className="text-embotec-orange">TEC</span>
-              </motion.span>
-              <motion.span
-                style={navbar.tagline}
-                className="hidden overflow-hidden font-medium tracking-wide text-embotec-gray uppercase sm:block"
-              >
-                {t('brandTagline')}
-              </motion.span>
-            </span>
+            <Logo tone="dark"/>
           </Link>
 
           {/* Menú central (escritorio) */}

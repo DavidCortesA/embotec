@@ -96,9 +96,6 @@ function PinnedProcess() {
                   className="h-full origin-left rounded-full bg-embotec-orange-dark"
                 />
               </div>
-              <p className="tech-label hidden text-embotec-gray sm:block">
-                {t('hint')}
-              </p>
             </div>
           </div>
 

@@ -1,7 +1,12 @@
-import LogoMark from './LogoMark';
+import Image from "next/image";
+import LogoMark from "./LogoMark";
+
+/** Tamaño intrínseco del PNG: se usa para que Next reserve el espacio correcto. */
+const LOGO_WIDTH = 825;
+const LOGO_HEIGHT = 201;
 
 type Props = {
-  tone?: 'dark' | 'light';
+  tone?: "dark" | "light";
   /** Muestra el descriptor "Embobinados y mantenimiento industrial" */
   tagline?: string;
   className?: string;
@@ -11,30 +16,23 @@ type Props = {
  * Logotipo completo (ícono + nombre). El naranja de la marca sobre blanco
  * no alcanza 4.5:1, pero WCAG 1.4.3 exime el texto que forma parte de un
  * logotipo; fuera del logo la marca usa naranja solo como relleno o gráfico.
+ *
+ * Sobre fondos claros se usa el PNG oficial (ya trae el tagline impreso).
+ * Sobre fondos oscuros el azul marino del PNG se pierde, así que se compone
+ * la versión vectorial con el nombre en blanco.
  */
-export default function Logo({ tone = 'dark', tagline, className }: Props) {
-  const nameColor =
-    tone === 'light' ? 'text-embotec-white' : 'text-embotec-dark';
-  const taglineColor =
-    tone === 'light' ? 'text-embotec-light' : 'text-embotec-gray';
+export default function Logo({ tone = "dark", tagline, className }: Props) {
+  const logoTone =
+    tone === "light" ? "/images/embotec-logo-light.png" : "/images/embotec-logo.png";
 
   return (
-    <span className={`flex items-center gap-3 ${className ?? ''}`}>
-      <LogoMark tone={tone} className="h-11 w-11 shrink-0" />
-      <span className="flex flex-col justify-center leading-none">
-        <span
-          className={`font-heading text-xl font-extrabold tracking-tight ${nameColor}`}
-        >
-          EMBO<span className="text-embotec-orange">TEC</span>
-        </span>
-        {tagline && (
-          <span
-            className={`mt-1 text-[10px] font-medium tracking-wide uppercase ${taglineColor}`}
-          >
-            {tagline}
-          </span>
-        )}
-      </span>
-    </span>
+    <Image
+      src={logoTone}
+      width={LOGO_WIDTH}
+      height={LOGO_HEIGHT}
+      // El alto lo fija la clase; el ancho se deriva del aspect ratio.
+      className={`h-12 w-auto ${className ?? ""}`}
+      alt={tagline ? `EMBOTEC — ${tagline}` : "EMBOTEC"}
+    />
   );
 }
