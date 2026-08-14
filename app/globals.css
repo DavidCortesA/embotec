@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
+@theme {
+  /* Paleta EMBOTEC */
+  --color-embotec-blue: #0b5ed7;
+  --color-embotec-dark: #0a2540;
+
+  --color-embotec-orange: #f28c28;
+  --color-embotec-orange-dark: #d96f0b;
+
+  --color-embotec-gray: #5b6573;
+  --color-embotec-light: #e9eef3;
+  --color-embotec-bg: #f7f9fc;
+
+  --color-embotec-black: #111827;
+  --color-embotec-white: #ffffff;
+
+  /* Tipografía: Montserrat para títulos, Inter para interfaz */
+  --font-heading: var(--font-montserrat), "Montserrat", sans-serif;
+  --font-body: var(--font-inter), "Inter", sans-serif;
+  --font-sans: var(--font-inter), "Inter", sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: var(--color-embotec-white);
+  --foreground: var(--color-embotec-black);
+  /* Alto del navbar flotante, usado para el offset de las páginas */
+  --navbar-height: 104px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* WCAG 2.4.11: el elemento con foco no debe quedar bajo el navbar fijo */
+  scroll-padding-top: calc(var(--navbar-height) + 16px);
+}
+
+/* WCAG 2.4.7: foco siempre visible, solo para navegación con teclado */
+:focus-visible {
+  outline: 3px solid var(--color-embotec-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Sobre fondos azul marino el azul no contrasta: usamos blanco */
+.on-dark :focus-visible {
+  outline-color: var(--color-embotec-white);
+}
+
+/* WCAG 2.3.3 / 2.2: respetar la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

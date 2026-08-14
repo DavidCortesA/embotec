@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="presentation">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e2f52"/>
+      <stop offset="55%" stop-color="#0a2540"/>
+      <stop offset="100%" stop-color="#061829"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.68" cy="0.42" r="0.55">
+      <stop offset="0%" stop-color="#1d4f86" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0a2540" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="coil" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f28c28" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#d96f0b" stop-opacity="0.5"/>
+    </linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0v64" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#base)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- Engrane grande: mantenimiento y confiabilidad -->
+  <g transform="translate(1120 430)" fill="none" stroke="#ffffff" stroke-opacity="0.13">
+    <circle r="330" stroke-width="46" stroke-dasharray="72 82"/>
+    <circle r="252" stroke-width="3"/>
+    <circle r="196" stroke-width="1.5" stroke-opacity="0.09"/>
+  </g>
+
+  <!-- Estator y bobina: el corazón del motor -->
+  <g transform="translate(1120 430)">
+    <circle r="150" fill="#0a2540" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.18" stroke-width="3"/>
+    <g stroke="url(#coil)" stroke-width="17" stroke-linecap="round">
+      <path d="M-86 -66h172"/>
+      <path d="M-104 -22h208"/>
+      <path d="M-104 22h208"/>
+      <path d="M-86 66h172"/>
+    </g>
+  </g>
+
+  <!-- Curvas de movimiento y energía -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M690 872C690 596 916 372 1194 372" stroke="#f28c28" stroke-opacity="0.5" stroke-width="10"/>
+    <path d="M596 900C596 574 862 310 1192 310" stroke="#ffffff" stroke-opacity="0.09" stroke-width="2"/>
+    <path d="M-40 690C260 690 470 520 560 300" stroke="#f28c28" stroke-opacity="0.22" stroke-width="6"/>
+  </g>
+
+  <!-- Trama técnica de fondo a la izquierda -->
+  <g stroke="#ffffff" stroke-opacity="0.07" stroke-width="2">
+    <path d="M120 140h190M120 190h120M120 240h250"/>
+  </g>
+  <g fill="#f28c28" fill-opacity="0.5">
+    <circle cx="96" cy="140" r="5"/>
+    <circle cx="96" cy="190" r="5"/>
+    <circle cx="96" cy="240" r="5"/>
+  </g>
+</svg>

@@ -1,11 +1,285 @@
 {
-  "Home": {
-    "title": "Hola mundo"
+  "Metadata": {
+    "title": "EMBOTEC | Motor rewinding and industrial maintenance",
+    "description": "Electric motor rewinding and repair, industrial maintenance and electrical diagnostics. We put your motors back in production with documented testing.",
+    "organizationDescription": "EMBOTEC is a workshop specialized in electric motor rewinding and repair, industrial maintenance and electrical diagnostics for production plants."
+  },
+  "Common": {
+    "skipToContent": "Skip to main content",
+    "quoteCta": "Request a quote",
+    "servicesCta": "See services",
+    "learnMore": "Learn more",
+    "backToServices": "Back to services"
   },
   "Navbar": {
+    "brand": "EMBOTEC",
+    "brandTagline": "Motor rewinding and industrial maintenance",
     "home": "Home",
     "about": "About Us",
     "services": "Services",
-    "contact": "Contact"
+    "projects": "Projects",
+    "contact": "Contact",
+    "servicesIntro": "Solutions for your motors and your plant",
+    "allServices": "See all services",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNavigation": "Main navigation"
+  },
+  "LanguageSwitcher": {
+    "label": "Change language",
+    "es": "ES",
+    "en": "EN",
+    "esLong": "Español",
+    "enLong": "English"
+  },
+  "Home": {
+    "metaTitle": "Electric motor rewinding and repair",
+    "metaDescription": "Electric motor rewinding and repair, industrial maintenance and electrical diagnostics. We put your motors back in production with documented testing.",
+    "hero": {
+      "eyebrow": "Motor rewinding and industrial maintenance",
+      "title": "Your motors back in production",
+      "description": "We rewind, repair and maintain electric motors and industrial equipment. Clear diagnostics, documented testing and lead times you can plan around.",
+      "imageAlt": "Industrial electric motor opened up in the workshop during a rewinding job",
+      "stats": {
+        "years": "Years in the workshop",
+        "motors": "Motors serviced",
+        "response": "Emergency response"
+      },
+      "responseValue": "24 h"
+    },
+    "services": {
+      "eyebrow": "Services",
+      "title": "What we solve",
+      "description": "From rewinding a burnt-out motor to the maintenance plan for your whole plant."
+    },
+    "process": {
+      "eyebrow": "How we work",
+      "title": "From diagnosis to delivery",
+      "description": "Five steps with evidence at each one: you know what we found, what we did and how your equipment came out.",
+      "hint": "Keep scrolling to move through the process.",
+      "steps": {
+        "diagnosis": {
+          "title": "Diagnosis",
+          "description": "We receive the motor, measure insulation and winding resistance, and document the failure with photos before touching anything."
+        },
+        "quote": {
+          "title": "Quote",
+          "description": "You get the scope in writing: what gets replaced, what gets recovered, how much it costs and how many days it takes."
+        },
+        "rewinding": {
+          "title": "Rewinding",
+          "description": "We strip the damaged winding, clean the stator and rewind with wire and insulation of the correct thermal class."
+        },
+        "testing": {
+          "title": "Testing",
+          "description": "Varnishing, balancing and electrical tests with no load and under load. You receive the report with every measured value."
+        },
+        "delivery": {
+          "title": "Delivery and installation",
+          "description": "We hand the motor over ready to run, or install and start it on site, checking operating current and temperature."
+        }
+      }
+    },
+    "why": {
+      "eyebrow": "Why EMBOTEC",
+      "title": "A workshop that answers",
+      "description": "We work with plants that cannot afford long downtime, so we measure, document and respect the agreed dates.",
+      "items": {
+        "specialists": {
+          "title": "Rewinding specialists",
+          "description": "Windings are our core trade, not a side service: three-phase, single-phase and DC motors, plus pumps."
+        },
+        "documented": {
+          "title": "Documented testing",
+          "description": "Every motor leaves with its insulation, resistance and operating current report."
+        },
+        "response": {
+          "title": "Emergency response",
+          "description": "We take on unplanned downtime and give you a diagnosis within the first 24 hours."
+        },
+        "warranty": {
+          "title": "Written warranty",
+          "description": "We back the winding and the labor with a warranty and follow-up after start-up."
+        }
+      }
+    },
+    "cta": {
+      "title": "Do you have a motor out of service?",
+      "description": "Tell us the nameplate data and the failure you observed. We will come back with a diagnosis and a clear quote."
+    }
+  },
+  "About": {
+    "eyebrow": "About Us",
+    "title": "The workshop behind your motors",
+    "description": "EMBOTEC was born from the union of technical precision and the energy that moves industry. We are a team dedicated to electric motor rewinding and repair, with industrial maintenance as its natural complement.",
+    "metaTitle": "About us: industrial rewinding workshop",
+    "metaDescription": "Meet EMBOTEC: a workshop specialized in electric motor rewinding and repair, with industrial maintenance and documented diagnostics.",
+    "story": {
+      "title": "Technical precision and the energy that moves industry",
+      "paragraphs": {
+        "first": "We started out servicing motors for local plants that needed a reliable, fast repair. Over time we added industrial maintenance, electrical diagnostics and on-site work, always with the same rule: measure before giving an opinion.",
+        "second": "Today we service three-phase and single-phase motors, DC motors, pumps and generators across a range of capacities, and we stay with our clients from the diagnosis through start-up on their production line."
+      }
+    },
+    "values": {
+      "title": "How we work",
+      "items": {
+        "measure": {
+          "title": "We measure, we don't guess",
+          "description": "Every diagnosis starts with insulation and resistance testing, and is documented with photos."
+        },
+        "reliability": {
+          "title": "Reliability in every process",
+          "description": "We use wire, insulation and varnish of the thermal class the application calls for, with no improvised substitutions."
+        },
+        "commitment": {
+          "title": "360° service",
+          "description": "Pickup, repair, testing, delivery and installation: we close the full cycle of the equipment."
+        },
+        "continuity": {
+          "title": "Continuity for your plant",
+          "description": "We plan the work around your scheduled shutdowns so production keeps running."
+        }
+      }
+    },
+    "stats": {
+      "years": "Years of experience",
+      "motors": "Motors serviced",
+      "clients": "Plants served"
+    }
+  },
+  "Services": {
+    "eyebrow": "Services",
+    "title": "Rewinding, repair and maintenance",
+    "description": "We cover the full lifecycle of your electric motors and the equipment around them, in the workshop or on site.",
+    "cta": "See the service",
+    "includes": "What it includes",
+    "otherServices": "Other services",
+    "metaTitle": "Motor rewinding and maintenance services",
+    "metaDescription": "Electric motor rewinding, industrial maintenance, motor and pump repair, and documented electrical diagnostics. In the workshop or on site.",
+    "items": {
+      "rewinding": {
+        "title": "Electric motor rewinding",
+        "summary": "Full rewind of three-phase, single-phase and DC motors.",
+        "description": "We strip the damaged winding, record the original winding data, clean the stator and rewind with wire and insulation of the correct thermal class. We finish with varnishing and electrical testing before delivery.",
+        "metaTitle": "Electric motor rewinding",
+        "metaDescription": "Rewinding of three-phase, single-phase and DC motors: original winding data, correct insulation class, varnishing and documented testing.",
+        "bullets": {
+          "1": "Original winding data recorded before teardown",
+          "2": "Magnet wire and class F or H insulation as the application requires",
+          "3": "Varnish impregnation with controlled curing",
+          "4": "Insulation, resistance and no-load current testing"
+        }
+      },
+      "maintenance": {
+        "title": "Industrial maintenance",
+        "summary": "Preventive and corrective work for motors and plant equipment.",
+        "description": "We design preventive maintenance routines and handle corrective work at your plant: cleaning, bearing replacement, connection checks, alignment and verification of operating parameters.",
+        "metaTitle": "Preventive and corrective industrial maintenance",
+        "metaDescription": "Preventive maintenance routines and corrective work on site: bearings, connections, alignment and verification of operating parameters.",
+        "bullets": {
+          "1": "Preventive routines planned around your scheduled shutdowns",
+          "2": "Bearing and seal replacement, winding cleaning",
+          "3": "Checks on connections, protections and starters",
+          "4": "Equipment log with measurements from every visit"
+        }
+      },
+      "repair": {
+        "title": "Motor and pump repair",
+        "summary": "Bearings, shafts, housings and centrifugal pumps.",
+        "description": "We repair the mechanical side that goes with the winding: bearings, worn shafts, end covers and housings, plus centrifugal and submersible pumps coupled to the motors we service.",
+        "metaTitle": "Electric motor and pump repair",
+        "metaDescription": "Mechanical repair of motors and pumps: bearings, shafts, covers and housings, rotor balancing and assembly with tolerance checks.",
+        "bullets": {
+          "1": "Shaft and housing grinding and metal spraying",
+          "2": "Bearing replacement with tolerance verification",
+          "3": "Repair of centrifugal and submersible pumps",
+          "4": "Rotor balancing and operational testing"
+        }
+      },
+      "diagnostics": {
+        "title": "Electrical diagnostics and testing",
+        "summary": "Insulation, resistance, current and temperature.",
+        "description": "We measure the real condition of your motor before and after servicing it: insulation resistance, winding resistance, current per phase, temperature and vibration, with a report of every value obtained.",
+        "metaTitle": "Electrical diagnostics and motor testing",
+        "metaDescription": "Insulation resistance, winding resistance, current per phase, temperature and vibration testing, with a report of every measured value.",
+        "bullets": {
+          "1": "Insulation resistance and polarization index",
+          "2": "Winding resistance and phase balance",
+          "3": "Current per phase and imbalance checks",
+          "4": "Report with measured values and recommendations"
+        }
+      }
+    }
+  },
+  "Projects": {
+    "eyebrow": "Projects",
+    "title": "Work that leaves the workshop",
+    "description": "Representative examples of the equipment we service and the typical scope of each job.",
+    "disclaimer": "The cases below are representative examples of our scope of work, not identifiable client projects.",
+    "comingSoon": "We are putting together the gallery with workshop photos. Reach out and we will share cases similar to the equipment at your plant.",
+    "metaTitle": "Motor rewinding and maintenance projects",
+    "metaDescription": "Examples of the motors, pumps and industrial equipment EMBOTEC rewinds, repairs and maintains, with the typical scope of each job.",
+    "labels": {
+      "equipment": "Equipment",
+      "scope": "Scope",
+      "result": "Result"
+    },
+    "cases": {
+      "1": {
+        "title": "75 HP three-phase motor",
+        "equipment": "Three-phase induction motor, 75 HP, 460 V, continuous duty",
+        "scope": "Full stator rewind, bearing replacement and rotor balancing",
+        "result": "Insulation restored and current balanced across phases at start-up"
+      },
+      "2": {
+        "title": "Process centrifugal pump",
+        "equipment": "Centrifugal pump coupled to a 20 HP motor",
+        "scope": "Mechanical pump repair, shaft grinding and motor rewind",
+        "result": "Equipment back in line with vibration within parameters"
+      },
+      "3": {
+        "title": "Plant preventive routine",
+        "equipment": "Set of motors and starters on a production line",
+        "scope": "Scheduled preventive routine: cleaning, bearings, connections and measurements",
+        "result": "Log per unit and early detection of two motors with low insulation"
+      }
+    }
+  },
+  "Contact": {
+    "eyebrow": "Contact",
+    "title": "Tell us which motor needs attention",
+    "description": "Share the nameplate data and the failure you observed. We come back with an initial diagnosis and the next step.",
+    "metaTitle": "Contact us: quote your motor rewind",
+    "metaDescription": "Send us your motor nameplate data and the failure you observed. You get an initial diagnosis, scope and lead time in writing.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "hours": "Hours",
+    "hoursValue": "Monday to Friday, 8:00 to 18:00",
+    "locationValue": "Mexico",
+    "whatToSend": {
+      "title": "What helps us quote faster",
+      "items": {
+        "1": "Nameplate data: power, voltage, RPM and brand",
+        "2": "What failure you observed and when it appeared",
+        "3": "Whether the equipment is down or still running",
+        "4": "Photos of the motor and of the nameplate"
+      }
+    },
+    "urgency": {
+      "title": "Is it an emergency?",
+      "description": "If your line is down, call us and we will prioritize the diagnosis."
+    }
+  },
+  "Footer": {
+    "tagline": "Electric motor rewinding and repair, industrial maintenance and electrical diagnostics for production plants.",
+    "navigationTitle": "Navigation",
+    "servicesTitle": "Services",
+    "contactTitle": "Contact",
+    "languageTitle": "Language",
+    "rights": "All rights reserved.",
+    "siteNavigation": "Site navigation",
+    "footerNavigation": "Footer navigation"
   }
 }
