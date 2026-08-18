@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EMBOTEC
 
-## Getting Started
+Sitio web de EMBOTEC: taller especializado en embobinado y reparación de motores eléctricos, mantenimiento industrial y diagnóstico eléctrico. Construido con Next.js (App Router) y contenido bilingüe (español / inglés) vía `next-intl`.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router, Turbopack) + **React 19** + **TypeScript**
+- **Tailwind CSS v4**
+- **next-intl** para i18n (rutas, mensajes y detección de idioma)
+- **framer-motion** + **Lenis** para las animaciones de scroll (parallax, scroll pinning, scroll suave)
+- Gestor de paquetes: **pnpm**
+
+## Requisitos
+
+- Node.js 20+
+- pnpm (`packageManager` fijado en `pnpm@11.18.0`)
+
+## Puesta en marcha
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) — redirige automáticamente a `/es` o `/en` según el idioma detectado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Otros scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+pnpm build   # build de producción
+pnpm start   # sirve el build de producción
+pnpm lint    # eslint
+```
 
-## Learn More
+## Estructura del proyecto
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/[locale]/            Páginas (App Router), una por sección: home, nosotros,
+                          servicios, servicios/[slug], proyectos, contacto
+components/
+  home/                   Secciones exclusivas del home (Header/hero, Ticker,
+                          ServicesPreview, ProcessScroll, WhyUs)
+  layout/                 Navbar, Footer, menú móvil, selector de idioma
+  ui/                     Piezas reutilizables entre páginas (PageHero, CtaBand,
+                          Faq, ParallaxImage, Reveal/RevealText)
+  motion/                 Scroll suave (Lenis) y el hook de scroll pinning
+  seo/                    JSON-LD (datos estructurados)
+data/
+  company.ts              Datos de contacto y cifras de la empresa (⚠️ provisionales,
+                          ver el TODO al inicio del archivo)
+  services.ts              Catálogo de servicios (slug, ícono, cantidad de bullets)
+  images.ts                Fuente de todas las fotos del sitio (hoy son de stock;
+                          los TODO marcan cuáles esperan foto real del cliente)
+  navigation.ts            Enlaces del menú principal
+messages/
+  es.json / en.json        Todo el copy del sitio, por namespace (Home, About,
+                          Services, Projects, Contact, Footer, etc.)
+i18n/
+  routing.ts               Locales soportados y el mapa de rutas traducidas
+                          (p. ej. `/nosotros` ↔ `/about-us`)
+  navigation.ts / request.ts  Wrappers de next-intl (Link, redirect, config de request)
+proxy.ts                   Middleware: detecta idioma y reescribe rutas traducidas
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Editar contenido
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Textos:** todos viven en `messages/es.json` y `messages/en.json`, organizados por namespace y con la misma forma en los dos archivos. Cualquier texto visible en el sitio sale de ahí, no de los componentes.
+- **Imágenes:** todas se definen en `data/images.ts`. Para reemplazar una foto de stock por una real basta con cambiar el valor por una ruta local (p. ej. `/images/taller-01.jpg`); los componentes ya usan `next/image` y no dependen de que la fuente sea remota. Revisa los comentarios `TODO (EMBOTEC)` en ese archivo para ver qué fotos están pendientes de reemplazo.
+- **Servicios:** agregar uno nuevo requiere tres pasos — entrada en `data/services.ts`, ruta traducida en `i18n/routing.ts` (`pathnames`) y textos en `Services.items.<key>` dentro de los dos `messages/*.json`. La página de detalle (`app/[locale]/servicios/[slug]/page.tsx`) es una sola plantilla compartida por todos los servicios.
+- **Datos de la empresa** (teléfono, correo, cifras): `data/company.ts`. Están marcados como provisionales hasta confirmar los datos reales.
 
-## Deploy on Vercel
+## Internacionalización
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Locales: `es` (por defecto) y `en`, con prefijo de idioma siempre presente en la URL (`/es/...`, `/en/...`).
+- Las rutas internas están en español (coinciden con las carpetas de `app/[locale]`); `i18n/routing.ts` define cómo se ven en inglés y `proxy.ts` hace la reescritura.
+- El idioma se detecta por cookie (`NEXT_LOCALE`) y luego por `Accept-Language`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notas
+
+- `AGENTS.md` documenta que esta versión de Next.js tiene cambios importantes respecto a la documentación de entrenamiento de los modelos de IA; ese archivo lo regenera `next dev` automáticamente y debe quedar commiteado.
+- Varias secciones del sitio tienen bloques de código comentados (no borrados) a pedido del cliente, a la espera de contenido pendiente (fotos, listado de marcas para el ticker, textos del servicio de "Ventas"). Búscalos por `TODO (EMBOTEC)` o los comentarios en español que explican el motivo.
