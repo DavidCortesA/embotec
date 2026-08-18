@@ -43,9 +43,11 @@
       "stats": {
         "years": "Años de taller",
         "motors": "Motores atendidos",
-        "response": "Respuesta a urgencias"
+        "sales": "Ventas",
+        "response": "Disponibilidad"
       },
-      "responseValue": "24 h",
+      "salesValue": "1K+",
+      "responseValue": "24/7",
       "scrollCue": "Desliza para ver el taller"
     },
     "ticker": [
@@ -113,17 +115,17 @@
     },
     "cta": {
       "title": "¿Tienes un motor fuera de servicio?",
-      "description": "Cuéntanos la placa de datos y la falla que observaste. Te damos un diagnóstico y una cotización clara."
+      "description": "Contáctanos y te damos la solución."
     }
   },
   "About": {
     "eyebrow": "Nosotros",
     "title": "El taller detrás de tus motores",
-    "description": "EMBOTEC nace de la unión entre la precisión técnica y la energía que mueve a la industria. Somos un equipo dedicado al embobinado y la reparación de motores eléctricos, con el mantenimiento industrial como complemento natural.",
+    "description": "EMBOTEC nace de la unión entre la precisión técnica y lo que mueve a la industria. Somos un equipo dedicado al embobinado y la reparación de motores eléctricos, con el mantenimiento industrial como complemento natural.",
     "metaTitle": "Nosotros: taller de embobinados industriales",
     "metaDescription": "Conoce a EMBOTEC: taller especializado en embobinado y reparación de motores eléctricos, con mantenimiento industrial y diagnóstico documentado.",
     "story": {
-      "title": "Precisión técnica y energía que mueve la industria",
+      "title": "Empresas con técnica y energía que mueve la industria",
       "paragraphs": {
         "first": "Empezamos atendiendo motores de plantas locales que necesitaban una reparación confiable y rápida. Con el tiempo sumamos mantenimiento industrial, diagnóstico eléctrico y trabajo en sitio, siempre con el mismo criterio: medir antes de opinar.",
         "second": "Hoy atendemos motores trifásicos y monofásicos, motores de corriente directa, bombas y generadores de distintas capacidades, y acompañamos a nuestros clientes desde el diagnóstico hasta el arranque en su línea de producción."
@@ -159,7 +161,7 @@
   "Services": {
     "eyebrow": "Servicios",
     "title": "Embobinado, reparación y mantenimiento",
-    "description": "Cubrimos el ciclo completo de tus motores eléctricos y el equipo que los rodea, en taller o en sitio.",
+    "description": "Cubrimos el ciclo completo de tus motores eléctricos y el equipo que los rodea —barnizado, horneado y pruebas técnicas incluidos—, en taller o en sitio.",
     "cta": "Ver el servicio",
     "includes": "Qué incluye",
     "otherServices": "Otros servicios",
@@ -168,7 +170,7 @@
     "items": {
       "rewinding": {
         "title": "Embobinado de motores eléctricos",
-        "summary": "Rebobinado completo de motores trifásicos, monofásicos y de CD.",
+        "summary": "Rebobinado de transformadores monofásicos, de corriente alterna y de corriente directa.",
         "description": "Retiramos el devanado dañado, registramos los datos originales del bobinado, limpiamos el estator y embobinamos con alambre y aislamientos del grado térmico correcto. Terminamos con barnizado y pruebas eléctricas antes de entregar.",
         "metaTitle": "Embobinado de motores eléctricos",
         "metaDescription": "Rebobinado de motores trifásicos, monofásicos y de corriente directa: datos originales, aislamiento del grado correcto, barnizado y pruebas documentadas.",

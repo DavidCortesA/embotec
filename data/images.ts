@@ -36,7 +36,11 @@ export const pageImages = {
 
 /** Una imagen por servicio, con la misma clave que `data/services.ts` */
 export const serviceImages: Record<string, string> = {
+  // TODO (EMBOTEC): pedido del cliente — cambiar por una foto real de una
+  // persona/manos haciendo el embobinado. Pendiente de que la envíen.
   rewinding: unsplash('photo-1707409464255-e78eb873298a', 1200),
+  // TODO (EMBOTEC): pedido del cliente — cambiar por una foto con varios
+  // equipos de planta. Pendiente de que la envíen.
   maintenance: unsplash('photo-1676018366904-c083ed678e60', 1200),
   repair: unsplash('photo-1772588063102-eed5af095b9e', 1200),
   diagnostics: unsplash('photo-1717386255777-ce60792a2a56', 1200),

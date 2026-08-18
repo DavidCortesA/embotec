@@ -26,6 +26,10 @@ const STEP = 100 / COPIES;
 export default function Ticker() {
   const t = useTranslations('Home');
   const prefersReducedMotion = useReducedMotion();
+  // TODO (EMBOTEC): pedido del cliente — la cinta debe listar todas las
+  // Marcas atendidas en vez de las frases de servicios. Falta que el cliente
+  // pase el listado de marcas; en cuanto llegue, reemplazar `Home.ticker` en
+  // messages/es.json y messages/en.json por esa lista.
   const items = t.raw('ticker') as string[];
 
   const { scrollY } = useScroll();

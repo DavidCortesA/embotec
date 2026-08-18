@@ -7,7 +7,9 @@ import PageHero from '@/components/ui/PageHero';
 import ParallaxImage from '@/components/ui/ParallaxImage';
 import Reveal from '@/components/ui/Reveal';
 import RevealText from '@/components/ui/RevealText';
-import { company } from '@/data/company';
+// Pedido del cliente: se elimina la banda de cifras (años de experiencia,
+// motores atendidos, plantas atendidas), así que `company` queda sin uso.
+// import { company } from '@/data/company';
 import { images, pageImages } from '@/data/images';
 import { resolveLocale } from '@/lib/locale';
 import { breadcrumbSchema } from '@/lib/schema';
@@ -44,11 +46,13 @@ export default async function AboutPage({ params }: Props) {
   const tNav = await getTranslations('Navbar');
   const tCta = await getTranslations('Home.cta');
 
-  const stats = [
-    { key: 'years', value: company.yearsInBusiness },
-    { key: 'motors', value: company.motorsServiced },
-    { key: 'clients', value: company.plantsServed },
-  ];
+  // Pedido del cliente: eliminar "Años de experiencia", "Motores atendidos"
+  // y "Plantas atendidas" — ver sección de cifras comentada más abajo.
+  // const stats = [
+  //   { key: 'years', value: company.yearsInBusiness },
+  //   { key: 'motors', value: company.motorsServiced },
+  //   { key: 'clients', value: company.plantsServed },
+  // ];
 
   return (
     <>
@@ -67,7 +71,8 @@ export default async function AboutPage({ params }: Props) {
         title={t('title')}
         description={t('description')}
         image={pageImages.about}
-        meta={`${company.yearsInBusiness} — ${t('stats.years')}`}
+        // Pedido del cliente: se elimina "Años de experiencia" de aquí también.
+        // meta={`${company.yearsInBusiness} — ${t('stats.years')}`}
       />
 
       {/* Relato: texto a la izquierda, foto que sube más despacio a la derecha */}
@@ -102,8 +107,9 @@ export default async function AboutPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Cifras: banda oscura con los números en tipografía de cartel */}
-      <section className="on-dark bg-embotec-night py-20 sm:py-24">
+      {/* Pedido del cliente: se elimina la banda de cifras (años de
+          experiencia, motores atendidos, plantas atendidas). */}
+      {/* <section className="on-dark bg-embotec-night py-20 sm:py-24">
         <dl className="mx-auto grid w-full max-w-7xl gap-12 px-6 sm:grid-cols-3">
           {stats.map((stat, index) => (
             <Reveal key={stat.key} as="div" delay={index * 0.08}>
@@ -116,7 +122,7 @@ export default async function AboutPage({ params }: Props) {
             </Reveal>
           ))}
         </dl>
-      </section>
+      </section> */}
 
       {/* Valores */}
       <section className="bg-embotec-bg py-24 sm:py-32">

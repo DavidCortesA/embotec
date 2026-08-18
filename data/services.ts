@@ -42,6 +42,19 @@ export const services: readonly Service[] = [
     icon: Gauge,
     bulletCount: 4,
   },
+  // TODO (EMBOTEC): pedido del cliente — agregar servicio de "Ventas".
+  // Falta el texto (el cliente menciona que viene en el documento de misión y
+  // visión, con el detalle de los servicios). Cuando llegue, agregar aquí la
+  // entrada (slug, href en `i18n/routing.ts`, ícono) y sus textos en
+  // `Services.items.sales` dentro de messages/es.json y messages/en.json,
+  // siguiendo el mismo formato que los demás servicios.
+  // {
+  //   slug: 'ventas',
+  //   href: '/servicios/ventas',
+  //   key: 'sales',
+  //   icon: ShoppingCart,
+  //   bulletCount: 4,
+  // },
 ];
 
 export function getService(slug: string) {

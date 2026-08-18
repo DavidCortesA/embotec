@@ -43,9 +43,11 @@
       "stats": {
         "years": "Years in the workshop",
         "motors": "Motors serviced",
-        "response": "Emergency response"
+        "sales": "Sales",
+        "response": "Availability"
       },
-      "responseValue": "24 h",
+      "salesValue": "1K+",
+      "responseValue": "24/7",
       "scrollCue": "Scroll to see the workshop"
     },
     "ticker": [
@@ -113,17 +115,17 @@
     },
     "cta": {
       "title": "Do you have a motor out of service?",
-      "description": "Tell us the nameplate data and the failure you observed. We will come back with a diagnosis and a clear quote."
+      "description": "Contact us and we'll give you the solution."
     }
   },
   "About": {
     "eyebrow": "About Us",
     "title": "The workshop behind your motors",
-    "description": "EMBOTEC was born from the union of technical precision and the energy that moves industry. We are a team dedicated to electric motor rewinding and repair, with industrial maintenance as its natural complement.",
+    "description": "EMBOTEC was born from the union of technical precision and what moves industry. We are a team dedicated to electric motor rewinding and repair, with industrial maintenance as its natural complement.",
     "metaTitle": "About us: industrial rewinding workshop",
     "metaDescription": "Meet EMBOTEC: a workshop specialized in electric motor rewinding and repair, with industrial maintenance and documented diagnostics.",
     "story": {
-      "title": "Technical precision and the energy that moves industry",
+      "title": "Companies with the technique and energy that moves industry",
       "paragraphs": {
         "first": "We started out servicing motors for local plants that needed a reliable, fast repair. Over time we added industrial maintenance, electrical diagnostics and on-site work, always with the same rule: measure before giving an opinion.",
         "second": "Today we service three-phase and single-phase motors, DC motors, pumps and generators across a range of capacities, and we stay with our clients from the diagnosis through start-up on their production line."
@@ -159,7 +161,7 @@
   "Services": {
     "eyebrow": "Services",
     "title": "Rewinding, repair and maintenance",
-    "description": "We cover the full lifecycle of your electric motors and the equipment around them, in the workshop or on site.",
+    "description": "We cover the full lifecycle of your electric motors and the equipment around them —varnishing, baking and technical testing included—, in the workshop or on site.",
     "cta": "See the service",
     "includes": "What it includes",
     "otherServices": "Other services",
@@ -168,7 +170,7 @@
     "items": {
       "rewinding": {
         "title": "Electric motor rewinding",
-        "summary": "Full rewind of three-phase, single-phase and DC motors.",
+        "summary": "Rewinding of single-phase transformers, AC and DC.",
         "description": "We strip the damaged winding, record the original winding data, clean the stator and rewind with wire and insulation of the correct thermal class. We finish with varnishing and electrical testing before delivery.",
         "metaTitle": "Electric motor rewinding",
         "metaDescription": "Rewinding of three-phase, single-phase and DC motors: original winding data, correct insulation class, varnishing and documented testing.",

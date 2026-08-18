@@ -164,7 +164,9 @@ export default async function ServicesPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Sectores + cobertura: señales de a quién servimos y dónde */}
+      {/* Sectores: a quién servimos.
+          Pedido del cliente: se elimina el bloque de "Cobertura y tiempos de
+          respuesta" que iba a la derecha (ver JSX comentado abajo). */}
       <section className="bg-embotec-bg py-24 sm:py-32">
         <div className="mx-auto grid w-full max-w-7xl gap-14 px-6 lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-20">
           <div>
@@ -191,14 +193,14 @@ export default async function ServicesPage({ params }: Props) {
             </ul>
           </div>
 
-          <Reveal delay={0.12} className="lg:pt-14">
+          {/* <Reveal delay={0.12} className="lg:pt-14">
             <h2 className="display text-2xl text-embotec-dark sm:text-3xl">
               {t('coverage.title')}
             </h2>
             <p className="mt-5 text-base leading-relaxed text-embotec-gray">
               {t('coverage.description')}
             </p>
-          </Reveal>
+          </Reveal> */}
         </div>
       </section>
 

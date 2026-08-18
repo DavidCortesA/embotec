@@ -38,9 +38,11 @@ function ServicesIntro() {
         >
           {t("title")}
         </RevealText>
-        <p className="text-lg leading-relaxed text-embotec-light lg:pb-3">
+        {/* Pedido del cliente: eliminar el texto "Del embobinado de un motor
+            quemado al plan de mantenimiento de toda tu planta." */}
+        {/* <p className="text-lg leading-relaxed text-embotec-light lg:pb-3">
           {t("description")}
-        </p>
+        </p> */}
       </div>
     </div>
   );

@@ -223,9 +223,10 @@ export default async function ServiceDetailPage({ params }: Props) {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-base leading-relaxed text-embotec-light/80">
+            {/* Pedido del cliente: se elimina "Cobertura y tiempos de respuesta". */}
+            {/* <p className="mt-8 text-base leading-relaxed text-embotec-light/80">
               {t('coverage.description')}
-            </p>
+            </p> */}
           </Reveal>
         </div>
       </section>

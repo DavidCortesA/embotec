@@ -6,7 +6,9 @@ import { ArrowDown, ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import ParallaxImage from '@/components/ui/ParallaxImage';
 import RevealText from '@/components/ui/RevealText';
-import { company } from '@/data/company';
+// Pedido del cliente: ya no se muestran "Años de taller" ni "Motores atendidos"
+// en el hero, así que `company` queda sin uso aquí (ver stats más abajo).
+// import { company } from '@/data/company';
 import { images } from '@/data/images';
 import { Link } from '@/i18n/navigation';
 import { useReducedMotion } from '@/lib/useReducedMotion';
@@ -33,8 +35,10 @@ export default function Header() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
   const stats = [
-    { key: 'years', value: company.yearsInBusiness },
-    { key: 'motors', value: company.motorsServiced },
+    // Pedido del cliente: se elimina "Años de taller" y "Motores atendidos" del hero.
+    // { key: 'years', value: company.yearsInBusiness },
+    // { key: 'motors', value: company.motorsServiced },
+    { key: 'sales', value: t('salesValue') },
     { key: 'response', value: t('responseValue') },
   ];
 
@@ -142,7 +146,7 @@ export default function Header() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1, ease: EASE }}
           data-reveal
-          className="mt-14 grid grid-cols-1 gap-px border-t border-embotec-white/15 pt-8 sm:grid-cols-3"
+          className="mt-14 grid grid-cols-1 gap-px border-t border-embotec-white/15 pt-8 sm:grid-cols-2"
         >
           {stats.map((stat) => (
             <div key={stat.key} className="flex flex-col gap-1">
