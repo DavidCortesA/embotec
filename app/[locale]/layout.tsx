@@ -8,6 +8,7 @@ import Navbar from '@/components/layout/Navbar';
 import SmoothScroll from '@/components/motion/SmoothScroll';
 import { routing } from '@/i18n/routing';
 import { siteName, siteUrl } from '@/lib/seo';
+import { Analytics } from "@vercel/analytics/next"
 import '../globals.css';
 
 /** Titulares de cartel */
@@ -116,6 +117,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <div aria-hidden className="grain" />
 
         <NextIntlClientProvider>
+          <Analytics />
           <SmoothScroll />
           {/* WCAG 2.4.1: permite saltarse el navbar con el teclado */}
           <a

@@ -38,7 +38,7 @@
     "hero": {
       "eyebrow": "Embobinados y mantenimiento industrial",
       "title": "Tus motores de vuelta a producción",
-      "description": "Embobinamos, reparamos y mantenemos motores eléctricos y equipo industrial. Diagnóstico claro, pruebas documentadas y tiempos de entrega que puedes planear.",
+      "description": "Rebobinado, reparación y mantenimiento motores eléctricos y bombas industriales. Diagnóstico claro, pruebas documentadas y tiempos de entrega que puedes planear.",
       "imageAlt": "Motor eléctrico industrial abierto en el taller durante un proceso de embobinado",
       "stats": {
         "years": "Años de taller",
@@ -55,7 +55,8 @@
       "Mantenimiento industrial",
       "Reparación de motores",
       "Diagnóstico eléctrico",
-      "Urgencias 24 h"
+      "Urgencias 24 h",
+      "Reparación de bombas"
     ],
     "services": {
       "eyebrow": "Servicios",

@@ -38,7 +38,7 @@
     "hero": {
       "eyebrow": "Motor rewinding and industrial maintenance",
       "title": "Your motors back in production",
-      "description": "We rewind, repair and maintain electric motors and industrial equipment. Clear diagnostics, documented testing and lead times you can plan around.",
+      "description": "Rewinding, repair and maintenance of electric motors and industrial pumps. Clear diagnostics, documented testing and lead times you can plan around.",
       "imageAlt": "Industrial electric motor opened up in the workshop during a rewinding job",
       "stats": {
         "years": "Years in the workshop",
@@ -55,7 +55,8 @@
       "Industrial maintenance",
       "Motor repair",
       "Electrical diagnostics",
-      "24 h emergencies"
+      "24 h emergencies",
+      "Pump repair"
     ],
     "services": {
       "eyebrow": "Services",
