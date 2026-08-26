@@ -29,19 +29,24 @@ export function absoluteUrl(href: AppPathname, locale: Locale) {
 }
 
 /**
- * Tarjeta social del sitio: el archivo que entregó el cliente, en
- * `public/og/opengraph-image.png`. Es una pieza de marca ya cerrada (logotipo,
- * claim, servicios y datos de contacto), así que se usa igual en todas las
- * páginas en vez de generar una por ruta.
+ * Tarjeta social del sitio: la pieza de marca que entregó el cliente
+ * (logotipo, claim, servicios y datos de contacto), así que se usa igual en
+ * todas las páginas en vez de generar una por ruta.
+ *
+ * El archivo que se publica es la versión optimizada para redes: 1200 px de
+ * ancho —lo que recomiendan Facebook, LinkedIn y X— y JPEG de calidad alta,
+ * 360 KB en vez de los 2 MB del original. El PNG original se conserva como
+ * fuente en `assets/og/` (fuera de `public/`, para no publicar 2 MB que nadie
+ * pide).
  *
  * Las medidas tienen que coincidir con el archivo real: si se sustituye por
  * otro de distinto tamaño, hay que actualizarlas aquí para que las redes no
  * reserven un hueco equivocado al mostrar la vista previa.
  */
 const OG_IMAGE = {
-  path: '/og/opengraph-image.png',
-  width: 1536,
-  height: 1024,
+  path: '/og/opengraph-image.jpg',
+  width: 1200,
+  height: 800,
 } as const;
 
 export function socialImage() {
