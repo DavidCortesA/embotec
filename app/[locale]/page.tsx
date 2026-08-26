@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import Brands from '@/components/home/Brands';
 import Header from '@/components/home/Header';
 import ProcessScroll from '@/components/home/ProcessScroll';
 import ServicesPreview from '@/components/home/ServicesPreview';
@@ -46,6 +47,7 @@ export default async function Home({ params }: Props) {
       <Ticker />
       <ServicesPreview />
       <ProcessScroll />
+      <Brands />
       <WhyUs />
       <CtaBand title={tCta('title')} description={tCta('description')} />
     </>

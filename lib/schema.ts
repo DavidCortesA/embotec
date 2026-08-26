@@ -1,3 +1,4 @@
+import { company, contacts } from '@/data/company';
 import type { AppPathname, Locale } from '@/i18n/routing';
 import { absoluteUrl, siteName, siteUrl } from './seo';
 
@@ -11,6 +12,39 @@ export type JsonLdData = Record<string, unknown>;
 /** Se referencia con `@id` desde los demás nodos para no duplicar la empresa */
 export const ORGANIZATION_ID = `${siteUrl}/#organization`;
 
+/** Domicilio del taller, tal como lo pide schema.org */
+export function postalAddressSchema(): JsonLdData {
+  return {
+    '@type': 'PostalAddress',
+    streetAddress: `${company.address.street}, ${company.address.neighborhood}`,
+    postalCode: company.address.postalCode,
+    addressLocality: company.address.city,
+    addressRegion: company.address.state,
+    addressCountry: 'MX',
+  };
+}
+
+/** Un `ContactPoint` por persona del taller, más el correo general */
+export function contactPointsSchema(): JsonLdData[] {
+  return [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      email: company.email,
+      telephone: company.phone,
+      availableLanguage: ['es', 'en'],
+    },
+    ...contacts.map((contact) => ({
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      name: contact.name,
+      email: contact.email,
+      telephone: contact.phone,
+      availableLanguage: ['es', 'en'],
+    })),
+  ];
+}
+
 export function organizationSchema(description: string): JsonLdData {
   return {
     '@context': 'https://schema.org',
@@ -19,7 +53,11 @@ export function organizationSchema(description: string): JsonLdData {
     name: siteName,
     url: siteUrl,
     description,
-    // TODO: agregar logo, sameAs (redes sociales) y address cuando estén.
+    email: company.email,
+    telephone: company.phone,
+    address: postalAddressSchema(),
+    contactPoint: contactPointsSchema(),
+    // TODO: agregar logo y sameAs (redes sociales) cuando estén.
   };
 }
 
@@ -56,8 +94,8 @@ export function serviceSchema({
     inLanguage: locale,
     serviceType: name,
     provider: { '@id': ORGANIZATION_ID },
-    // TODO (EMBOTEC): acotar a estado/ciudad cuando se confirme la ubicación
-    // real del taller; el país es lo único que hoy podemos afirmar.
+    // El taller está en Apodaca (ver `data/company.ts`), pero se atiende a
+    // planta en todo el país, así que el área de servicio es nacional.
     areaServed: { '@type': 'Country', name: 'México' },
   };
 }

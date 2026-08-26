@@ -5,11 +5,16 @@ import { routing, type AppPathname, type Locale } from '@/i18n/routing';
 export const siteName = 'EMBOTEC';
 
 /**
- * Dominio de producción. Configúralo en `.env` como NEXT_PUBLIC_SITE_URL
- * (sin slash final) para que los canonical y hreflang apunten al host real.
+ * Dominio de producción. De aquí salen los canonical, los hreflang, el
+ * sitemap, el robots.txt y las URLs de las imágenes OG, así que tiene que ser
+ * el host real y con una sola forma (con www o sin www, no las dos).
+ *
+ * Se puede sobrescribir con NEXT_PUBLIC_SITE_URL (sin slash final) para
+ * entornos de prueba. Si algún día el sitio se sirve sin www, hay que cambiar
+ * este valor y dejar el otro host redirigiendo con 301 al bueno.
  */
 export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://embotec.mx'
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.embo-tec.com'
 ).replace(/\/$/, '');
 
 /** Formato que espera Open Graph para og:locale */
@@ -24,15 +29,26 @@ export function absoluteUrl(href: AppPathname, locale: Locale) {
 }
 
 /**
- * Tarjeta social generada por `app/[locale]/opengraph-image.tsx`. Next solo
- * la hereda automáticamente en las páginas del mismo segmento, así que las
- * páginas anidadas la declaran de forma explícita.
+ * Tarjeta social del sitio: el archivo que entregó el cliente, en
+ * `public/og/opengraph-image.png`. Es una pieza de marca ya cerrada (logotipo,
+ * claim, servicios y datos de contacto), así que se usa igual en todas las
+ * páginas en vez de generar una por ruta.
+ *
+ * Las medidas tienen que coincidir con el archivo real: si se sustituye por
+ * otro de distinto tamaño, hay que actualizarlas aquí para que las redes no
+ * reserven un hueco equivocado al mostrar la vista previa.
  */
-function openGraphImage(locale: Locale) {
+const OG_IMAGE = {
+  path: '/og/opengraph-image.png',
+  width: 1536,
+  height: 1024,
+} as const;
+
+export function socialImage() {
   return {
-    url: `${absoluteUrl('/', locale)}/opengraph-image`,
-    width: 1200,
-    height: 630,
+    url: `${siteUrl}${OG_IMAGE.path}`,
+    width: OG_IMAGE.width,
+    height: OG_IMAGE.height,
     alt: 'EMBOTEC — Embobinados y mantenimiento industrial',
   };
 }
@@ -69,7 +85,7 @@ type PageMetadataOptions = {
 
 /**
  * Metadata por página: título, descripción, canonical, hreflang, Open Graph
- * y Twitter Card. La imagen OG la aporta `app/[locale]/opengraph-image.tsx`.
+ * y Twitter Card. La imagen OG la aporta el `opengraph-image.tsx` de cada ruta.
  */
 export function buildPageMetadata({
   locale,
@@ -78,10 +94,13 @@ export function buildPageMetadata({
   description,
 }: PageMetadataOptions): Metadata {
   const fullTitle = `${title} | ${siteName}`;
-  const image = openGraphImage(locale);
+  const image = socialImage();
 
   return {
-    title,
+    // La portada vive en el mismo segmento que declara `title.template`, y
+    // Next no aplica la plantilla a su propio segmento: sin `absolute` el
+    // título del home saldría sin la marca, a diferencia del resto.
+    title: href === '/' ? { absolute: fullTitle } : title,
     description,
     alternates: getAlternates(href, locale),
     openGraph: {

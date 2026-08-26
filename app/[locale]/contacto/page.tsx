@@ -6,10 +6,15 @@ import PageHero from '@/components/ui/PageHero';
 import ParallaxImage from '@/components/ui/ParallaxImage';
 import Reveal from '@/components/ui/Reveal';
 import RevealText from '@/components/ui/RevealText';
-import { company } from '@/data/company';
+import { company, contacts } from '@/data/company';
 import { images, pageImages } from '@/data/images';
 import { resolveLocale } from '@/lib/locale';
-import { breadcrumbSchema, ORGANIZATION_ID } from '@/lib/schema';
+import {
+  breadcrumbSchema,
+  contactPointsSchema,
+  ORGANIZATION_ID,
+  postalAddressSchema,
+} from '@/lib/schema';
 import { absoluteUrl, buildPageMetadata } from '@/lib/seo';
 
 type Props = {
@@ -37,7 +42,16 @@ export default async function ContactPage({ params }: Props) {
   const t = await getTranslations('Contact');
   const tNav = await getTranslations('Navbar');
 
-  const channels = [
+  type Channel = {
+    key: string;
+    icon: typeof Mail;
+    value: string;
+    href: string | null;
+    /** Abre fuera del sitio (el mapa), así que necesita `rel`/`target` */
+    external?: boolean;
+  };
+
+  const channels: readonly Channel[] = [
     {
       key: 'email',
       icon: Mail,
@@ -50,7 +64,13 @@ export default async function ContactPage({ params }: Props) {
       value: company.phone,
       href: company.phoneHref,
     },
-    { key: 'location', icon: MapPin, value: t('locationValue'), href: null },
+    {
+      key: 'location',
+      icon: MapPin,
+      value: company.address.full,
+      href: company.address.mapsUrl,
+      external: true,
+    },
     { key: 'hours', icon: Clock, value: t('hoursValue'), href: null },
   ];
 
@@ -76,13 +96,10 @@ export default async function ContactPage({ params }: Props) {
             mainEntity: {
               '@type': 'Organization',
               '@id': ORGANIZATION_ID,
-              contactPoint: {
-                '@type': 'ContactPoint',
-                contactType: 'sales',
-                email: company.email,
-                telephone: company.phone,
-                availableLanguage: ['es', 'en'],
-              },
+              email: company.email,
+              telephone: company.phone,
+              address: postalAddressSchema(),
+              contactPoint: contactPointsSchema(),
             },
           },
         ]}
@@ -124,9 +141,16 @@ export default async function ContactPage({ params }: Props) {
                 {channel.href ? (
                   <a
                     href={channel.href}
+                    target={channel.external ? '_blank' : undefined}
+                    rel={channel.external ? 'noopener noreferrer' : undefined}
                     className="block transition-colors hover:text-embotec-orange-dark"
                   >
                     {content}
+                    {channel.external && (
+                      <span className="tech-label mt-2 block text-embotec-orange-dark">
+                        {t('mapCta')}
+                      </span>
+                    )}
                   </a>
                 ) : (
                   content
@@ -135,6 +159,63 @@ export default async function ContactPage({ params }: Props) {
             );
           })}
         </ul>
+      </section>
+
+      {/* Contactos directos del taller (`data/company.ts`) */}
+      <section className="bg-embotec-white pb-24 sm:pb-28">
+        <div className="mx-auto w-full max-w-7xl px-6">
+          <RevealText
+            as="h2"
+            className="display max-w-[18ch] text-[clamp(1.875rem,4vw,3rem)] text-embotec-dark"
+          >
+            {t('team.title')}
+          </RevealText>
+
+          <Reveal delay={0.08}>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-embotec-gray">
+              {t('team.description')}
+            </p>
+          </Reveal>
+
+          <ul className="mt-12 grid gap-6 sm:grid-cols-2">
+            {contacts.map((contact, index) => (
+              <Reveal
+                as="li"
+                key={contact.email}
+                delay={index * 0.08}
+                className="rounded-2xl border border-embotec-dark/12 bg-embotec-bg p-7"
+              >
+                <h3 className="display text-2xl text-embotec-dark sm:text-3xl">
+                  {contact.name}
+                </h3>
+
+                <div className="mt-6 flex flex-col gap-3">
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="inline-flex items-center gap-3 font-heading text-base font-bold text-embotec-dark transition-colors hover:text-embotec-orange-dark"
+                  >
+                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-embotec-orange/20 text-embotec-orange-dark">
+                      <Mail className="h-4 w-4" aria-hidden />
+                    </span>
+                    <span className="sr-only">{t('email')}: </span>
+                    <span className="break-all">{contact.email}</span>
+                  </a>
+
+                  <a
+                    href={contact.phoneHref}
+                    className="inline-flex items-center gap-3 font-heading text-base font-bold text-embotec-dark transition-colors hover:text-embotec-orange-dark"
+                  >
+                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-embotec-orange/20 text-embotec-orange-dark">
+                      <Phone className="h-4 w-4" aria-hidden />
+                    </span>
+                    <span className="sr-only">{t('phone')}: </span>
+                    {contact.phone}
+                  </a>
+                </div>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
       </section>
 
       {/* Qué mandarnos, con la foto sosteniendo el bloque */}

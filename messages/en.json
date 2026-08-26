@@ -9,7 +9,16 @@
     "quoteCta": "Request a quote",
     "servicesCta": "See services",
     "learnMore": "Learn more",
-    "backToServices": "Back to services"
+    "backToServices": "Back to services",
+    "loading": "Loading",
+    "facts": {
+      "location": "Workshop",
+      "coverage": "Coverage",
+      "response": "Response",
+      "phone": "Phone",
+      "coverageValue": "In the workshop and on site, across Mexico",
+      "responseValue": "Initial diagnosis within 24 h"
+    }
   },
   "Navbar": {
     "brand": "EMBOTEC",
@@ -50,13 +59,18 @@
       "responseValue": "24/7",
       "scrollCue": "Scroll to see the workshop"
     },
+    "answer": {
+      "question": "What does EMBOTEC do?",
+      "answer": "EMBOTEC is an industrial electric motor rewinding and repair workshop in Apodaca, Nuevo León, Mexico. We rewind three-phase and single-phase A.C. and D.C. motors, repair pumps, run preventive maintenance at your plant and sell motors and spare parts. Every unit is handed over with its insulation, resistance and current tests in writing."
+    },
     "ticker": [
       "Motor rewinding",
       "Industrial maintenance",
       "Motor repair",
       "Electrical diagnostics",
       "24 h emergencies",
-      "Pump repair"
+      "Pump repair",
+      "Product sales"
     ],
     "services": {
       "eyebrow": "Services",
@@ -91,6 +105,13 @@
         }
       }
     },
+    "brands": {
+      "eyebrow": "Brands",
+      "title": "The brands that come through the workshop",
+      "description": "We service and supply motors, pumps and spare parts from the brands already installed at your plant.",
+      "cta": "See product sales",
+      "note": "We work with these brands and their equivalent spare parts. If yours is not on the list, just ask: chances are we handle it too."
+    },
     "why": {
       "eyebrow": "Why EMBOTEC",
       "title": "A workshop that answers",
@@ -98,7 +119,7 @@
       "items": {
         "specialists": {
           "title": "Rewinding specialists",
-          "description": "Windings are our core trade, not a side service: three-phase, single-phase and DC motors, plus pumps."
+          "description": "Windings are our core trade, not a side service: three-phase motors, single-phase A.C. and D.C. motors, and pumps."
         },
         "documented": {
           "title": "Documented testing",
@@ -129,7 +150,7 @@
       "title": "Companies with the technique and energy that moves industry",
       "paragraphs": {
         "first": "We started out servicing motors for local plants that needed a reliable, fast repair. Over time we added industrial maintenance, electrical diagnostics and on-site work, always with the same rule: measure before giving an opinion.",
-        "second": "Today we service three-phase and single-phase motors, DC motors, pumps and generators across a range of capacities, and we stay with our clients from the diagnosis through start-up on their production line."
+        "second": "Today we service three-phase and single-phase A.C. and D.C. motors, pumps and generators across a range of capacities, and we stay with our clients from the diagnosis through start-up on their production line."
       }
     },
     "values": {
@@ -161,20 +182,28 @@
   },
   "Services": {
     "eyebrow": "Services",
-    "title": "Rewinding, repair and maintenance",
-    "description": "We cover the full lifecycle of your electric motors and the equipment around them —varnishing, baking and technical testing included—, in the workshop or on site.",
+    "title": "Rewinding, repair, maintenance and sales",
+    "description": "We cover the full lifecycle of your electric motors and the equipment around them —varnishing, baking, technical testing and spare-part sales included—, in the workshop or on site.",
+    "answer": {
+      "question": "What services does EMBOTEC offer?",
+      "answer": "Five: electric motor rewinding, industrial maintenance, motor and pump repair, electrical diagnostics and testing, and sales of motors and spare parts. Rewinding and machining happen at the Apodaca workshop, where the oven and the machines are; preventive maintenance, diagnostics and start-up happen at your plant."
+    },
     "cta": "See the service",
     "includes": "What it includes",
     "otherServices": "Other services",
     "metaTitle": "Motor rewinding and maintenance services",
-    "metaDescription": "Electric motor rewinding, industrial maintenance, motor and pump repair, and documented electrical diagnostics. In the workshop or on site.",
+    "metaDescription": "Electric motor rewinding, industrial maintenance, motor and pump repair, documented electrical diagnostics, and sales of motors and spare parts.",
     "items": {
       "rewinding": {
         "title": "Electric motor rewinding",
-        "summary": "Rewinding of single-phase transformers, AC and DC.",
+        "summary": "Rewinding of single-phase A.C. and D.C. motors and transformers.",
         "description": "We strip the damaged winding, record the original winding data, clean the stator and rewind with wire and insulation of the correct thermal class. We finish with varnishing and electrical testing before delivery.",
-        "metaTitle": "Electric motor rewinding",
+        "metaTitle": "Motor rewinding in Apodaca, Nuevo León",
         "metaDescription": "Rewinding of three-phase, single-phase and DC motors: original winding data, correct insulation class, varnishing and documented testing.",
+        "answer": {
+          "question": "What does rewinding an electric motor involve?",
+          "answer": "Recording the original winding data, stripping the burnt winding, cleaning and inspecting the core, rewinding with magnet wire and class F or H insulation, varnish impregnation, controlled baking and testing. A low-power three-phase motor usually leaves within a few working days of quote approval, with an insulation, resistance and no-load current report."
+        },
         "bullets": {
           "1": "Original winding data recorded before teardown",
           "2": "Magnet wire and class F or H insulation as the application requires",
@@ -187,8 +216,8 @@
         },
         "applications": [
           "Three-phase squirrel-cage motors",
+          "Single-phase A.C. and D.C. motors",
           "Single-phase capacitor-start motors",
-          "DC motors",
           "Centrifugal and submersible pump motors",
           "Fan and compressor motors",
           "Two-speed and high-efficiency motors"
@@ -216,8 +245,12 @@
         "title": "Industrial maintenance",
         "summary": "Preventive and corrective work for motors and plant equipment.",
         "description": "We design preventive maintenance routines and handle corrective work at your plant: cleaning, bearing replacement, connection checks, alignment and verification of operating parameters.",
-        "metaTitle": "Preventive and corrective industrial maintenance",
+        "metaTitle": "Preventive and corrective maintenance on site",
         "metaDescription": "Preventive maintenance routines and corrective work on site: bearings, connections, alignment and verification of operating parameters.",
+        "answer": {
+          "question": "What does an industrial maintenance routine include?",
+          "answer": "Winding cleaning, bearing and seal replacement, checks on connections, protections and starters, alignment, and measurement of temperature, current per phase and vibration. Every visit leaves an equipment log with what was measured, what was replaced and what to watch, and it is scheduled inside your planned shutdowns."
+        },
         "bullets": {
           "1": "Preventive routines planned around your scheduled shutdowns",
           "2": "Bearing and seal replacement, winding cleaning",
@@ -259,8 +292,12 @@
         "title": "Motor and pump repair",
         "summary": "Bearings, shafts, housings and centrifugal pumps.",
         "description": "We repair the mechanical side that goes with the winding: bearings, worn shafts, end covers and housings, plus centrifugal and submersible pumps coupled to the motors we service.",
-        "metaTitle": "Electric motor and pump repair",
+        "metaTitle": "Mechanical repair of industrial motors and pumps",
         "metaDescription": "Mechanical repair of motors and pumps: bearings, shafts, covers and housings, rotor balancing and assembly with tolerance checks.",
+        "answer": {
+          "question": "What gets repaired on an electric motor or a pump?",
+          "answer": "The mechanical side that goes with the winding: worn shafts (metal-sprayed and ground back to the original dimension), bearing housings out of tolerance, bearings, seals, end shields and frames, plus centrifugal and submersible pumps. Before delivery the rotor is balanced and the unit is run-tested."
+        },
         "bullets": {
           "1": "Shaft and housing grinding and metal spraying",
           "2": "Bearing replacement with tolerance verification",
@@ -302,8 +339,12 @@
         "title": "Electrical diagnostics and testing",
         "summary": "Insulation, resistance, current and temperature.",
         "description": "We measure the real condition of your motor before and after servicing it: insulation resistance, winding resistance, current per phase, temperature and vibration, with a report of every value obtained.",
-        "metaTitle": "Electrical diagnostics and motor testing",
+        "metaTitle": "Insulation testing and motor diagnostics",
         "metaDescription": "Insulation resistance, winding resistance, current per phase, temperature and vibration testing, with a report of every measured value.",
+        "answer": {
+          "question": "Which electrical tests are run on a motor?",
+          "answer": "Insulation resistance and polarisation index, winding resistance and balance, current per phase and imbalance, operating temperature and vibration. We measure before and after the work so there is something to compare against, and we hand over a report with the values obtained and the recommendation: repair, watch or replace."
+        },
         "bullets": {
           "1": "Insulation resistance and polarization index",
           "2": "Winding resistance and phase balance",
@@ -340,6 +381,53 @@
             "answer": "Yes. Diagnostics and post-start-up verification can be done on site; rewinding and machining are done at the workshop."
           }
         ]
+      },
+      "sales": {
+        "title": "Product sales",
+        "summary": "Motors, pumps, spare parts and winding materials.",
+        "description": "We sell new electric motors, pumps, spare parts and winding and control materials. We help you choose the unit from its nameplate data and from how it actually runs on your line, not from a catalogue.",
+        "metaTitle": "Sales of motors, pumps and spare parts",
+        "metaDescription": "Sales of electric motors, pumps, bearings, capacitors, magnet wire, insulation and starters, with guidance based on your equipment's nameplate data.",
+        "answer": {
+          "question": "What products does EMBOTEC sell?",
+          "answer": "New three-phase and single-phase A.C. and D.C. electric motors, centrifugal and submersible pumps, spare parts (bearings, seals, capacitors, fans and end shields) and winding and control materials: magnet wire, class F or H insulation, starters and protections. All we need to quote is the equipment nameplate."
+        },
+        "bullets": {
+          "1": "New electric motors: three-phase and single-phase A.C. and D.C.",
+          "2": "Centrifugal and submersible pumps with their coupled motor",
+          "3": "Spare parts: bearings, seals, capacitors, fans and end shields",
+          "4": "Winding and control materials: magnet wire, insulation, starters and protections"
+        },
+        "intro": {
+          "first": "We sell what we repair every day, and that is the difference. When you ask for a motor, a pump or a spare part, the recommendation comes from having opened hundreds of identical units: we know which brand holds up in a humid area, which bearing the dust eats through, and when a motor with a similar nameplate will not give you the same service on your line.",
+          "second": "All we need to quote is the nameplate data —power, voltage, RPM, brand and model— and how the equipment runs. With that we give you the equivalent option, the lead time and, if it helps, an honest comparison against rewinding the motor you already have. We can deliver it to your plant, install it and leave it running with its values measured."
+        },
+        "applications": [
+          "New replacement electric motors",
+          "Centrifugal and submersible pumps",
+          "Bearings, seals and end shields",
+          "Start and run capacitors",
+          "Magnet wire and class F or H insulation",
+          "Starters, drives and protections"
+        ],
+        "faq": [
+          {
+            "question": "Do you sell new motors or only repair them?",
+            "answer": "Both. We sell motors, pumps and spare parts, and we also rewind. Since we don't live on sales alone, we tell you with numbers which of the two suits each unit."
+          },
+          {
+            "question": "What do you need in order to quote a motor or a spare part?",
+            "answer": "The equipment nameplate (power, voltage, RPM, brand and model) and, if you can, a photo. With that we confirm the size and give you price and lead time."
+          },
+          {
+            "question": "Is it better to buy new or rewind the motor I have?",
+            "answer": "As long as the core and the frame are sound, rewinding is cheaper and delivered sooner. When the motor has already been rewound several times, is a low-efficiency unit, or the damage reaches the core, replacement pays for itself in energy consumption. You get both figures before you decide."
+          },
+          {
+            "question": "Do you deliver and install the equipment?",
+            "answer": "Yes. We can deliver it to your plant and install it, checking current and temperature at start-up, so the new unit is documented from day one."
+          }
+        ]
       }
     },
     "sectionLabels": {
@@ -359,7 +447,7 @@
     "intro": {
       "title": "One workshop for the whole motor",
       "first": "At EMBOTEC we treat an electric motor as what it actually is inside a plant: a link that production, energy consumption and the date of your next shutdown all depend on. That is why we don't split rewinding from diagnostics or from mechanical work; the same team that measures insulation is the one that rewinds the stator, grinds the shaft and starts the motor with you on site.",
-      "second": "We work on three-phase, single-phase and DC motors, centrifugal and submersible pumps, and the auxiliary equipment around them. Every job leaves with its measured values in writing, so you can compare how the motor arrived with how it was delivered."
+      "second": "We work on three-phase and single-phase A.C. and D.C. motors, centrifugal and submersible pumps, and the auxiliary equipment around them. Every job leaves with its measured values in writing, so you can compare how the motor arrived with how it was delivered."
     },
     "coverage": {
       "title": "Coverage and response times",
@@ -423,13 +511,17 @@
     "title": "Tell us which motor needs attention",
     "description": "Share the nameplate data and the failure you observed. We come back with an initial diagnosis and the next step.",
     "metaTitle": "Contact us: quote your motor rewind",
-    "metaDescription": "Send us your motor nameplate data and the failure you observed. You get an initial diagnosis, scope and lead time in writing.",
+    "metaDescription": "Workshop in Apodaca, Nuevo León. Send us your motor nameplate data and the failure you observed: you get an initial diagnosis, scope and lead time in writing.",
     "email": "Email",
     "phone": "Phone",
     "location": "Location",
     "hours": "Hours",
     "hoursValue": "Monday to Friday, 8:00 to 18:00",
-    "locationValue": "Mexico",
+    "mapCta": "Open in Google Maps",
+    "team": {
+      "title": "Talk to the workshop directly",
+      "description": "These are the direct contacts: call or write to them if you would rather skip the general inbox."
+    },
     "whatToSend": {
       "title": "What helps us quote faster",
       "items": {
@@ -444,6 +536,146 @@
       "description": "If your line is down, call us and we will prioritize the diagnosis."
     }
   },
+  "Cookies": {
+    "label": "Cookie notice",
+    "title": "Cookies and measurement",
+    "description": "This site uses the bare minimum: one cookie to remember your language and, if you accept, anonymous visit measurement so we know which pages are useful. No advertising, no user profiles.",
+    "accept": "Accept",
+    "reject": "Only what's needed",
+    "policy": "Read the privacy notice"
+  },
+  "NotFound": {
+    "eyebrow": "Error 404",
+    "title": "This page does not exist",
+    "description": "The address you opened is not on this site: the link may have been incomplete, or the page may have been renamed. If you are looking for a service or want a motor quoted, you are one click away.",
+    "homeCta": "Go to homepage",
+    "linksTitle": "What the workshop does"
+  },
+  "Privacy": {
+    "eyebrow": "Legal",
+    "title": "Privacy notice",
+    "description": "Which personal data we collect when you request a quote, what we use it for, and how to ask us to correct or delete it.",
+    "metaTitle": "How we handle your personal data",
+    "metaDescription": "EMBOTEC privacy notice: what data we collect when quoting a motor, what we use it for, who we do not share it with, and how to exercise your data rights.",
+    "updated": "Last updated: 26 August 2026",
+    "sections": [
+      {
+        "title": "Who is responsible for your data",
+        "body": [
+          "EMBOTEC, with offices at Girasol 715, Col. Los Fresnos, 66636 Apodaca, Nuevo León, Mexico, is responsible for processing the personal data you share with us through this site, by email or by phone.",
+          "For anything related to your personal data, the channel is ventas@embo-tec.com."
+        ]
+      },
+      {
+        "title": "What data we collect",
+        "body": [
+          "Only what you give us so we can help you: name, company, email address and phone number, together with the technical information about the equipment (nameplate data, observed fault, photos of the motor).",
+          "This site has no payment forms and collects no financial, asset-related or sensitive personal data."
+        ]
+      },
+      {
+        "title": "What we use it for",
+        "body": [
+          "To answer your request, prepare the diagnosis and the quote, follow up on the work, coordinate delivery or on-site service, invoice, and contact you about the equipment you entrusted to us.",
+          "We do not use your data for third-party advertising, and we do not add you to mailing lists unless you ask us to."
+        ]
+      },
+      {
+        "title": "Who we share it with",
+        "body": [
+          "We do not sell or rent your personal data. We only share it with providers needed to deliver the service (courier or accounting, for example), who are bound to treat it confidentially, or when a competent authority requires it in writing."
+        ]
+      },
+      {
+        "title": "Cookies and site measurement",
+        "body": [
+          "The site stores your language preference (the NEXT_LOCALE cookie) and your cookie decision in your browser. Both are needed for the site to behave as you expect and neither identifies anyone.",
+          "Audience measurement (Vercel Analytics) loads only if you accept it in the cookie notice. It reports visits in aggregate and anonymously; you can decline it and the site works just the same."
+        ]
+      },
+      {
+        "title": "Your data rights",
+        "body": [
+          "You may request access to, correction of, deletion of, or object to the processing of your data, and withdraw any consent you gave us.",
+          "Write to ventas@embo-tec.com stating your name, a way to reach you and what you are asking for. We will reply within the terms set by Mexico's Federal Law on the Protection of Personal Data Held by Private Parties."
+        ]
+      },
+      {
+        "title": "Changes to this notice",
+        "body": [
+          "Any change is published on this same page with a new update date. We recommend reviewing it before sharing new data with us."
+        ]
+      }
+    ]
+  },
+  "Terms": {
+    "eyebrow": "Legal",
+    "title": "Terms and conditions",
+    "description": "The rules for using this site and the scope of what we publish: what is informative, what becomes a commitment, and what the warranty covers.",
+    "metaTitle": "Conditions for using the site and our services",
+    "metaDescription": "EMBOTEC terms and conditions: scope of the published information, quotes and lead times, written warranties, intellectual property and applicable law.",
+    "updated": "Last updated: 26 August 2026",
+    "sections": [
+      {
+        "title": "Acceptance",
+        "body": [
+          "By using this site you accept these terms. If you disagree with any of them, the best course is not to use it and to contact us directly by phone or email."
+        ]
+      },
+      {
+        "title": "Scope of the published information",
+        "body": [
+          "The texts on this site describe our services and are informative: they are not a binding offer nor a commitment on price or lead time.",
+          "The lead times we mention are references based on typical jobs. The firm price and date always come in writing in the quote, after the equipment has been diagnosed."
+        ]
+      },
+      {
+        "title": "Quotes and service orders",
+        "body": [
+          "The quote is issued after inspecting and measuring the equipment, states the scope of work and is valid for the period stated in the document.",
+          "Work begins once you approve the quote. What is agreed there and in the service order governs the relationship between the parties, above any text on this site."
+        ]
+      },
+      {
+        "title": "Warranties",
+        "body": [
+          "The winding and the labour are backed by the warranty and the term stated in the corresponding service order.",
+          "The warranty does not cover damage unrelated to the work performed: incorrect installation by third parties, overload, power supply faults, an environment other than the one declared, or lack of maintenance after delivery."
+        ]
+      },
+      {
+        "title": "Intellectual property and third-party brands",
+        "body": [
+          "The texts, photographs, graphic identity and the EMBOTEC name belong to the workshop and may not be reproduced for commercial purposes without written authorisation.",
+          "The motor, pump and equipment brands mentioned on this site belong to their respective owners and are cited solely to identify the type of equipment we service or supply. Mentioning them implies no representation, sponsorship or affiliation with those companies."
+        ]
+      },
+      {
+        "title": "Use of the site",
+        "body": [
+          "You may read and share the content. It is not permitted to attempt to compromise the site, extract its data in an automated and massive fashion, or use it for activities that affect its operation or other users."
+        ]
+      },
+      {
+        "title": "Third-party links and services",
+        "body": [
+          "The site links to external services, such as Google Maps for the workshop address, and uses an audience measurement tool subject to your consent. We are not responsible for the content or the policies of those third parties."
+        ]
+      },
+      {
+        "title": "Limitation of liability",
+        "body": [
+          "We aim to keep the information correct and up to date, but we do not guarantee the site will be available without interruption or free of errors. Technical decisions about a unit should be made with the diagnosis and the quote in hand, not with the site's general content."
+        ]
+      },
+      {
+        "title": "Applicable law and jurisdiction",
+        "body": [
+          "These terms are governed by the laws of the United Mexican States. Any dispute shall be submitted to the competent courts of the State of Nuevo León."
+        ]
+      }
+    ]
+  },
   "Footer": {
     "tagline": "Electric motor rewinding and repair, industrial maintenance and electrical diagnostics for production plants.",
     "navigationTitle": "Navigation",
@@ -452,6 +684,7 @@
     "languageTitle": "Language",
     "rights": "All rights reserved.",
     "siteNavigation": "Site navigation",
-    "footerNavigation": "Footer navigation"
+    "footerNavigation": "Footer navigation",
+    "legalNavigation": "Legal notices"
   }
 }

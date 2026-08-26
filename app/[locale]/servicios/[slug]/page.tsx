@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import JsonLd from '@/components/seo/JsonLd';
+import AnswerBlock from '@/components/ui/AnswerBlock';
 import CtaBand from '@/components/ui/CtaBand';
 import Faq, { type FaqItem } from '@/components/ui/Faq';
 import PageHero from '@/components/ui/PageHero';
@@ -42,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 /**
- * Plantilla única para los cuatro servicios: el orden de bloques es siempre el
+ * Plantilla única para todos los servicios: el orden de bloques es siempre el
  * mismo (intro larga → qué incluye → qué atendemos → sectores → dudas), así que
  * añadir un servicio nuevo es añadir sus textos en `messages` y su entrada en
  * `data/services.ts`, sin tocar esta página.
@@ -90,7 +91,16 @@ export default async function ServiceDetailPage({ params }: Props) {
             ],
             locale
           ),
-          faqSchema(faq),
+          // La respuesta rápida del encabezado entra también en el FAQPage:
+          // es texto visible en la página y es justo lo que citan los
+          // buscadores generativos.
+          faqSchema([
+            {
+              question: t(`items.${service.key}.answer.question`),
+              answer: t(`items.${service.key}.answer.answer`),
+            },
+            ...faq,
+          ]),
         ]}
       />
 
@@ -122,6 +132,12 @@ export default async function ServiceDetailPage({ params }: Props) {
           </Link>
         </div>
       </PageHero>
+
+      {/* Respuesta directa a la duda con la que llega el usuario */}
+      <AnswerBlock
+        question={t(`items.${service.key}.answer.question`)}
+        answer={t(`items.${service.key}.answer.answer`)}
+      />
 
       {/* En detalle: el texto largo del servicio */}
       <section className="bg-embotec-white py-24 sm:py-32">
@@ -248,7 +264,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             {t('otherServices')}
           </RevealText>
 
-          <ul className="mt-12 grid gap-8 sm:grid-cols-3">
+          <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {others.map((item, index) => (
               <Reveal as="li" key={item.slug} delay={index * 0.07}>
                 <Link href={item.href} className="group block">
@@ -257,7 +273,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                       src={serviceImages[item.key]}
                       alt=""
                       fill
-                      sizes="(min-width: 640px) 30vw, 100vw"
+                      sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, 100vw"
                       className="object-cover grayscale-[45%] transition-[transform,filter] duration-[900ms] ease-out group-hover:scale-[1.05] group-hover:grayscale-0"
                     />
                   </figure>

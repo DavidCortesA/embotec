@@ -26,6 +26,8 @@ const entries: readonly Entry[] = [
   { href: '/nosotros', priority: 0.7, changeFrequency: 'yearly' },
   { href: '/proyectos', priority: 0.7, changeFrequency: 'monthly' },
   { href: '/contacto', priority: 0.6, changeFrequency: 'yearly' },
+  { href: '/privacidad', priority: 0.2, changeFrequency: 'yearly' },
+  { href: '/terminos', priority: 0.2, changeFrequency: 'yearly' },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

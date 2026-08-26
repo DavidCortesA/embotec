@@ -1,4 +1,11 @@
-import { Disc3, Gauge, Cog, Wrench, type LucideIcon } from 'lucide-react';
+import {
+  Disc3,
+  Gauge,
+  Cog,
+  ShoppingCart,
+  Wrench,
+  type LucideIcon,
+} from 'lucide-react';
 import type { AppPathname } from '@/i18n/routing';
 
 export type Service = {
@@ -42,19 +49,17 @@ export const services: readonly Service[] = [
     icon: Gauge,
     bulletCount: 4,
   },
-  // TODO (EMBOTEC): pedido del cliente — agregar servicio de "Ventas".
-  // Falta el texto (el cliente menciona que viene en el documento de misión y
-  // visión, con el detalle de los servicios). Cuando llegue, agregar aquí la
-  // entrada (slug, href en `i18n/routing.ts`, ícono) y sus textos en
-  // `Services.items.sales` dentro de messages/es.json y messages/en.json,
-  // siguiendo el mismo formato que los demás servicios.
-  // {
-  //   slug: 'ventas',
-  //   href: '/servicios/ventas',
-  //   key: 'sales',
-  //   icon: ShoppingCart,
-  //   bulletCount: 4,
-  // },
+  // TODO (EMBOTEC): los textos de este servicio son una primera redacción del
+  // taller (motores, bombas, refacciones y material eléctrico). Falta cotejarlos
+  // con el documento de misión y visión que va a mandar el cliente y ajustar el
+  // catálogo real en `Services.items.sales` de messages/es.json y en.json.
+  {
+    slug: 'venta-de-productos',
+    href: '/servicios/venta-de-productos',
+    key: 'sales',
+    icon: ShoppingCart,
+    bulletCount: 4,
+  },
 ];
 
 export function getService(slug: string) {

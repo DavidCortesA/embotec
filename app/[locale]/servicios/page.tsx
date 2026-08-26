@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import JsonLd from '@/components/seo/JsonLd';
+import AnswerBlock from '@/components/ui/AnswerBlock';
 import CtaBand from '@/components/ui/CtaBand';
 import Faq, { type FaqItem } from '@/components/ui/Faq';
 import PageHero from '@/components/ui/PageHero';
@@ -65,7 +66,10 @@ export default async function ServicesPage({ params }: Props) {
               url: absoluteUrl(service.href, locale),
             })),
           },
-          faqSchema(faq),
+          faqSchema([
+            { question: t('answer.question'), answer: t('answer.answer') },
+            ...faq,
+          ]),
         ]}
       />
 
@@ -75,6 +79,11 @@ export default async function ServicesPage({ params }: Props) {
         description={t('description')}
         image={pageImages.services}
         meta={`0${services.length} — ${t('eyebrow')}`}
+      />
+
+      <AnswerBlock
+        question={t('answer.question')}
+        answer={t('answer.answer')}
       />
 
       {/* Texto de posicionamiento: el cuerpo largo va arriba, no escondido al pie */}
@@ -108,7 +117,7 @@ export default async function ServicesPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Los cuatro servicios */}
+      {/* La rejilla de servicios (se arma desde `data/services.ts`) */}
       <section className="on-dark bg-embotec-night py-24 sm:py-32">
         <div className="mx-auto w-full max-w-7xl px-6">
           <ul className="grid gap-x-8 gap-y-14 sm:grid-cols-2">

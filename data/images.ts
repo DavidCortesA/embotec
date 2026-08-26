@@ -44,6 +44,9 @@ export const serviceImages: Record<string, string> = {
   maintenance: unsplash('photo-1676018366904-c083ed678e60', 1200),
   repair: unsplash('photo-1772588063102-eed5af095b9e', 1200),
   diagnostics: unsplash('photo-1717386255777-ce60792a2a56', 1200),
+  // TODO (EMBOTEC): provisional. Para "Venta de productos" hace falta una foto
+  // del almacén o del mostrador con motores y refacciones en existencia.
+  sales: unsplash('photo-1524514587686-e2909d726e9b', 1200),
 };
 
 /** Una imagen por paso del proceso, con las claves de `ProcessScroll` */

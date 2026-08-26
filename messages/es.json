@@ -9,7 +9,16 @@
     "quoteCta": "Solicitar cotización",
     "servicesCta": "Ver servicios",
     "learnMore": "Conocer más",
-    "backToServices": "Volver a servicios"
+    "backToServices": "Volver a servicios",
+    "loading": "Cargando",
+    "facts": {
+      "location": "Taller",
+      "coverage": "Cobertura",
+      "response": "Respuesta",
+      "phone": "Teléfono",
+      "coverageValue": "En taller y en sitio, en todo México",
+      "responseValue": "Diagnóstico inicial en 24 h"
+    }
   },
   "Navbar": {
     "brand": "EMBOTEC",
@@ -50,13 +59,18 @@
       "responseValue": "24/7",
       "scrollCue": "Desliza para ver el taller"
     },
+    "answer": {
+      "question": "¿Qué hace EMBOTEC?",
+      "answer": "EMBOTEC es un taller de embobinado y reparación de motores eléctricos industriales en Apodaca, Nuevo León. Rebobinamos motores trifásicos y monofásicos de C.A. y C.D., reparamos bombas, damos mantenimiento preventivo en planta y vendemos motores y refacciones. Cada equipo se entrega con sus pruebas de aislamiento, resistencias y corriente por escrito."
+    },
     "ticker": [
       "Embobinado de motores",
       "Mantenimiento industrial",
       "Reparación de motores",
       "Diagnóstico eléctrico",
       "Urgencias 24 h",
-      "Reparación de bombas"
+      "Reparación de bombas",
+      "Venta de productos"
     ],
     "services": {
       "eyebrow": "Servicios",
@@ -91,6 +105,13 @@
         }
       }
     },
+    "brands": {
+      "eyebrow": "Marcas",
+      "title": "Las marcas que pasan por el taller",
+      "description": "Atendemos y surtimos motores, bombas y refacciones de las marcas que ya están instaladas en tu planta.",
+      "cta": "Ver venta de productos",
+      "note": "Trabajamos con estas marcas y con sus refacciones equivalentes. Si la tuya no aparece en la lista, pregúntanos: lo más probable es que también la atendamos."
+    },
     "why": {
       "eyebrow": "Por qué EMBOTEC",
       "title": "Un taller que responde",
@@ -98,7 +119,7 @@
       "items": {
         "specialists": {
           "title": "Especialistas en embobinado",
-          "description": "El devanado es nuestro oficio principal, no un servicio secundario: motores trifásicos, monofásicos, de CD y bombas."
+          "description": "El devanado es nuestro oficio principal, no un servicio secundario: motores trifásicos, monofásicos de C.A. y C.D., y bombas."
         },
         "documented": {
           "title": "Pruebas documentadas",
@@ -129,7 +150,7 @@
       "title": "Empresas con técnica y energía que mueve la industria",
       "paragraphs": {
         "first": "Empezamos atendiendo motores de plantas locales que necesitaban una reparación confiable y rápida. Con el tiempo sumamos mantenimiento industrial, diagnóstico eléctrico y trabajo en sitio, siempre con el mismo criterio: medir antes de opinar.",
-        "second": "Hoy atendemos motores trifásicos y monofásicos, motores de corriente directa, bombas y generadores de distintas capacidades, y acompañamos a nuestros clientes desde el diagnóstico hasta el arranque en su línea de producción."
+        "second": "Hoy atendemos motores trifásicos y monofásicos de C.A. y C.D., bombas y generadores de distintas capacidades, y acompañamos a nuestros clientes desde el diagnóstico hasta el arranque en su línea de producción."
       }
     },
     "values": {
@@ -161,20 +182,28 @@
   },
   "Services": {
     "eyebrow": "Servicios",
-    "title": "Embobinado, reparación y mantenimiento",
-    "description": "Cubrimos el ciclo completo de tus motores eléctricos y el equipo que los rodea —barnizado, horneado y pruebas técnicas incluidos—, en taller o en sitio.",
+    "title": "Embobinado, reparación, mantenimiento y venta",
+    "description": "Cubrimos el ciclo completo de tus motores eléctricos y el equipo que los rodea —barnizado, horneado, pruebas técnicas y venta de refacciones incluidos—, en taller o en sitio.",
+    "answer": {
+      "question": "¿Qué servicios ofrece EMBOTEC?",
+      "answer": "Cinco: embobinado de motores eléctricos, mantenimiento industrial, reparación de motores y bombas, diagnóstico y pruebas eléctricas, y venta de motores y refacciones. El embobinado y el rectificado se hacen en el taller de Apodaca, donde están el horno y las máquinas; el mantenimiento preventivo, el diagnóstico y el arranque se hacen en tu planta."
+    },
     "cta": "Ver el servicio",
     "includes": "Qué incluye",
     "otherServices": "Otros servicios",
     "metaTitle": "Servicios de embobinado y mantenimiento",
-    "metaDescription": "Embobinado de motores eléctricos, mantenimiento industrial, reparación de motores y bombas y diagnóstico eléctrico documentado. En taller o en sitio.",
+    "metaDescription": "Embobinado de motores eléctricos, mantenimiento industrial, reparación de motores y bombas, diagnóstico eléctrico documentado y venta de motores y refacciones.",
     "items": {
       "rewinding": {
         "title": "Embobinado de motores eléctricos",
-        "summary": "Rebobinado de transformadores monofásicos, de corriente alterna y de corriente directa.",
+        "summary": "Rebobinado de motores y transformadores monofásicos de C.A. y C.D.",
         "description": "Retiramos el devanado dañado, registramos los datos originales del bobinado, limpiamos el estator y embobinamos con alambre y aislamientos del grado térmico correcto. Terminamos con barnizado y pruebas eléctricas antes de entregar.",
-        "metaTitle": "Embobinado de motores eléctricos",
+        "metaTitle": "Rebobinado de motores eléctricos industriales",
         "metaDescription": "Rebobinado de motores trifásicos, monofásicos y de corriente directa: datos originales, aislamiento del grado correcto, barnizado y pruebas documentadas.",
+        "answer": {
+          "question": "¿Qué incluye el embobinado de un motor eléctrico?",
+          "answer": "Registrar los datos del devanado original, retirar el devanado quemado, limpiar y revisar el núcleo, embobinar con alambre magneto y aislamiento clase F o H, impregnar con barniz, hornear y probar. Un trifásico de baja potencia suele salir en pocos días hábiles desde que apruebas la cotización, con reporte de aislamiento, resistencias y corriente en vacío."
+        },
         "bullets": {
           "1": "Registro de datos del devanado original antes del desarmado",
           "2": "Alambre magneto y aislamientos clase F o H según la aplicación",
@@ -187,8 +216,8 @@
         },
         "applications": [
           "Motores trifásicos de jaula de ardilla",
+          "Motores monofásicos de C.A. y C.D.",
           "Motores monofásicos de arranque por capacitor",
-          "Motores de corriente directa",
           "Motores de bombas centrífugas y sumergibles",
           "Motores de ventiladores y compresores",
           "Motores de dos velocidades y de alta eficiencia"
@@ -216,8 +245,12 @@
         "title": "Mantenimiento industrial",
         "summary": "Preventivo y correctivo para motores y equipo de planta.",
         "description": "Diseñamos rutinas de mantenimiento preventivo y atendemos correctivos en tu planta: limpieza, cambio de rodamientos, revisión de conexiones, alineación y verificación de parámetros de operación.",
-        "metaTitle": "Mantenimiento industrial preventivo y correctivo",
+        "metaTitle": "Mantenimiento preventivo y correctivo en planta",
         "metaDescription": "Rutinas de mantenimiento preventivo y atención de correctivos en planta: rodamientos, conexiones, alineación y verificación de parámetros de operación.",
+        "answer": {
+          "question": "¿Qué incluye una rutina de mantenimiento industrial?",
+          "answer": "Limpieza de devanados, cambio de rodamientos y retenes, revisión de conexiones, protecciones y arrancadores, alineación y medición de temperatura, corriente por fase y vibración. Cada visita deja una bitácora del equipo con lo medido, lo sustituido y lo que conviene vigilar, y se calendariza dentro de tus paros programados."
+        },
         "bullets": {
           "1": "Rutinas preventivas planeadas junto con tus paros programados",
           "2": "Cambio de rodamientos, retenes y limpieza de devanados",
@@ -259,8 +292,12 @@
         "title": "Reparación de motores y bombas",
         "summary": "Rodamientos, ejes, flechas, carcasas y bombas centrífugas.",
         "description": "Reparamos la parte mecánica que acompaña al devanado: rodamientos, ejes y flechas desgastadas, tapas y carcasas, además de bombas centrífugas y sumergibles acopladas a los motores que atendemos.",
-        "metaTitle": "Reparación de motores eléctricos y bombas",
+        "metaTitle": "Reparación mecánica de motores y bombas industriales",
         "metaDescription": "Reparación mecánica de motores y bombas: rodamientos, ejes y flechas, tapas y carcasas, balanceo y armado con verificación de tolerancias.",
+        "answer": {
+          "question": "¿Qué se repara de un motor eléctrico o una bomba?",
+          "answer": "La parte mecánica que acompaña al devanado: ejes y flechas desgastadas (se metalizan y se rectifican a la medida original), alojamientos de rodamiento fuera de tolerancia, rodamientos, retenes, tapas y carcasas, además de bombas centrífugas y sumergibles. Antes de entregar, el rotor se balancea y el equipo se prueba en operación."
+        },
         "bullets": {
           "1": "Rectificado y metalizado de ejes y alojamientos",
           "2": "Sustitución de rodamientos con verificación de tolerancias",
@@ -302,8 +339,12 @@
         "title": "Diagnóstico y pruebas eléctricas",
         "summary": "Aislamiento, resistencias, corriente y temperatura.",
         "description": "Medimos el estado real de tu motor antes y después de intervenirlo: resistencia de aislamiento, resistencia de devanados, corriente por fase, temperatura y vibración, con reporte de los valores obtenidos.",
-        "metaTitle": "Diagnóstico y pruebas eléctricas de motores",
+        "metaTitle": "Pruebas de aislamiento y diagnóstico de motores",
         "metaDescription": "Pruebas de resistencia de aislamiento, resistencia de devanados, corriente por fase, temperatura y vibración, con reporte de los valores medidos.",
+        "answer": {
+          "question": "¿Qué pruebas eléctricas se le hacen a un motor?",
+          "answer": "Resistencia de aislamiento e índice de polarización, resistencia y balance entre devanados, corriente por fase y desbalanceo, temperatura de operación y vibración. Las medimos antes y después de intervenir el motor para poder comparar, y entregamos un reporte con los valores obtenidos y la recomendación: intervenir, vigilar o reemplazar."
+        },
         "bullets": {
           "1": "Resistencia de aislamiento e índice de polarización",
           "2": "Resistencia y balance entre devanados",
@@ -340,6 +381,53 @@
             "answer": "Sí. El diagnóstico y la verificación posterior al arranque se pueden hacer en sitio; el rebobinado y el rectificado se hacen en taller."
           }
         ]
+      },
+      "sales": {
+        "title": "Venta de productos",
+        "summary": "Motores, bombas, refacciones y material de embobinado.",
+        "description": "Vendemos motores eléctricos nuevos, bombas, refacciones y material de embobinado y control. Te ayudamos a elegir el equipo a partir de la placa de datos y de cómo trabaja en tu línea, no del catálogo.",
+        "metaTitle": "Venta de motores, bombas y refacciones",
+        "metaDescription": "Venta de motores eléctricos, bombas, rodamientos, capacitores, alambre magneto, aislamientos y arrancadores, con asesoría a partir de la placa de datos de tu equipo.",
+        "answer": {
+          "question": "¿Qué productos vende EMBOTEC?",
+          "answer": "Motores eléctricos nuevos trifásicos y monofásicos de C.A. y C.D., bombas centrífugas y sumergibles, refacciones (rodamientos, retenes, capacitores, ventiladores y tapas) y material de embobinado y control: alambre magneto, aislamientos clase F o H, arrancadores y protecciones. Para cotizar basta la placa de datos del equipo."
+        },
+        "bullets": {
+          "1": "Motores eléctricos nuevos: trifásicos y monofásicos de C.A. y C.D.",
+          "2": "Bombas centrífugas y sumergibles con su motor acoplado",
+          "3": "Refacciones: rodamientos, retenes, capacitores, ventiladores y tapas",
+          "4": "Material de embobinado y control: alambre magneto, aislamientos, arrancadores y protecciones"
+        },
+        "intro": {
+          "first": "Vendemos lo que reparamos todos los días, y esa es la diferencia. Cuando pides un motor, una bomba o una refacción, la recomendación sale de haber abierto cientos de equipos iguales: sabemos qué marca aguanta en un área húmeda, qué rodamiento se come el polvo y cuándo un motor de placa parecida no va a dar el mismo servicio en tu línea.",
+          "second": "Lo único que necesitamos para cotizar es la placa de datos —potencia, voltaje, RPM, marca y modelo— y cómo trabaja el equipo. Con eso te damos la opción equivalente, el tiempo de entrega y, si te sirve, la comparación honesta contra rebobinar el motor que ya tienes. Podemos entregarlo en tu planta, instalarlo y dejarlo arrancado con sus valores medidos."
+        },
+        "applications": [
+          "Motores eléctricos nuevos de reposición",
+          "Bombas centrífugas y sumergibles",
+          "Rodamientos, retenes y tapas",
+          "Capacitores de arranque y de marcha",
+          "Alambre magneto y aislamientos clase F o H",
+          "Arrancadores, variadores y protecciones"
+        ],
+        "faq": [
+          {
+            "question": "¿Venden motores nuevos o solo los reparan?",
+            "answer": "Los dos. Vendemos motores, bombas y refacciones, y también rebobinamos. Como no vivimos solo de la venta, te decimos con números cuál de las dos te conviene en cada equipo."
+          },
+          {
+            "question": "¿Qué necesitan para cotizar un motor o una refacción?",
+            "answer": "La placa de datos del equipo (potencia, voltaje, RPM, marca y modelo) y, si puedes, una foto. Con eso confirmamos la medida y te damos precio y tiempo de entrega."
+          },
+          {
+            "question": "¿Conviene comprar nuevo o rebobinar el que tengo?",
+            "answer": "Mientras el núcleo y la carcasa estén sanos, rebobinar sale más barato y se entrega antes. Cuando el motor ya lleva varios rebobinados, es de baja eficiencia o el daño llega al núcleo, la reposición se paga sola en consumo de energía. Te damos las dos cifras antes de que decidas."
+          },
+          {
+            "question": "¿Entregan e instalan el equipo?",
+            "answer": "Sí. Podemos entregarlo en tu planta e instalarlo, verificando corriente y temperatura al arranque, para que el equipo nuevo quede documentado desde el primer día."
+          }
+        ]
       }
     },
     "sectionLabels": {
@@ -359,7 +447,7 @@
     "intro": {
       "title": "Un solo taller para el motor completo",
       "first": "En EMBOTEC tratamos el motor eléctrico como lo que es dentro de una planta: un eslabón del que dependen la producción, el consumo de energía y la fecha del siguiente paro. Por eso no separamos el embobinado del diagnóstico ni de la parte mecánica; el mismo equipo que mide el aislamiento es el que rebobina, rectifica el eje y arranca el motor contigo en sitio.",
-      "second": "Trabajamos motores trifásicos, monofásicos y de corriente directa, bombas centrífugas y sumergibles, y el equipo auxiliar que los acompaña. Cada intervención sale con los valores medidos por escrito, para que puedas comparar cómo llegó el motor y cómo se entregó."
+      "second": "Trabajamos motores trifásicos y monofásicos de C.A. y C.D., bombas centrífugas y sumergibles, y el equipo auxiliar que los acompaña. Cada intervención sale con los valores medidos por escrito, para que puedas comparar cómo llegó el motor y cómo se entregó."
     },
     "coverage": {
       "title": "Cobertura y tiempos de respuesta",
@@ -423,13 +511,17 @@
     "title": "Cuéntanos qué motor necesitas atender",
     "description": "Compártenos los datos de placa y la falla que observaste. Te respondemos con un diagnóstico inicial y el siguiente paso.",
     "metaTitle": "Contacto: cotiza el embobinado de tu motor",
-    "metaDescription": "Escríbenos con los datos de placa de tu motor y la falla observada. Te damos diagnóstico inicial, alcance y tiempo de entrega por escrito.",
+    "metaDescription": "Taller en Apodaca, Nuevo León. Escríbenos con los datos de placa de tu motor y la falla observada: te damos diagnóstico inicial, alcance y tiempo de entrega por escrito.",
     "email": "Correo",
     "phone": "Teléfono",
     "location": "Ubicación",
     "hours": "Horario",
     "hoursValue": "Lunes a viernes, 8:00 a 18:00",
-    "locationValue": "México",
+    "mapCta": "Ver en Google Maps",
+    "team": {
+      "title": "Habla directo con el taller",
+      "description": "Estos son los contactos directos: márcales o escríbeles si prefieres saltarte el correo general."
+    },
     "whatToSend": {
       "title": "Qué nos ayuda a cotizar más rápido",
       "items": {
@@ -444,6 +536,146 @@
       "description": "Si tu línea está detenida, márcanos por teléfono y priorizamos el diagnóstico."
     }
   },
+  "Cookies": {
+    "label": "Aviso de cookies",
+    "title": "Cookies y medición",
+    "description": "Este sitio usa lo mínimo: una cookie para recordar tu idioma y, si lo aceptas, una medición anónima de visitas para saber qué páginas sirven. No hay publicidad ni perfiles de usuario.",
+    "accept": "Aceptar",
+    "reject": "Solo lo necesario",
+    "policy": "Ver aviso de privacidad"
+  },
+  "NotFound": {
+    "eyebrow": "Error 404",
+    "title": "Esta página no existe",
+    "description": "La dirección que abriste no está en el sitio: puede que el enlace viniera incompleto o que la página cambiara de nombre. Si buscas un servicio o quieres cotizar un motor, desde aquí llegas en un clic.",
+    "homeCta": "Ir al inicio",
+    "linksTitle": "Los servicios del taller"
+  },
+  "Privacy": {
+    "eyebrow": "Legal",
+    "title": "Aviso de privacidad",
+    "description": "Qué datos personales recabamos cuando pides una cotización, para qué los usamos y cómo pedir que los corrijamos o los borremos.",
+    "metaTitle": "Cómo tratamos tus datos personales",
+    "metaDescription": "Aviso de privacidad de EMBOTEC: qué datos recabamos al cotizar un motor, para qué los usamos, con quién no los compartimos y cómo ejercer tus derechos ARCO.",
+    "updated": "Última actualización: 26 de agosto de 2026",
+    "sections": [
+      {
+        "title": "Quién es responsable de tus datos",
+        "body": [
+          "EMBOTEC, con domicilio en Girasol 715, Col. Los Fresnos, 66636 Apodaca, Nuevo León, México, es responsable del tratamiento de los datos personales que nos compartes a través de este sitio, por correo o por teléfono.",
+          "Para cualquier asunto relacionado con tus datos personales el canal es ventas@embo-tec.com."
+        ]
+      },
+      {
+        "title": "Qué datos recabamos",
+        "body": [
+          "Los que nos das para poder atenderte: nombre, empresa, correo electrónico y teléfono, junto con la información técnica del equipo (datos de placa, falla observada, fotografías del motor).",
+          "Este sitio no tiene formularios de pago ni recaba datos financieros, patrimoniales ni datos personales sensibles."
+        ]
+      },
+      {
+        "title": "Para qué los usamos",
+        "body": [
+          "Para responder tu solicitud, elaborar el diagnóstico y la cotización, dar seguimiento al trabajo, coordinar la entrega o el servicio en sitio, facturar y contactarte sobre el equipo que nos confiaste.",
+          "No usamos tus datos para publicidad de terceros ni los incorporamos a listas de correo sin que lo pidas."
+        ]
+      },
+      {
+        "title": "Con quién los compartimos",
+        "body": [
+          "No vendemos ni rentamos tus datos personales. Solo los compartimos con proveedores necesarios para cumplir el servicio (por ejemplo paquetería o contabilidad), obligados a tratarlos de forma confidencial, o cuando una autoridad competente lo requiera por escrito."
+        ]
+      },
+      {
+        "title": "Cookies y medición del sitio",
+        "body": [
+          "El sitio guarda en tu navegador la preferencia de idioma (cookie NEXT_LOCALE) y tu decisión sobre las cookies de medición. Ambas son necesarias para que el sitio funcione como esperas y no identifican a nadie.",
+          "La medición de audiencia (Vercel Analytics) solo se carga si la aceptas en el aviso de cookies. Reporta visitas de forma agregada y anónima; puedes rechazarla y el sitio funciona igual."
+        ]
+      },
+      {
+        "title": "Tus derechos ARCO",
+        "body": [
+          "Puedes solicitar el acceso, la rectificación, la cancelación o la oposición al tratamiento de tus datos, así como revocar el consentimiento que nos hayas dado.",
+          "Escribe a ventas@embo-tec.com indicando tu nombre, un medio de contacto y qué solicitas. Te responderemos dentro de los plazos que marca la Ley Federal de Protección de Datos Personales en Posesión de los Particulares."
+        ]
+      },
+      {
+        "title": "Cambios a este aviso",
+        "body": [
+          "Cualquier modificación se publica en esta misma página con una nueva fecha de actualización. Te recomendamos revisarla antes de compartirnos datos nuevos."
+        ]
+      }
+    ]
+  },
+  "Terms": {
+    "eyebrow": "Legal",
+    "title": "Términos y condiciones",
+    "description": "Las reglas de uso de este sitio y el alcance de lo que publicamos: qué es informativo, qué se vuelve compromiso y qué cubre la garantía.",
+    "metaTitle": "Condiciones de uso del sitio y de los servicios",
+    "metaDescription": "Términos y condiciones de EMBOTEC: alcance de la información publicada, cotizaciones y tiempos de entrega, garantías por escrito, propiedad intelectual y ley aplicable.",
+    "updated": "Última actualización: 26 de agosto de 2026",
+    "sections": [
+      {
+        "title": "Aceptación",
+        "body": [
+          "Al usar este sitio aceptas estos términos. Si no estás de acuerdo con alguno, lo mejor es no usarlo y contactarnos directamente por teléfono o correo."
+        ]
+      },
+      {
+        "title": "Alcance de la información publicada",
+        "body": [
+          "Los textos del sitio describen nuestros servicios y son informativos: no constituyen una oferta vinculante ni un compromiso de precio o de plazo.",
+          "Los tiempos de entrega que mencionamos son referencias basadas en trabajos habituales. El precio y la fecha en firme salen siempre por escrito en la cotización, después del diagnóstico del equipo."
+        ]
+      },
+      {
+        "title": "Cotizaciones y órdenes de servicio",
+        "body": [
+          "La cotización se emite tras revisar y medir el equipo, indica el alcance del trabajo y tiene la vigencia que se señale en el documento.",
+          "El trabajo arranca cuando apruebas la cotización. Lo que se acuerde ahí y en la orden de servicio es lo que rige la relación entre las partes, por encima de cualquier texto de este sitio."
+        ]
+      },
+      {
+        "title": "Garantías",
+        "body": [
+          "El embobinado y la mano de obra se respaldan con la garantía y el plazo indicados en la orden de servicio correspondiente.",
+          "La garantía no cubre daños ajenos al trabajo realizado: instalación incorrecta por terceros, sobrecarga, fallas de alimentación eléctrica, ambiente distinto al declarado o falta de mantenimiento posterior a la entrega."
+        ]
+      },
+      {
+        "title": "Propiedad intelectual y marcas de terceros",
+        "body": [
+          "Los textos, fotografías, identidad gráfica y el nombre EMBOTEC son propiedad del taller y no pueden reproducirse con fines comerciales sin autorización por escrito.",
+          "Las marcas de motores, bombas y equipo que se mencionan en el sitio pertenecen a sus respectivos titulares y se citan únicamente para identificar el tipo de equipo que atendemos o suministramos. Mencionarlas no implica representación, patrocinio ni afiliación con esas empresas."
+        ]
+      },
+      {
+        "title": "Uso del sitio",
+        "body": [
+          "Puedes consultar y compartir el contenido. No está permitido intentar vulnerar el sitio, extraer sus datos de forma automatizada y masiva, ni usarlo para actividades que afecten su funcionamiento o a otros usuarios."
+        ]
+      },
+      {
+        "title": "Enlaces y servicios de terceros",
+        "body": [
+          "El sitio enlaza a servicios externos, como Google Maps para el domicilio del taller, y usa una herramienta de medición de audiencia sujeta a tu consentimiento. No respondemos por el contenido ni por las políticas de esos terceros."
+        ]
+      },
+      {
+        "title": "Limitación de responsabilidad",
+        "body": [
+          "Procuramos que la información esté correcta y actualizada, pero no garantizamos que el sitio esté disponible sin interrupciones ni libre de errores. Las decisiones técnicas sobre un equipo deben tomarse con el diagnóstico y la cotización en mano, no con el contenido general del sitio."
+        ]
+      },
+      {
+        "title": "Ley aplicable y jurisdicción",
+        "body": [
+          "Estos términos se rigen por las leyes de los Estados Unidos Mexicanos. Cualquier controversia se someterá a los tribunales competentes del Estado de Nuevo León."
+        ]
+      }
+    ]
+  },
   "Footer": {
     "tagline": "Embobinado y reparación de motores eléctricos, mantenimiento industrial y diagnóstico eléctrico para plantas productivas.",
     "navigationTitle": "Navegación",
@@ -452,6 +684,7 @@
     "languageTitle": "Idioma",
     "rights": "Todos los derechos reservados.",
     "siteNavigation": "Navegación del sitio",
-    "footerNavigation": "Navegación del pie de página"
+    "footerNavigation": "Navegación del pie de página",
+    "legalNavigation": "Avisos legales"
   }
 }

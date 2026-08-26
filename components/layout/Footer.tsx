@@ -11,7 +11,8 @@ export default async function Footer() {
   const t = await getTranslations('Footer');
   const tNav = await getTranslations('Navbar');
   const tServices = await getTranslations('Services');
-  const tContact = await getTranslations('Contact');
+  const tPrivacy = await getTranslations('Privacy');
+  const tTerms = await getTranslations('Terms');
 
   // Se evalúa al generar el sitio; se actualiza en cada build.
   const year = new Date().getFullYear();
@@ -26,10 +27,16 @@ export default async function Footer() {
           </p>
         </div>
 
+        {/*
+          Los rótulos del pie van como <p> y no como <h2>: son etiquetas de
+          columna, y si fueran encabezados aparecerían en el esquema de cada
+          página compitiendo con los <h2> reales del contenido. La accesibilidad
+          la sostienen los `aria-label` de cada <nav>.
+        */}
         <nav aria-label={t('footerNavigation')}>
-          <h2 className="font-heading text-xs font-bold tracking-[0.16em] text-embotec-orange uppercase">
+          <p className="font-heading text-xs font-bold tracking-[0.16em] text-embotec-orange uppercase">
             {t('navigationTitle')}
-          </h2>
+          </p>
           <ul className="mt-4 flex flex-col gap-2.5">
             {navItems.map((item) => (
               <li key={item.key}>
@@ -52,10 +59,10 @@ export default async function Footer() {
           </ul>
         </nav>
 
-        <div>
-          <h2 className="font-heading text-xs font-bold tracking-[0.16em] text-embotec-orange uppercase">
+        <nav aria-label={t('servicesTitle')}>
+          <p className="font-heading text-xs font-bold tracking-[0.16em] text-embotec-orange uppercase">
             {t('servicesTitle')}
-          </h2>
+          </p>
           <ul className="mt-4 flex flex-col gap-2.5">
             {services.map((service) => (
               <li key={service.slug}>
@@ -68,12 +75,12 @@ export default async function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
         <div>
-          <h2 className="font-heading text-xs font-bold tracking-[0.16em] text-embotec-orange uppercase">
+          <p className="font-heading text-xs font-bold tracking-[0.16em] text-embotec-orange uppercase">
             {t('contactTitle')}
-          </h2>
+          </p>
           <ul className="mt-4 flex flex-col gap-3 text-sm text-embotec-light">
             <li>
               <a
@@ -93,15 +100,22 @@ export default async function Footer() {
                 {company.phone}
               </a>
             </li>
-            <li className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 shrink-0" aria-hidden />
-              {tContact('locationValue')}
+            <li>
+              <a
+                href={company.address.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-start gap-2 py-1 transition-colors hover:text-embotec-white"
+              >
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+                <span>{company.address.full}</span>
+              </a>
             </li>
           </ul>
 
-          <h2 className="mt-8 font-heading text-xs font-bold tracking-[0.16em] text-embotec-orange uppercase">
+          <p className="mt-8 font-heading text-xs font-bold tracking-[0.16em] text-embotec-orange uppercase">
             {t('languageTitle')}
-          </h2>
+          </p>
           <div className="mt-4 max-w-[220px]">
             <LanguageSwitcher variant="full" layoutId="language-indicator-footer" />
           </div>
@@ -109,9 +123,29 @@ export default async function Footer() {
       </div>
 
       <div className="border-t border-embotec-white/10">
-        <p className="mx-auto w-full max-w-6xl px-6 py-6 text-xs text-embotec-light">
-          © {year} EMBOTEC. {t('rights')}
-        </p>
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-6 py-6 text-xs text-embotec-light sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {year} EMBOTEC. {t('rights')}
+          </p>
+
+          <nav
+            aria-label={t('legalNavigation')}
+            className="flex flex-wrap gap-x-6 gap-y-2"
+          >
+            <Link
+              href="/privacidad"
+              className="transition-colors hover:text-embotec-white"
+            >
+              {tPrivacy('title')}
+            </Link>
+            <Link
+              href="/terminos"
+              className="transition-colors hover:text-embotec-white"
+            >
+              {tTerms('title')}
+            </Link>
+          </nav>
+        </div>
       </div>
     </footer>
   );

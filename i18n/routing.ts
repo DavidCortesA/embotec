@@ -46,6 +46,10 @@ export const routing = defineRouting({
       es: '/servicios/diagnostico-electrico',
       en: '/services/electrical-diagnostics',
     },
+    '/servicios/venta-de-productos': {
+      es: '/servicios/venta-de-productos',
+      en: '/services/product-sales',
+    },
     '/proyectos': {
       es: '/proyectos',
       en: '/projects',
@@ -53,6 +57,14 @@ export const routing = defineRouting({
     '/contacto': {
       es: '/contacto',
       en: '/contact',
+    },
+    '/privacidad': {
+      es: '/privacidad',
+      en: '/privacy-policy',
+    },
+    '/terminos': {
+      es: '/terminos-y-condiciones',
+      en: '/terms-and-conditions',
     },
   },
 });

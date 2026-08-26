@@ -3,12 +3,12 @@ import { notFound } from 'next/navigation';
 import { Anton, IBM_Plex_Mono, Manrope } from 'next/font/google';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import CookieBanner from '@/components/consent/CookieBanner';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 import SmoothScroll from '@/components/motion/SmoothScroll';
 import { routing } from '@/i18n/routing';
-import { siteName, siteUrl } from '@/lib/seo';
-import { Analytics } from "@vercel/analytics/next"
+import { siteName, siteUrl, socialImage } from '@/lib/seo';
 import '../globals.css';
 
 /** Titulares de cartel */
@@ -67,6 +67,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     description: t('description'),
     applicationName: siteName,
+    // Respaldo para las rutas que no pasan por `buildPageMetadata` (la 404):
+    // las páginas normales declaran su propio bloque `openGraph`, que
+    // reemplaza este por completo.
+    openGraph: {
+      type: 'website',
+      siteName,
+      images: [socialImage()],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [socialImage().url],
+    },
     robots: {
       index: true,
       follow: true,
@@ -117,7 +129,9 @@ export default async function LocaleLayout({ children, params }: Props) {
         <div aria-hidden className="grain" />
 
         <NextIntlClientProvider>
-          <Analytics />
+          {/* La medición de audiencia se monta dentro del aviso de cookies:
+              solo se carga si la persona la acepta. */}
+          <CookieBanner />
           <SmoothScroll />
           {/* WCAG 2.4.1: permite saltarse el navbar con el teclado */}
           <a
