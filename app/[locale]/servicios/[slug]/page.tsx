@@ -11,6 +11,7 @@ import PageHero from '@/components/ui/PageHero';
 import ParallaxImage from '@/components/ui/ParallaxImage';
 import Reveal from '@/components/ui/Reveal';
 import RevealText from '@/components/ui/RevealText';
+import { brands } from '@/data/brands';
 import { serviceImages } from '@/data/images';
 import { getService, services } from '@/data/services';
 import { Link } from '@/i18n/navigation';
@@ -197,6 +198,37 @@ export default async function ServiceDetailPage({ params }: Props) {
           </ul>
         </div>
       </section>
+
+      {/* Marcas: solo en venta de productos, es la cola larga de "vendes X" */}
+      {service.key === 'sales' && (
+        <section className="bg-embotec-white py-24 sm:py-32">
+          <div className="mx-auto w-full max-w-7xl px-6">
+            <p className="tech-label flex items-center gap-3 text-embotec-orange-dark">
+              <span aria-hidden className="h-px w-10 bg-embotec-orange-dark" />
+              {t('sectionLabels.brands')}
+            </p>
+
+            <ul className="mt-12 grid grid-cols-2 border-t border-l border-embotec-dark/12 sm:grid-cols-3 lg:grid-cols-4">
+              {brands.map((brand, index) => (
+                <Reveal
+                  as="li"
+                  key={brand.name}
+                  delay={(index % 4) * 0.05}
+                  className="flex min-h-28 items-center justify-center border-r border-b border-embotec-dark/12 px-5 py-9"
+                >
+                  <Image
+                    src={brand.logo}
+                    alt={brand.alt}
+                    width={160}
+                    height={64}
+                    className="h-12 w-auto max-w-[9rem] object-contain grayscale transition-all duration-300 hover:grayscale-0 sm:h-14"
+                  />
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* Qué atendemos + sectores: la cola larga de búsquedas */}
       <section className="on-dark bg-embotec-night py-24 sm:py-32">

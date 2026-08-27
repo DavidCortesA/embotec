@@ -1,14 +1,14 @@
 import { ArrowUpRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import Image from 'next/image';
 import Reveal from '@/components/ui/Reveal';
 import RevealText from '@/components/ui/RevealText';
 import { brands } from '@/data/brands';
 import { Link } from '@/i18n/navigation';
 
 /**
- * Muro de marcas: rejilla de nombres a modo de logotipos tipográficos. No hay
- * archivos de logo (ni permiso de uso de cada marca), así que se dibujan con la
- * tipografía de cartel del sitio; el listado vive en `data/brands.ts`.
+ * Muro de marcas: rejilla de logotipos. El listado (nombre, logo y alt) vive
+ * en `data/brands.ts`.
  */
 export default async function Brands() {
   const t = await getTranslations('Home.brands');
@@ -52,13 +52,17 @@ export default async function Brands() {
           {brands.map((brand, index) => (
             <Reveal
               as="li"
-              key={brand}
+              key={brand.name}
               delay={(index % 4) * 0.05}
               className="flex min-h-28 items-center justify-center border-r border-b border-embotec-dark/12 px-5 py-9"
             >
-              <span className="display text-center text-2xl text-embotec-gray transition-colors hover:text-embotec-orange-dark sm:text-3xl">
-                {brand}
-              </span>
+              <Image
+                src={brand.logo}
+                alt={brand.alt}
+                width={160}
+                height={64}
+                className="h-12 w-auto max-w-[9rem] object-contain grayscale transition-all duration-300 hover:grayscale-0 sm:h-14"
+              />
             </Reveal>
           ))}
         </ul>
