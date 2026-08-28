@@ -40,10 +40,10 @@ export const pageImages = {
  */
 export const serviceImages: Record<string, string> = {
   rewinding: '/images/servicios/embobinado-de-motores.jpg',
-  maintenance: '/images/servicios/mantenimiento-industrial.jpg',
+  maintenance: '/images/servicios/venta-de-productos.jpg',
   repair: '/images/servicios/reparacion-de-motores-bombas.jpg',
   diagnostics: '/images/proceso/pruebas-electricas-1.jpg',
-  sales: '/images/servicios/venta-de-productos.jpg',
+  sales: '/images/productos/altamira-multietapas-job.jpg',
 };
 
 /** Una foto de galería. `label` la vuelve informativa (producto con nombre). */
