@@ -83,24 +83,24 @@
       "description": "Cinco pasos con evidencia en cada uno: sabes qué encontramos, qué hicimos y cómo quedó tu equipo.",
       "hint": "Sigue haciendo scroll para avanzar por el proceso.",
       "steps": {
+        "collection": {
+          "title": "Recolecta y revisión del equipo",
+          "description": "Recogemos el motor en tu planta o lo recibimos en el taller. Revisamos en qué condiciones llega y lo registramos con fotos antes de tocar nada."
+        },
         "diagnosis": {
-          "title": "Diagnóstico",
-          "description": "Recibimos el motor, medimos aislamiento y resistencias, y documentamos la falla con fotos antes de tocar nada."
+          "title": "Diagnóstico y cotización",
+          "description": "Desarmamos, medimos aislamiento y resistencias y ubicamos la falla. Con eso te enviamos el alcance por escrito: qué se cambia, qué se recupera, cuánto cuesta y en cuántos días."
         },
-        "quote": {
-          "title": "Cotización",
-          "description": "Te enviamos el alcance por escrito: qué se cambia, qué se recupera, cuánto cuesta y en cuántos días."
-        },
-        "rewinding": {
-          "title": "Embobinado",
-          "description": "Retiramos el devanado dañado, limpiamos el estator y embobinamos con alambre y aislamientos del grado térmico correcto."
+        "repair": {
+          "title": "Reparación",
+          "description": "Retiramos el devanado dañado, limpiamos el estator y embobinamos con alambre y aislamientos del grado térmico correcto. Después barnizado y horneado."
         },
         "testing": {
-          "title": "Pruebas",
-          "description": "Barnizado, balanceo y pruebas eléctricas en vacío y con carga. Te entregamos el reporte con los valores medidos."
+          "title": "Pruebas eléctricas",
+          "description": "Balanceo y pruebas eléctricas en vacío y con carga. Te entregamos el reporte con los valores medidos."
         },
         "delivery": {
-          "title": "Entrega e instalación",
+          "title": "Entrega del equipo",
           "description": "Entregamos el motor listo o lo instalamos y arrancamos en sitio, verificando corriente y temperatura de operación."
         }
       }
@@ -435,7 +435,10 @@
       "applications": "Qué atendemos",
       "sectors": "Sectores",
       "brands": "Marcas",
-      "faq": "Preguntas frecuentes"
+      "faq": "Preguntas frecuentes",
+      "gallery": "El trabajo por dentro",
+      "catalog": "Catálogo Altamira",
+      "catalogNote": "Imágenes de producto de Bombas y Equipos Altamira. Manejamos el catálogo completo: si no ves el modelo que necesitas, pregúntanos."
     },
     "sectors": [
       "Alimentos y bebidas",
@@ -471,7 +474,13 @@
         "question": "¿Entregan reporte de las pruebas?",
         "answer": "Sí. Cada motor sale con resistencia de aislamiento, resistencia entre devanados y corriente en vacío medidas y documentadas."
       }
-    ]
+    ],
+    "videos": {
+      "sectionLabel": "En video",
+      "varnishing": "Barnizado del rotor tras el embobinado.",
+      "rotor": "Colocación de las bobinas en el rotor.",
+      "electricalTests": "Pruebas eléctricas de un motor terminado, antes de entregarlo."
+    }
   },
   "Projects": {
     "eyebrow": "Proyectos",

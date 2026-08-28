@@ -9,10 +9,11 @@ import CtaBand from '@/components/ui/CtaBand';
 import Faq, { type FaqItem } from '@/components/ui/Faq';
 import PageHero from '@/components/ui/PageHero';
 import ParallaxImage from '@/components/ui/ParallaxImage';
+import VideoBlock from '@/components/ui/VideoBlock';
 import Reveal from '@/components/ui/Reveal';
 import RevealText from '@/components/ui/RevealText';
 import { brands } from '@/data/brands';
-import { serviceImages } from '@/data/images';
+import { serviceGalleries, serviceImages, serviceVideos } from '@/data/images';
 import { getService, services } from '@/data/services';
 import { Link } from '@/i18n/navigation';
 import { resolveLocale } from '@/lib/locale';
@@ -58,6 +59,7 @@ export default async function ServiceDetailPage({ params }: Props) {
   if (!service) notFound();
 
   const t = await getTranslations('Services');
+  const tVideos = await getTranslations('Services.videos');
   const tNav = await getTranslations('Navbar');
   const tCommon = await getTranslations('Common');
   const tCta = await getTranslations('Home.cta');
@@ -73,6 +75,8 @@ export default async function ServiceDetailPage({ params }: Props) {
   ) as string[];
   const faq = t.raw(`items.${service.key}.faq`) as FaqItem[];
   const sectors = t.raw('sectors') as string[];
+  const gallery = serviceGalleries[service.key];
+  const videos = serviceVideos[service.key] ?? [];
 
   return (
     <>
@@ -169,6 +173,31 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Video: solo los servicios con clips en `serviceVideos` */}
+      {videos.length > 0 && (
+        <section className="on-dark bg-embotec-night py-24 sm:py-32">
+          <div className="mx-auto w-full max-w-7xl px-6">
+            <p className="tech-label flex items-center gap-3 text-embotec-orange">
+              <span aria-hidden className="h-px w-10 bg-embotec-orange" />
+              {tVideos('sectionLabel')}
+            </p>
+
+            <ul className="mt-12 flex flex-wrap gap-8">
+              {videos.map((video, index) => (
+                <Reveal as="li" key={video.src} delay={index * 0.08}>
+                  <VideoBlock
+                    src={video.src}
+                    poster={video.poster}
+                    label={tVideos(video.labelKey)}
+                    autoLoop={video.autoLoop}
+                  />
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
       {/* Qué incluye */}
       <section className="bg-embotec-bg py-24 sm:py-32">
         <div className="mx-auto w-full max-w-7xl px-6">
@@ -198,6 +227,76 @@ export default async function ServiceDetailPage({ params }: Props) {
           </ul>
         </div>
       </section>
+
+      {/* Galería: solo los servicios con fotos propias en `serviceGalleries` */}
+      {gallery && (
+        <section className="bg-embotec-white py-24 sm:py-32">
+          <div className="mx-auto w-full max-w-7xl px-6">
+            <p className="tech-label flex items-center gap-3 text-embotec-orange-dark">
+              <span aria-hidden className="h-px w-10 bg-embotec-orange-dark" />
+              {t(`sectionLabels.${gallery.labelKey}`)}
+            </p>
+
+            <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+              {gallery.items.map((item, index) => (
+                <Reveal
+                  as="li"
+                  key={item.src}
+                  delay={(index % 5) * 0.06}
+                  className={
+                    gallery.fit === 'contain'
+                      ? 'flex flex-col rounded-2xl border border-embotec-dark/12 bg-embotec-bg p-4'
+                      : // La última foto ocupa el hueco que deja la cuadrícula
+                        // de dos columnas en móvil; en pantalla grande vuelve a
+                        // la fila de cinco.
+                        `relative overflow-hidden rounded-2xl bg-embotec-dark ${
+                          index === gallery.items.length - 1 &&
+                          gallery.items.length % 2 === 1
+                            ? 'col-span-2 aspect-[16/10] sm:col-span-1 sm:aspect-[3/4]'
+                            : 'aspect-[3/4]'
+                        }`
+                  }
+                >
+                  {gallery.fit === 'contain' ? (
+                    <>
+                      <div className="relative aspect-square w-full">
+                        <Image
+                          src={item.src}
+                          alt={item.label ?? ''}
+                          fill
+                          sizes="(min-width: 1024px) 15vw, (min-width: 640px) 28vw, 44vw"
+                          className="object-contain"
+                        />
+                      </div>
+                      {item.label ? (
+                        <p className="mt-4 text-center text-sm leading-snug font-medium text-embotec-dark">
+                          {item.label}
+                        </p>
+                      ) : null}
+                    </>
+                  ) : (
+                    <Image
+                      // Decorativas: ilustran el texto del servicio, no aportan
+                      // información nueva.
+                      src={item.src}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 19vw, 46vw"
+                      className="object-cover"
+                    />
+                  )}
+                </Reveal>
+              ))}
+            </ul>
+
+            {gallery.noteKey ? (
+              <p className="mt-8 text-sm text-embotec-gray">
+                {t(`sectionLabels.${gallery.noteKey}`)}
+              </p>
+            ) : null}
+          </div>
+        </section>
+      )}
 
       {/* Marcas: solo en venta de productos, es la cola larga de "vendes X" */}
       {service.key === 'sales' && (

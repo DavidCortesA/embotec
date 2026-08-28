@@ -1,9 +1,9 @@
 /**
  * Fotografía del sitio.
  *
- * TODO (EMBOTEC): son fotos de archivo de Unsplash elegidas por tono
- * (taller a media luz, cobre, metal), no fotos reales del taller. Para
- * cambiarlas basta sustituir el valor por una ruta local, p. ej.
+ * TODO (EMBOTEC): las que siguen apuntando a Unsplash son fotos de archivo
+ * elegidas por tono (taller a media luz, cobre, metal), no fotos reales del
+ * taller. Para cambiarlas basta sustituir el valor por una ruta local, p. ej.
  * `'/images/taller-01.jpg'`: los componentes usan `next/image` y no dependen
  * de que la fuente sea remota. Cuando ya no quede ninguna URL de Unsplash,
  * el bloque `images.remotePatterns` de `next.config.ts` puede borrarse.
@@ -21,7 +21,7 @@ export const images = {
   /** Cierre de página */
   cta: unsplash('photo-1720036236657-cc7de2dc5b7a', 1800),
   /** Bloque "por qué EMBOTEC": chispas de amolado */
-  why: unsplash('photo-1738162837369-a2beec3a1d47', 1400),
+  why: '/images/servicios/reparacion-de-motores-bombas.jpg',
   /** Retrato de taller para el bloque de credenciales */
   workshop: unsplash('photo-1764115424737-25aca6f47835', 1200),
 } as const;
@@ -34,26 +34,140 @@ export const pageImages = {
   contact: unsplash('photo-1512813759302-a44af29da3c1', 1800),
 } as const;
 
-/** Una imagen por servicio, con la misma clave que `data/services.ts` */
+/**
+ * Portada de cada servicio, con la misma clave que `data/services.ts`.
+ * Las rutas locales son fotos del taller enviadas por el cliente.
+ */
 export const serviceImages: Record<string, string> = {
-  // TODO (EMBOTEC): pedido del cliente — cambiar por una foto real de una
-  // persona/manos haciendo el embobinado. Pendiente de que la envíen.
-  rewinding: unsplash('photo-1707409464255-e78eb873298a', 1200),
-  // TODO (EMBOTEC): pedido del cliente — cambiar por una foto con varios
-  // equipos de planta. Pendiente de que la envíen.
-  maintenance: unsplash('photo-1676018366904-c083ed678e60', 1200),
-  repair: unsplash('photo-1772588063102-eed5af095b9e', 1200),
-  diagnostics: unsplash('photo-1717386255777-ce60792a2a56', 1200),
-  // TODO (EMBOTEC): provisional. Para "Venta de productos" hace falta una foto
-  // del almacén o del mostrador con motores y refacciones en existencia.
-  sales: unsplash('photo-1524514587686-e2909d726e9b', 1200),
+  rewinding: '/images/servicios/embobinado-de-motores.jpg',
+  maintenance: '/images/servicios/mantenimiento-industrial.jpg',
+  repair: '/images/servicios/reparacion-de-motores-bombas.jpg',
+  diagnostics: '/images/proceso/pruebas-electricas-1.jpg',
+  sales: '/images/servicios/venta-de-productos.jpg',
 };
 
-/** Una imagen por paso del proceso, con las claves de `ProcessScroll` */
-export const processImages: Record<string, string> = {
-  diagnosis: unsplash('photo-1747999918007-e3442cabb23a', 900),
-  quote: unsplash('photo-1578988247876-ce2647da8195', 900),
-  rewinding: unsplash('photo-1563456020111-f02d832ae94c', 900),
-  testing: unsplash('photo-1717386255893-59c0846cdef0', 900),
-  delivery: unsplash('photo-1738162837642-df6ca5695438', 900),
+/** Una foto de galería. `label` la vuelve informativa (producto con nombre). */
+export type GalleryItem = { src: string; label?: string };
+
+/**
+ * Galería de la página de detalle de un servicio. Solo las claves presentes
+ * aquí muestran esa sección.
+ *
+ * `fit: 'cover'` es para fotos de taller, que llenan el marco. `fit: 'contain'`
+ * es para fotos de catálogo sobre fondo blanco, que se muestran completas
+ * dentro de una tarjeta y llevan el nombre del modelo debajo.
+ *
+ * `labelKey` apunta a `Services.sectionLabels.<clave>` en messages.
+ */
+export type ServiceGallery = {
+  fit: 'cover' | 'contain';
+  labelKey: string;
+  /** Aviso opcional bajo la cuadrícula, en `Services.sectionLabels.<clave>` */
+  noteKey?: string;
+  items: readonly GalleryItem[];
+};
+
+export const serviceGalleries: Record<string, ServiceGallery> = {
+  rewinding: {
+    fit: 'cover',
+    labelKey: 'gallery',
+    items: [
+      { src: '/images/servicios/embobinado-detalle-1.jpg' },
+      { src: '/images/servicios/embobinado-detalle-2.jpg' },
+      { src: '/images/servicios/embobinado-barnizado.jpg' },
+      { src: '/images/servicios/embobinado-horneado-1.jpg' },
+      { src: '/images/servicios/embobinado-horneado-2.jpg' },
+    ],
+  },
+  // Fotos de producto del fabricante (bombasaltamira.com.mx). EMBOTEC las usa
+  // como distribuidor autorizado; si Altamira manda un kit de medios propio,
+  // basta sustituir los archivos de /public/images/productos.
+  sales: {
+    fit: 'contain',
+    labelKey: 'catalog',
+    noteKey: 'catalogNote',
+    items: [
+      {
+        src: '/images/productos/altamira-multietapas-tx.jpg',
+        label: 'Multietapas vertical Altamira TX',
+      },
+      {
+        src: '/images/productos/altamira-centrifuga-flux.webp',
+        label: 'Centrífuga horizontal Altamira FLUX',
+      },
+      {
+        src: '/images/productos/altamira-multietapas-trx.jpg',
+        label: 'Multietapas vertical Altamira TRX',
+      },
+      {
+        src: '/images/productos/altamira-multietapas-job.jpg',
+        label: 'Multietapas vertical Altamira JOB',
+      },
+      {
+        src: '/images/productos/altamira-sumergible-kor.webp',
+        label: 'Sumergible pozo profundo Altamira KOR',
+      },
+    ],
+  },
+};
+
+/** Clip de taller de un servicio. `labelKey` vive en `Services.videos`. */
+export type VideoItem = {
+  src: string;
+  poster: string;
+  labelKey: string;
+  /** Clips cortos: se reproducen solos, en silencio y en bucle */
+  autoLoop?: boolean;
+};
+
+/**
+ * Videos verticales de la página de detalle de un servicio. Solo las claves
+ * presentes aquí muestran esa sección.
+ */
+export const serviceVideos: Record<string, readonly VideoItem[]> = {
+  rewinding: [
+    {
+      src: '/videos/barnizado.mp4',
+      poster: '/videos/barnizado.jpg',
+      labelKey: 'varnishing',
+      autoLoop: true,
+    },
+    {
+      src: '/videos/embobinado-rotor.mp4',
+      poster: '/videos/embobinado-rotor.jpg',
+      labelKey: 'rotor',
+      autoLoop: true,
+    },
+  ],
+  // Dura poco más de un minuto: se queda en el póster hasta que le dan play.
+  diagnostics: [
+    {
+      src: '/videos/pruebas-electricas.mp4',
+      poster: '/videos/pruebas-electricas.jpg',
+      labelKey: 'electricalTests',
+    },
+  ],
+};
+
+/**
+ * Fotos de cada paso del proceso, con las claves de `ProcessScroll`.
+ *
+ * La primera de la lista es la principal; si hay una segunda se monta encima
+ * como recorte. Un paso puede tener una sola foto sin que el layout cambie.
+ */
+export const processImages: Record<string, readonly string[]> = {
+  collection: [
+    '/images/proceso/recoleccion-1.jpg',
+    '/images/proceso/recoleccion-2.jpg',
+  ],
+  diagnosis: [
+    '/images/proceso/diagnostico-1.jpg',
+    '/images/proceso/diagnostico-2.jpg',
+  ],
+  repair: [
+    '/images/proceso/reparacion-1.jpg',
+    '/images/proceso/reparacion-2.jpg',
+  ],
+  testing: ['/images/proceso/pruebas-electricas-1.jpg'],
+  delivery: ['/images/proceso/entrega-1.jpg', '/images/proceso/entrega-2.jpg'],
 };

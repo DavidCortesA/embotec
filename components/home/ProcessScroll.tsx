@@ -9,9 +9,9 @@ import { processImages } from '@/data/images';
 import { useReducedMotion } from '@/lib/useReducedMotion';
 
 const STEPS = [
+  'collection',
   'diagnosis',
-  'quote',
-  'rewinding',
+  'repair',
   'testing',
   'delivery',
 ] as const;
@@ -138,18 +138,51 @@ function ProcessPanel({
           </p>
         </div>
 
-        <figure className="relative order-1 aspect-[4/3] overflow-hidden rounded-2xl bg-embotec-dark lg:order-2 lg:aspect-[5/4]">
-          <Image
-            src={processImages[step]}
-            // Decorativa: el título y la descripción del paso ya lo explican.
-            alt=""
-            fill
-            sizes="(min-width: 1024px) 46vw, 100vw"
-            className="object-cover"
-          />
-        </figure>
+        <StepPhotos
+          step={step}
+          className="order-1 aspect-[4/3] lg:order-2 lg:aspect-[5/4]"
+          sizes="(min-width: 1024px) 46vw, 100vw"
+        />
       </div>
     </li>
+  );
+}
+
+/**
+ * Fotos de un paso. La primera ocupa todo el marco; si el paso trae una
+ * segunda, se monta abajo a la derecha como recorte, separada del fondo por un
+ * borde del color de la sección. Los pasos de una sola foto no cambian nada.
+ */
+function StepPhotos({
+  step,
+  className,
+  sizes,
+}: {
+  step: (typeof STEPS)[number];
+  className?: string;
+  sizes: string;
+}) {
+  const [main, inset] = processImages[step];
+
+  return (
+    // Decorativas: el título y la descripción del paso ya lo explican.
+    <figure className={`relative ${className ?? ''}`}>
+      <div className="relative h-full w-full overflow-hidden rounded-2xl bg-embotec-dark">
+        <Image src={main} alt="" fill sizes={sizes} className="object-cover" />
+      </div>
+
+      {inset ? (
+        <div className="absolute right-3 bottom-3 aspect-[4/3] w-[42%] overflow-hidden rounded-xl border-4 border-embotec-bg bg-embotec-dark shadow-lg sm:right-4 sm:bottom-4 sm:border-[6px]">
+          <Image
+            src={inset}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 20vw, 42vw"
+            className="object-cover"
+          />
+        </div>
+      ) : null}
+    </figure>
   );
 }
 
@@ -180,15 +213,11 @@ function StaticProcess() {
       <ol className="mx-auto mt-14 grid w-full max-w-7xl gap-x-8 gap-y-12 px-6 sm:grid-cols-2 lg:grid-cols-3">
         {STEPS.map((step, index) => (
           <li key={step} className="flex flex-col">
-            <figure className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-embotec-dark">
-              <Image
-                src={processImages[step]}
-                alt=""
-                fill
-                sizes="(min-width: 640px) 45vw, 100vw"
-                className="object-cover"
-              />
-            </figure>
+            <StepPhotos
+              step={step}
+              className="aspect-[4/3]"
+              sizes="(min-width: 640px) 45vw, 100vw"
+            />
             <span className="display mt-6 text-3xl text-embotec-orange-dark">
               {String(index + 1).padStart(2, '0')}
             </span>

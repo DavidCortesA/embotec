@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
  */
 const CASES = [
   { id: '1', image: serviceImages.repair },
-  { id: '2', image: processImages.testing },
+  { id: '2', image: processImages.testing[0] },
   { id: '3', image: serviceImages.maintenance },
 ] as const;
 

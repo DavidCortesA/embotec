@@ -83,24 +83,24 @@
       "description": "Five steps with evidence at each one: you know what we found, what we did and how your equipment came out.",
       "hint": "Keep scrolling to move through the process.",
       "steps": {
+        "collection": {
+          "title": "Pickup and intake check",
+          "description": "We collect the motor at your plant or receive it at the shop. We check the condition it arrives in and log it with photos before touching anything."
+        },
         "diagnosis": {
-          "title": "Diagnosis",
-          "description": "We receive the motor, measure insulation and winding resistance, and document the failure with photos before touching anything."
+          "title": "Diagnosis and quote",
+          "description": "We strip it down, measure insulation and winding resistance and locate the fault. Then you get the scope in writing: what gets replaced, what gets recovered, how much it costs and how many days it takes."
         },
-        "quote": {
-          "title": "Quote",
-          "description": "You get the scope in writing: what gets replaced, what gets recovered, how much it costs and how many days it takes."
-        },
-        "rewinding": {
-          "title": "Rewinding",
-          "description": "We strip the damaged winding, clean the stator and rewind with wire and insulation of the correct thermal class."
+        "repair": {
+          "title": "Repair",
+          "description": "We remove the damaged winding, clean the stator and rewind with wire and insulation of the correct thermal class. Then varnishing and baking."
         },
         "testing": {
-          "title": "Testing",
-          "description": "Varnishing, balancing and electrical tests with no load and under load. You receive the report with every measured value."
+          "title": "Electrical testing",
+          "description": "Balancing and electrical tests with no load and under load. You receive the report with every measured value."
         },
         "delivery": {
-          "title": "Delivery and installation",
+          "title": "Equipment handover",
           "description": "We hand the motor over ready to run, or install and start it on site, checking operating current and temperature."
         }
       }
@@ -435,7 +435,10 @@
       "applications": "What we handle",
       "sectors": "Industries",
       "brands": "Brands",
-      "faq": "Frequently asked questions"
+      "faq": "Frequently asked questions",
+      "gallery": "Inside the work",
+      "catalog": "Altamira catalog",
+      "catalogNote": "Product images by Bombas y Equipos Altamira. We carry the full catalog: if you do not see the model you need, just ask."
     },
     "sectors": [
       "Food and beverage",
@@ -471,7 +474,13 @@
         "question": "Do you provide a test report?",
         "answer": "Yes. Every motor leaves with insulation resistance, winding resistance and no-load current measured and documented."
       }
-    ]
+    ],
+    "videos": {
+      "sectionLabel": "On video",
+      "varnishing": "Varnishing the rotor after rewinding.",
+      "rotor": "Setting the coils into the rotor.",
+      "electricalTests": "Electrical testing of a finished motor, before handover."
+    }
   },
   "Projects": {
     "eyebrow": "Projects",

@@ -35,9 +35,13 @@ export function absoluteUrl(href: AppPathname, locale: Locale) {
  *
  * El archivo que se publica es la versión optimizada para redes: 1200 px de
  * ancho —lo que recomiendan Facebook, LinkedIn y X— y JPEG de calidad alta,
- * 360 KB en vez de los 2 MB del original. El PNG original se conserva como
+ * 280 KB en vez de los 2 MB del original. El PNG original se conserva como
  * fuente en `assets/og/` (fuera de `public/`, para no publicar 2 MB que nadie
  * pide).
+ *
+ * La franja de logos de marca de arriba la monta
+ * `assets/og/build-opengraph-image.py`, que hay que volver a correr si cambian
+ * las marcas o el arte.
  *
  * Las medidas tienen que coincidir con el archivo real: si se sustituye por
  * otro de distinto tamaño, hay que actualizarlas aquí para que las redes no
