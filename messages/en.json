@@ -61,7 +61,7 @@
     },
     "answer": {
       "question": "What does EMBOTEC do?",
-      "answer": "EMBOTEC is an industrial electric motor rewinding and repair workshop in Apodaca, Nuevo León, Mexico. We rewind three-phase and single-phase A.C. and D.C. motors, repair pumps, run preventive maintenance at your plant and sell motors and spare parts. Every unit is handed over with its insulation, resistance and current tests in writing."
+      "answer": "EMBOTEC is an industrial electric motor rewinding and repair workshop in Monterrey, Nuevo León, Mexico. We rewind three-phase and single-phase A.C. and D.C. motors, repair pumps, run preventive maintenance at your plant and sell motors and spare parts. Every unit is handed over with its insulation, resistance and current tests in writing."
     },
     "ticker": [
       "Motor rewinding",
@@ -186,7 +186,7 @@
     "description": "We cover the full lifecycle of your electric motors and the equipment around them —varnishing, baking, technical testing and spare-part sales included—, in the workshop or on site.",
     "answer": {
       "question": "What services does EMBOTEC offer?",
-      "answer": "Five: electric motor rewinding, industrial maintenance, motor and pump repair, electrical diagnostics and testing, and sales of motors and spare parts. Rewinding and machining happen at the Apodaca workshop, where the oven and the machines are; preventive maintenance, diagnostics and start-up happen at your plant."
+      "answer": "Five: electric motor rewinding, industrial maintenance, motor and pump repair, electrical diagnostics and testing, and sales of motors and spare parts. Rewinding and machining happen at the Monterrey workshop, where the oven and the machines are; preventive maintenance, diagnostics and start-up happen at your plant."
     },
     "cta": "See the service",
     "includes": "What it includes",
@@ -198,7 +198,7 @@
         "title": "Electric motor rewinding",
         "summary": "Rewinding of single-phase A.C. and D.C. motors and transformers.",
         "description": "We strip the damaged winding, record the original winding data, clean the stator and rewind with wire and insulation of the correct thermal class. We finish with varnishing and electrical testing before delivery.",
-        "metaTitle": "Motor rewinding in Apodaca, Nuevo León",
+        "metaTitle": "Motor rewinding in Monterrey, Nuevo León",
         "metaDescription": "Rewinding of three-phase, single-phase and DC motors: original winding data, correct insulation class, varnishing and documented testing.",
         "answer": {
           "question": "What does rewinding an electric motor involve?",
@@ -521,7 +521,7 @@
     "title": "Tell us which motor needs attention",
     "description": "Share the nameplate data and the failure you observed. We come back with an initial diagnosis and the next step.",
     "metaTitle": "Contact us: quote your motor rewind",
-    "metaDescription": "Workshop in Apodaca, Nuevo León. Send us your motor nameplate data and the failure you observed: you get an initial diagnosis, scope and lead time in writing.",
+    "metaDescription": "Workshop in Monterrey, Nuevo León. Send us your motor nameplate data and the failure you observed: you get an initial diagnosis, scope and lead time in writing.",
     "email": "Email",
     "phone": "Phone",
     "location": "Location",
@@ -572,7 +572,7 @@
       {
         "title": "Who is responsible for your data",
         "body": [
-          "EMBOTEC, with offices at Girasol 715, Col. Los Fresnos, 66636 Apodaca, Nuevo León, Mexico, is responsible for processing the personal data you share with us through this site, by email or by phone.",
+          "EMBOTEC, with offices at C. Epifanio Carreón 631, Col. La Alianza, 64103 Monterrey, Nuevo León, Mexico, is responsible for processing the personal data you share with us through this site, by email or by phone.",
           "For anything related to your personal data, the channel is ventas@embo-tec.com."
         ]
       },

@@ -18,17 +18,17 @@ export const company = {
   /** Formato E.164 para el enlace tel: */
   phoneHref: 'tel:+528120943194',
   address: {
-    street: 'Girasol 715',
-    neighborhood: 'Col. Los Fresnos',
-    city: 'Apodaca',
+    street: 'C. Epifanio Carreón 631',
+    neighborhood: 'Col. La Alianza',
+    city: 'Monterrey',
     state: 'Nuevo León',
-    postalCode: '66636',
+    postalCode: '64103',
     country: 'México',
     /** Domicilio completo en una línea (footer, ficha de contacto, schema) */
-    full: 'Girasol 715, Col. Los Fresnos, 66636 Apodaca, Nuevo León, México',
+    full: 'C. Epifanio Carreón 631, Col. La Alianza, 64103 Monterrey, Nuevo León, México',
     /** Búsqueda en Google Maps: no fija un negocio, solo el domicilio */
     mapsUrl:
-      'https://www.google.com/maps/search/?api=1&query=Girasol%20715%2C%20Los%20Fresnos%2C%2066636%20Apodaca%2C%20Nuevo%20Le%C3%B3n',
+      'https://www.google.com/maps/search/?api=1&query=C.%20Epifanio%20Carre%C3%B3n%20631%2C%20La%20Alianza%2C%2064103%20Monterrey%2C%20Nuevo%20Le%C3%B3n',
   },
 } as const;
 

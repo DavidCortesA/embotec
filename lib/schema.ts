@@ -94,7 +94,7 @@ export function serviceSchema({
     inLanguage: locale,
     serviceType: name,
     provider: { '@id': ORGANIZATION_ID },
-    // El taller está en Apodaca (ver `data/company.ts`), pero se atiende a
+    // El taller está en Monterrey (ver `data/company.ts`), pero se atiende a
     // planta en todo el país, así que el área de servicio es nacional.
     areaServed: { '@type': 'Country', name: 'México' },
   };
