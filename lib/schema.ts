@@ -1,6 +1,6 @@
 import { company, contacts } from '@/data/company';
 import type { AppPathname, Locale } from '@/i18n/routing';
-import { absoluteUrl, siteName, siteUrl } from './seo';
+import { absoluteUrl, siteName, siteUrl, socialImage } from './seo';
 
 /**
  * Constructores de datos estructurados (schema.org). Se serializan con
@@ -45,19 +45,39 @@ export function contactPointsSchema(): JsonLdData[] {
   ];
 }
 
+/**
+ * La empresa como negocio local: es lo que Google cruza con el perfil de
+ * Google Business (nombre, domicilio y teléfono tienen que coincidir letra por
+ * letra con los del perfil). `alternateName` ayuda a no confundir la marca con
+ * otras empresas que se llaman igual.
+ */
 export function organizationSchema(description: string): JsonLdData {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'LocalBusiness',
     '@id': ORGANIZATION_ID,
     name: siteName,
+    alternateName: `${siteName} Embobinados y Mantenimiento Industrial`,
     url: siteUrl,
+    image: socialImage().url,
     description,
     email: company.email,
     telephone: company.phone,
     address: postalAddressSchema(),
+    hasMap: company.address.mapsUrl,
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: company.openingHours.days,
+      opens: company.openingHours.opens,
+      closes: company.openingHours.closes,
+    },
+    areaServed: [
+      ...company.serviceCities.map((name) => ({ '@type': 'City', name })),
+      { '@type': 'Country', name: 'México' },
+    ],
     contactPoint: contactPointsSchema(),
-    // TODO: agregar logo y sameAs (redes sociales) cuando estén.
+    // TODO: agregar logo y sameAs (perfil de Google Business y redes
+    // sociales) cuando estén.
   };
 }
 

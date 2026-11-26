@@ -30,6 +30,26 @@ export const company = {
     mapsUrl:
       'https://www.google.com/maps/search/?api=1&query=C.%20Epifanio%20Carre%C3%B3n%20631%2C%20La%20Alianza%2C%2064103%20Monterrey%2C%20Nuevo%20Le%C3%B3n',
   },
+  /**
+   * Horario de oficina, el mismo que muestra la página de contacto
+   * (`Contact.hoursValue`). Las urgencias se atienden por teléfono fuera de él.
+   */
+  openingHours: {
+    days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '08:00',
+    closes: '18:00',
+  },
+  /** Municipios del área metropolitana donde se atiende en sitio */
+  serviceCities: [
+    'Monterrey',
+    'Apodaca',
+    'Guadalupe',
+    'San Nicolás de los Garza',
+    'Escobedo',
+    'Santa Catarina',
+    'San Pedro Garza García',
+    'García',
+  ],
 } as const;
 
 export type Contact = {

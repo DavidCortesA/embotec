@@ -2,7 +2,7 @@
   "Metadata": {
     "title": "EMBOTEC | Embobinados y mantenimiento industrial",
     "description": "Embobinado y reparación de motores eléctricos, mantenimiento industrial y diagnóstico eléctrico. Devolvemos tus motores a operación con pruebas garantizadas.",
-    "organizationDescription": "EMBOTEC es un taller especializado en embobinado y reparación de motores eléctricos, mantenimiento industrial y diagnóstico eléctrico para plantas productivas."
+    "organizationDescription": "EMBOTEC es un taller en Monterrey, Nuevo León, especializado en embobinado y reparación de motores eléctricos, mantenimiento industrial y diagnóstico eléctrico para plantas productivas."
   },
   "Common": {
     "skipToContent": "Saltar al contenido principal",
@@ -42,8 +42,8 @@
     "enLong": "English"
   },
   "Home": {
-    "metaTitle": "Embobinado y reparación de motores eléctricos",
-    "metaDescription": "Embobinado y reparación de motores eléctricos, mantenimiento industrial y diagnóstico eléctrico. Devolvemos tus motores a operación con pruebas garantizadas.",
+    "metaTitle": "Embobinado y reparación de motores en Monterrey",
+    "metaDescription": "Taller en Monterrey, N.L.: embobinado y reparación de motores eléctricos, bombas industriales, mantenimiento y diagnóstico eléctrico. Devolvemos tus motores a operación con pruebas garantizadas.",
     "hero": {
       "eyebrow": "Embobinados y mantenimiento industrial",
       "title": "Tus motores de vuelta a producción",
@@ -198,8 +198,8 @@
         "title": "Embobinado de motores eléctricos",
         "summary": "Rebobinado de motores y transformadores monofásicos de C.A. y C.D.",
         "description": "Retiramos el devanado dañado, registramos los datos originales del bobinado, limpiamos el estator y embobinamos con alambre y aislamientos del grado térmico correcto. Terminamos con barnizado y pruebas eléctricas antes de entregar.",
-        "metaTitle": "Rebobinado de motores eléctricos industriales",
-        "metaDescription": "Rebobinado de motores trifásicos, monofásicos y de corriente directa: datos originales, aislamiento del grado correcto, barnizado y pruebas documentadas.",
+        "metaTitle": "Embobinado de motores eléctricos en Monterrey",
+        "metaDescription": "Embobinado de motores trifásicos, monofásicos y de corriente directa en Monterrey, N.L.: datos originales, aislamiento del grado correcto, barnizado y pruebas documentadas.",
         "answer": {
           "question": "¿Qué incluye el embobinado de un motor eléctrico?",
           "answer": "Registrar los datos del devanado original, retirar el devanado quemado, limpiar y revisar el núcleo, embobinar con alambre magneto y aislamiento clase F o H, impregnar con barniz, hornear y probar. Un trifásico de baja potencia suele salir en pocos días hábiles desde que apruebas la cotización, con reporte de aislamiento, resistencias y corriente en vacío."
@@ -292,8 +292,8 @@
         "title": "Reparación de motores y bombas",
         "summary": "Rodamientos, ejes, flechas, carcasas y bombas centrífugas.",
         "description": "Reparamos la parte mecánica que acompaña al devanado: rodamientos, ejes y flechas desgastadas, tapas y carcasas, además de bombas centrífugas y sumergibles acopladas a los motores que atendemos.",
-        "metaTitle": "Reparación mecánica de motores y bombas industriales",
-        "metaDescription": "Reparación mecánica de motores y bombas: rodamientos, ejes y flechas, tapas y carcasas, balanceo y armado con verificación de tolerancias.",
+        "metaTitle": "Reparación de bombas y motores industriales en Monterrey",
+        "metaDescription": "Reparación de bombas industriales y motores en Monterrey, N.L.: rodamientos, ejes y flechas, tapas y carcasas, balanceo y armado con verificación de tolerancias.",
         "answer": {
           "question": "¿Qué se repara de un motor eléctrico o una bomba?",
           "answer": "La parte mecánica que acompaña al devanado: ejes y flechas desgastadas (se metalizan y se rectifican a la medida original), alojamientos de rodamiento fuera de tolerancia, rodamientos, retenes, tapas y carcasas, además de bombas centrífugas y sumergibles. Antes de entregar, el rotor se balancea y el equipo se prueba en operación."
@@ -455,7 +455,7 @@
     },
     "coverage": {
       "title": "Cobertura y tiempos de respuesta",
-      "description": "Atendemos plantas industriales en México, en taller y en sitio. El embobinado y el rectificado se hacen en el taller, donde están el horno y las máquinas; el diagnóstico, el mantenimiento preventivo y la verificación de arranque se pueden hacer en tu planta. Ante un paro no programado damos un diagnóstico inicial dentro de las primeras 24 horas."
+      "description": "Nuestro taller está en Monterrey, Nuevo León, y atendemos plantas de toda el área metropolitana y del resto de México, en taller y en sitio. El embobinado y el rectificado se hacen en el taller, donde están el horno y las máquinas; el diagnóstico, el mantenimiento preventivo y la verificación de arranque se pueden hacer en tu planta. Ante un paro no programado damos un diagnóstico inicial dentro de las primeras 24 horas."
     },
     "faq": [
       {

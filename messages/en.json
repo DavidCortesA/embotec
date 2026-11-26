@@ -2,7 +2,7 @@
   "Metadata": {
     "title": "EMBOTEC | Motor rewinding and industrial maintenance",
     "description": "Electric motor rewinding and repair, industrial maintenance and electrical diagnostics. We put your motors back in production with documented testing.",
-    "organizationDescription": "EMBOTEC is a workshop specialized in electric motor rewinding and repair, industrial maintenance and electrical diagnostics for production plants."
+    "organizationDescription": "EMBOTEC is a workshop in Monterrey, Nuevo León, specialized in electric motor rewinding and repair, industrial maintenance and electrical diagnostics for production plants."
   },
   "Common": {
     "skipToContent": "Skip to main content",
@@ -42,8 +42,8 @@
     "enLong": "English"
   },
   "Home": {
-    "metaTitle": "Electric motor rewinding and repair",
-    "metaDescription": "Electric motor rewinding and repair, industrial maintenance and electrical diagnostics. We put your motors back in production with documented testing.",
+    "metaTitle": "Electric motor rewinding and repair in Monterrey",
+    "metaDescription": "Workshop in Monterrey, Mexico: electric motor rewinding and repair, industrial pump repair, maintenance and electrical diagnostics. We put your motors back in production with documented testing.",
     "hero": {
       "eyebrow": "Motor rewinding and industrial maintenance",
       "title": "Your motors back in production",
@@ -199,7 +199,7 @@
         "summary": "Rewinding of single-phase A.C. and D.C. motors and transformers.",
         "description": "We strip the damaged winding, record the original winding data, clean the stator and rewind with wire and insulation of the correct thermal class. We finish with varnishing and electrical testing before delivery.",
         "metaTitle": "Motor rewinding in Monterrey, Nuevo León",
-        "metaDescription": "Rewinding of three-phase, single-phase and DC motors: original winding data, correct insulation class, varnishing and documented testing.",
+        "metaDescription": "Rewinding of three-phase, single-phase and DC motors in Monterrey, Mexico: original winding data, correct insulation class, varnishing and documented testing.",
         "answer": {
           "question": "What does rewinding an electric motor involve?",
           "answer": "Recording the original winding data, stripping the burnt winding, cleaning and inspecting the core, rewinding with magnet wire and class F or H insulation, varnish impregnation, controlled baking and testing. A low-power three-phase motor usually leaves within a few working days of quote approval, with an insulation, resistance and no-load current report."
@@ -292,8 +292,8 @@
         "title": "Motor and pump repair",
         "summary": "Bearings, shafts, housings and centrifugal pumps.",
         "description": "We repair the mechanical side that goes with the winding: bearings, worn shafts, end covers and housings, plus centrifugal and submersible pumps coupled to the motors we service.",
-        "metaTitle": "Mechanical repair of industrial motors and pumps",
-        "metaDescription": "Mechanical repair of motors and pumps: bearings, shafts, covers and housings, rotor balancing and assembly with tolerance checks.",
+        "metaTitle": "Industrial pump and motor repair in Monterrey",
+        "metaDescription": "Industrial pump and motor repair in Monterrey, Mexico: bearings, shafts, covers and housings, rotor balancing and assembly with tolerance checks.",
         "answer": {
           "question": "What gets repaired on an electric motor or a pump?",
           "answer": "The mechanical side that goes with the winding: worn shafts (metal-sprayed and ground back to the original dimension), bearing housings out of tolerance, bearings, seals, end shields and frames, plus centrifugal and submersible pumps. Before delivery the rotor is balanced and the unit is run-tested."
@@ -455,7 +455,7 @@
     },
     "coverage": {
       "title": "Coverage and response times",
-      "description": "We serve industrial plants across Mexico, both in the workshop and on site. Rewinding and machining happen at the workshop, where the oven and the machines are; diagnostics, preventive maintenance and start-up verification can happen at your plant. For an unplanned shutdown we deliver an initial diagnosis within the first 24 hours."
+      "description": "Our workshop is in Monterrey, Nuevo León, and we serve plants across the metro area and the rest of Mexico, both in the workshop and on site. Rewinding and machining happen at the workshop, where the oven and the machines are; diagnostics, preventive maintenance and start-up verification can happen at your plant. For an unplanned shutdown we deliver an initial diagnosis within the first 24 hours."
     },
     "faq": [
       {
